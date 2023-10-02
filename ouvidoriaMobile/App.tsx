@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Image, Text, View} from 'react-native';
-import {InputBlock} from './src/components/InputBlock';
+import {CustomInput} from './src/components/CustomInput';
 import {CustomButton} from './src/components/CustomButton';
 import {styles} from './src/styles/styles';
 
@@ -15,13 +15,13 @@ function App() {
         source={require('./src/assets/logo/logo.png')}
       />
       <Text style={styles.h1}>Entrar</Text>
-      <InputBlock
+      <CustomInput
         icon="user"
         placeholderName="Email"
         value={email}
         setValue={setEmail}
       />
-      <InputBlock
+      <CustomInput
         icon="lock"
         placeholderName="Senha"
         value={password}

@@ -7,11 +7,11 @@ type Props = {
   value: string;
   setValue: Function;
   placeholderName: string;
-  icon: string;
+  icon?: string;
   secureTextEntry?: boolean;
 };
 
-export function InputBlock({
+export function CustomInput({
   value,
   setValue,
   placeholderName,
