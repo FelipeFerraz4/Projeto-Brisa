@@ -1,0 +1,256 @@
+{
+    "perguntasDadosPessoaisAbertas":[
+        {
+            "id": 1,
+            "texto": "Nome:"
+        },
+        {
+            "id": 2,
+            "texto": "Endereço"
+        },
+        {
+            "id": 3,
+            "texto": "Idade"
+        },
+        {
+            "id": 4,
+            "texto": "Contato"
+        }
+    ],
+    "perguntasDadosPessoaisFechadas": [
+        {
+            "id": 1,
+            "texto": "Gênero",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Masculino"
+                },
+                {
+                    "id": 2,
+                    "texto": "Feminino"
+                },
+                {
+                    "id": 3,
+                    "texto": "Não se identifica com nenhum gênero"
+                }
+            ]
+        }
+    ],
+    "perguntasAbertas": [
+        {
+            "id": 1,
+            "texto": "Este espaço é seu! Registre aqui sugestões, reclamações, elogios, críticas..."
+        }
+    ],
+    "perguntasFechadas": [
+        {
+            "id": 1,
+            "texto": "Qual sua opinião sobre a infraestrutura municipal ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "texto": "Qual sua opinião sobre a limpeza pública municipal ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "texto": "Qual sua opinião sobre a prestação dos serviços ofertados pela saúde ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "texto": "Como você avalia o atendimento recebido pelos servidores da saúde ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "texto": "Qual sua opinião sobre a educação no âmbito municipal ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "texto": "Como você avalia o atendimento recebido pelos servidores da educação ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "texto": "Qual sua opinião sobre a segurança pública no município ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "texto": "Qual sua avaliação sobre a gestão municipal ?",
+            "option": [
+                {
+                    "id": 1,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 2,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 3,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 4,
+                    "texto": "Ótimo"
+                },
+                {
+                    "id": 5,
+                    "texto": "Ótimo"
+                }
+            ]
+        }
+    ]
+}
