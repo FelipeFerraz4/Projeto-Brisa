@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const stylePage = StyleSheet.create({
+const styleComponent = StyleSheet.create({
   campo: {
     margin: '3%',
     padding: '2%',
@@ -21,6 +21,13 @@ const stylePage = StyleSheet.create({
     borderColor: '#888',
     backgroundColor: '#FFF',
   },
+  checkBox: {
+    margin: '3%',
+  },
+  box: {
+    flex: 1,
+    flexDirection: 'row',
+  },
 });
 
-export default stylePage;
+export default styleComponent;

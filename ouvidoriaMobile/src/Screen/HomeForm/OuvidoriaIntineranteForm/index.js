@@ -8,11 +8,11 @@ import {
   ScrollView,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
-import CampoInputFechado from '../Componentes/campoInputFechado';
 import Voltar from '../../../assets/voltar.svg';
 import Login from '../../../assets/person-circle.svg';
 import stylePage from '../Componentes/stylePage';
 import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
+import CheckBox from '../Componentes/CheckBox/CheckBox';
 
 function OuvidoriaIntineranteForm() {
   const dados = CarregarOuvidoria();
@@ -27,42 +27,39 @@ function OuvidoriaIntineranteForm() {
           <Login width={40} height={30} />
         </View>
         <View style={stylePage.titulo}>
-          <Text style={stylePage.tituloNome}>
-            Pesquisa da Ouvidoria Itinerante
-          </Text>
-          <Text style={stylePage.tituloSubnome}>
-            Formulário de avaliação da satisfação dos usuários dos serviços
-            públicos do Município do Juazeiro do Norte - CE
-          </Text>
+          <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
+          <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
         </View>
+
         <View style={stylePage.titulo}>
-          <CampoInputAberto
-            pergunta={dados.perguntasDadosPessoaisAbertas[0].texto}
-          />
-          <CampoInputAberto
-            pergunta={dados.perguntasDadosPessoaisAbertas[1].texto}
-          />
-          <CampoInputAberto
-            pergunta={dados.perguntasDadosPessoaisAbertas[2].texto}
-          />
-          <CampoInputAberto
-            pergunta={dados.perguntasDadosPessoaisAbertas[3].texto}
-          />
-          <CampoInputFechado
-            pergunta={dados.perguntasDadosPessoaisFechadas[0].texto}
-          />
+          {dados.dadosPessoais.abertos.map(pergunta => (
+            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
+
+          {dados.dadosPessoais.fechados.map(pergunta => (
+            <CheckBox
+              key={pergunta.id}
+              pergunta={pergunta.texto}
+              quantityChackBox={pergunta.campos}
+              option={pergunta.option}
+            />
+          ))}
         </View>
+
         <View style={stylePage.titulo}>
-          <CampoInputFechado pergunta={dados.perguntasFechadas[0].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[1].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[2].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[3].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[4].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[5].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[6].texto} />
-          <CampoInputFechado pergunta={dados.perguntasFechadas[7].texto} />
-          <CampoInputAberto pergunta={dados.perguntasAbertas[0].texto} />
+          {dados.perguntas.fechada.map(pergunta => (
+            <CheckBox
+              key={pergunta.id}
+              pergunta={pergunta.texto}
+              quantityChackBox={pergunta.campos}
+              option={pergunta.option}
+            />
+          ))}
+          {dados.perguntas.aberta.map(pergunta => (
+            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
         </View>
+
         <View>
           <TouchableOpacity style={stylePage.botao}>
             <Text style={stylePage.textoBotao}>Salvar</Text>

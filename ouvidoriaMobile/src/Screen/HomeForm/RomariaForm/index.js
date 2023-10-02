@@ -8,11 +8,12 @@ import {
   ScrollView,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
-import CampoInputFechado from '../Componentes/campoInputFechado';
+import CampoMisto from '../Componentes/CampoMisto';
 import Voltar from '../../../assets/voltar.svg';
 import Login from '../../../assets/person-circle.svg';
 import stylePage from '../Componentes/stylePage';
 import {CarregarRomaria} from '../../../serviços/CarregarForms';
+import CheckBox from '../Componentes/CheckBox/CheckBox';
 
 function OuvidoriaIntineranteForm() {
   const dados = CarregarRomaria();
@@ -38,19 +39,37 @@ function OuvidoriaIntineranteForm() {
             <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
           ))}
           {dados.dadosPessoais.fechados.map(pergunta => (
-            <CampoInputFechado key={pergunta.id} pergunta={pergunta.texto} />
+            <CheckBox
+              key={pergunta.id}
+              pergunta={pergunta.texto}
+              quantityChackBox={pergunta.campos}
+              option={pergunta.option}
+            />
           ))}
         </View>
 
         <View style={stylePage.titulo}>
           {dados.perguntas.fechada.map(pergunta => (
-            <CampoInputFechado key={pergunta.id} pergunta={pergunta.texto} />
+            <CheckBox
+              key={pergunta.id}
+              pergunta={pergunta.texto}
+              quantityChackBox={pergunta.campos}
+              option={pergunta.option}
+            />
           ))}
-          <CampoInputFechado pergunta={dados.perguntas.mista[0].texto} />
+          {dados.perguntas.mista.map(pergunta => (
+            <CampoMisto
+              key={pergunta.id}
+              quantityChackBox={pergunta.campos}
+              pergunta={pergunta.texto}
+              option={pergunta.option}
+            />
+          ))}
           {dados.perguntas.aberta.map(pergunta => (
             <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
           ))}
         </View>
+
         <View>
           <TouchableOpacity style={stylePage.botao}>
             <Text style={stylePage.textoBotao}>Salvar</Text>

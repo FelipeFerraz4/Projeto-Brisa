@@ -15,6 +15,7 @@ const stylePage = StyleSheet.create({
   },
   titulo: {
     margin: '3%',
+    padding: '2%',
     borderRadius: 17,
     borderWidth: 0.5,
     borderColor: '#888',
