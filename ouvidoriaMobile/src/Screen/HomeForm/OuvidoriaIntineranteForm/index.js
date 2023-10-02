@@ -12,8 +12,10 @@ import CampoInputFechado from '../Componentes/campoInputFechado';
 import Voltar from '../../../assets/voltar.svg';
 import Login from '../../../assets/person-circle.svg';
 import stylePage from '../Componentes/stylePage';
+import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
 
 function OuvidoriaIntineranteForm() {
+  const dados = CarregarOuvidoria();
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -34,22 +36,32 @@ function OuvidoriaIntineranteForm() {
           </Text>
         </View>
         <View style={stylePage.titulo}>
-          <CampoInputAberto pergunta={'pergunta1'} />
-          <CampoInputAberto pergunta={'pergunta2'} />
-          <CampoInputAberto pergunta={'pergunta3'} />
-          <CampoInputAberto pergunta={'pergunta4'} />
-          <CampoInputFechado />
+          <CampoInputAberto
+            pergunta={dados.perguntasDadosPessoaisAbertas[0].texto}
+          />
+          <CampoInputAberto
+            pergunta={dados.perguntasDadosPessoaisAbertas[1].texto}
+          />
+          <CampoInputAberto
+            pergunta={dados.perguntasDadosPessoaisAbertas[2].texto}
+          />
+          <CampoInputAberto
+            pergunta={dados.perguntasDadosPessoaisAbertas[3].texto}
+          />
+          <CampoInputFechado
+            pergunta={dados.perguntasDadosPessoaisFechadas[0].texto}
+          />
         </View>
         <View style={stylePage.titulo}>
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputAberto pergunta={'pergunta5'} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[0].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[1].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[2].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[3].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[4].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[5].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[6].texto} />
+          <CampoInputFechado pergunta={dados.perguntasFechadas[7].texto} />
+          <CampoInputAberto pergunta={dados.perguntasAbertas[0].texto} />
         </View>
         <View>
           <TouchableOpacity style={stylePage.botao}>

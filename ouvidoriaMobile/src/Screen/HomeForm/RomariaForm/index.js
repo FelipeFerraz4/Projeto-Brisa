@@ -12,8 +12,11 @@ import CampoInputFechado from '../Componentes/campoInputFechado';
 import Voltar from '../../../assets/voltar.svg';
 import Login from '../../../assets/person-circle.svg';
 import stylePage from '../Componentes/stylePage';
+import {CarregarRomaria} from '../../../serviços/CarregarForms';
 
 function OuvidoriaIntineranteForm() {
+  const dados = CarregarRomaria();
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -24,30 +27,29 @@ function OuvidoriaIntineranteForm() {
           <Voltar width={40} height={30} />
           <Login width={40} height={30} />
         </View>
+
         <View style={stylePage.titulo}>
-          <Text style={stylePage.tituloNome}>Pesquisa das Romaria</Text>
-          <Text style={stylePage.tituloSubnome}>
-            Formulário de avaliação da satisfação dos usuários dos serviços
-            públicos do Município do Juazeiro do Norte - CE
-          </Text>
+          <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
+          <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
         </View>
+
         <View style={stylePage.titulo}>
-          <CampoInputAberto pergunta={'pergunta1'} />
-          <CampoInputAberto pergunta={'pergunta2'} />
-          <CampoInputAberto pergunta={'pergunta3'} />
-          <CampoInputAberto pergunta={'pergunta4'} />
-          <CampoInputFechado />
+          {dados.dadosPessoais.abertos.map(pergunta => (
+            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
+          {dados.dadosPessoais.fechados.map(pergunta => (
+            <CampoInputFechado key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
         </View>
+
         <View style={stylePage.titulo}>
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputFechado />
-          <CampoInputAberto pergunta={'pergunta5'} />
+          {dados.perguntas.fechada.map(pergunta => (
+            <CampoInputFechado key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
+          <CampoInputFechado pergunta={dados.perguntas.mista[0].texto} />
+          {dados.perguntas.aberta.map(pergunta => (
+            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
+          ))}
         </View>
         <View>
           <TouchableOpacity style={stylePage.botao}>
