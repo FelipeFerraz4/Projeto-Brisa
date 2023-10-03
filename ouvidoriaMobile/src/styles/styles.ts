@@ -21,4 +21,14 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#0068bd',
   },
+  forgotArea: {
+    width: '100%',
+    alignItems: 'flex-end',
+    marginEnd: 25,
+    marginVertical: 5,
+  },
+  forgotText: {
+    fontSize: 18,
+    color: '#0068bd',
+  },
 });

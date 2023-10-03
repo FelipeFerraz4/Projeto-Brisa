@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {CustomInput} from './src/components/CustomInput';
 import {CustomButton} from './src/components/CustomButton';
 import {styles} from './src/styles/styles';
@@ -28,6 +28,11 @@ function App() {
         setValue={setPassword}
         secureTextEntry
       />
+      <View style={styles.forgotArea}>
+        <TouchableOpacity>
+          <Text style={styles.forgotText}>Esqueci minha senha</Text>
+        </TouchableOpacity>
+      </View>
       <CustomButton name="Entrar" />
     </View>
   );

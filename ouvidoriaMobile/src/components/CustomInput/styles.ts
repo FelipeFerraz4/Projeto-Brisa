@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
   inputAreaLabel: {
     flexDirection: 'row',
     backgroundColor: '#EEE',
-    width: '88%',
+    width: '95%',
     paddingVertical: 4,
     borderColor: '#000',
     borderWidth: 1,
