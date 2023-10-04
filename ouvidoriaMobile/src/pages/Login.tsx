@@ -3,10 +3,23 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {CustomInput} from '../components/CustomInput';
 import {CustomButton} from '../components/CustomButton';
 import {styles} from '../styles/styles';
+import {NavigationProp} from '@react-navigation/native';
 
-export function Login() {
+type RootStackParamList = {
+  Upload: undefined;
+};
+
+type Props = {
+  navigation: NavigationProp<RootStackParamList>;
+};
+
+export function Login({navigation}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  function handleUploadBnt() {
+    navigation.navigate('Upload');
+  }
 
   return (
     <View style={styles.container}>
@@ -30,7 +43,7 @@ export function Login() {
           <Text style={styles.forgotText}>Esqueci minha senha</Text>
         </TouchableOpacity>
       </View>
-      <CustomButton name="Entrar" />
+      <CustomButton name="Entrar" onPress={handleUploadBnt} />
     </View>
   );
 }
