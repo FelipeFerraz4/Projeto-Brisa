@@ -2,22 +2,18 @@ import {StyleSheet} from 'react-native';
 
 const styleComponent = StyleSheet.create({
   campo: {
-    margin: '3%',
-    padding: '2%',
-    borderWidth: 0.5,
-    borderRadius: 17,
-    borderColor: '#888',
-    backgroundColor: '#FFF',
+    margin: '1%',
+    padding: '0.5%',
   },
   campoTitulo: {
-    margin: '3%',
+    margin: '1%',
     fontSize: 15,
     color: '#000',
   },
   inputText: {
-    margin: '5%',
+    margin: '1%',
     borderWidth: 0.5,
-    borderRadius: 17,
+    borderRadius: 10,
     borderColor: '#888',
     backgroundColor: '#FFF',
   },

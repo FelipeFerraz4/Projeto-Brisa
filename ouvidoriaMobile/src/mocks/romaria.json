@@ -13,30 +13,22 @@
             },
             {
                 "id": 3,
-                "texto": "Logradoro:"
+                "texto": "Endereço:"
             },
             {
                 "id": 4,
-                "texto": "Número:"
-            },
-            {
-                "id": 5,
-                "texto": "Bairro:"
-            },
-            {
-                "id": 6,
                 "texto": "Cidade:"
             },
             {
-                "id": 7,
+                "id": 5,
                 "texto": "Estado:"
             },
             {
-                "id": 8,
+                "id": 6,
                 "texto": "Idade:"
             },
             {
-                "id": 9,
+                "id": 7,
                 "texto": "Contato:"
             }
         ],
