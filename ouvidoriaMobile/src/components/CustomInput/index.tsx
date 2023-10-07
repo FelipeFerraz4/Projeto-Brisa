@@ -21,7 +21,7 @@ export function CustomInput({
   return (
     <View style={styles.inputBlock}>
       <View style={styles.inputAreaLabel}>
-        <Icon name={icon} style={styles.icon} size={30} />
+        {icon && <Icon name={icon} style={styles.icon} size={30} />}
         <TextInput
           style={styles.inputLabel}
           placeholder={placeholderName}

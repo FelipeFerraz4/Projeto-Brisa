@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   buttonArea: {
     marginVertical: 10,
     backgroundColor: '#0D61FF',
-    width: '30%',
+    width: '90%',
     borderRadius: 9,
     padding: 13,
   },

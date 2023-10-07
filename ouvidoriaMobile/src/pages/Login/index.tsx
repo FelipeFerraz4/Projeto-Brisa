@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {CustomInput} from '../components/CustomInput';
-import {CustomButton} from '../components/CustomButton';
-import {styles} from '../styles/styles';
+import {CustomInput} from '../../components/CustomInput';
+import {CustomButton} from '../../components/CustomButton';
+import {styles} from './styles';
 import {NavigationProp} from '@react-navigation/native';
 
 type RootStackParamList = {
@@ -23,7 +23,10 @@ export function Login({navigation}: Props) {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.logo} source={require('../assets/logo/logo.png')} />
+      <Image
+        style={styles.logo}
+        source={require('../../assets/logo/logo.png')}
+      />
       <Text style={styles.h1}>Entrar</Text>
       <CustomInput
         icon="user"
