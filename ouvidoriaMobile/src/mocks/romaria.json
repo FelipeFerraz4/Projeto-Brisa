@@ -1,0 +1,216 @@
+{
+    "titulo": "Pesquisa das romarias",
+    "subtitulo": "Pesquisa de satisfação dos serviços publicos",
+    "dadosPessoais": {
+        "abertos":[
+            {
+                "id": 1,
+                "texto": "Nome:"
+            },
+            {
+                "id": 2,
+                "texto": "CPF:"
+            },
+            {
+                "id": 3,
+                "texto": "Logradoro:"
+            },
+            {
+                "id": 4,
+                "texto": "Número:"
+            },
+            {
+                "id": 5,
+                "texto": "Bairro:"
+            },
+            {
+                "id": 6,
+                "texto": "Cidade:"
+            },
+            {
+                "id": 7,
+                "texto": "Estado:"
+            },
+            {
+                "id": 8,
+                "texto": "Idade:"
+            },
+            {
+                "id": 9,
+                "texto": "Contato:"
+            }
+        ],
+        "fechados":[
+            {
+                "id": 1,
+                "campos": 3,
+                "texto": "Gênero",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Masculino"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Feminino"
+                    },
+                    {
+                        "id": 3,
+                        "texto": "Não se identifica com nenhum gênero"
+                    }
+                ]
+            }
+        ]
+    },
+    "perguntas": {
+        "aberta":[
+            {
+                "id": 1,
+                "texto": "Este espaço é seu! Registre aqui sugestões, reclamações, elogios, críticas..."
+            }
+        ],
+        "mista": [
+            {
+                "id": 1,
+                "campos": 2,
+                "texto": "Você utilizou algum serviço público municipal ?",
+                "subtexto": "Se sim, qual ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Sim"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Não"
+                    }
+                ]
+            }
+        ],
+        "fechada": [
+            {
+                "id": 1,
+                "campos": 5,
+                "texto": "Como avalia as condições de hospedagem na Cidade ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Ótimo"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Bom"
+                    },
+                    {
+                        "id": 3,
+                        "texto": "Regular"
+                    },
+                    {
+                        "id": 4,
+                        "texto": "Ruim"
+                    },
+                    {
+                        "id": 5,
+                        "texto": "Péssimo"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "campos": 2,
+                "texto": "Os pontos turísticos da cidade são fáceis de serem localizados ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Sim"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Não"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "campos": 5,
+                "texto": "Como você avalia o serviço público utilizado ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Ótimo"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Bom"
+                    },
+                    {
+                        "id": 3,
+                        "texto": "Regular"
+                    },
+                    {
+                        "id": 4,
+                        "texto": "Ruim"
+                    },
+                    {
+                        "id": 5,
+                        "texto": "Péssimo"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "campos": 5,
+                "texto": "Quais serviços públicos realizados pelo município você destaca na Cidade ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Limpeza Pública"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Segurança"
+                    },
+                    {
+                        "id": 3,
+                        "texto": "Infraestrutura"
+                    },
+                    {
+                        "id": 4,
+                        "texto": "Turismo"
+                    },
+                    {
+                        "id": 5,
+                        "texto": "Saúde"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "campos": 5,
+                "texto": "Qual serviço público deve ser melhorado no município de Juazeiro do Norte - CE para atender as necessidades dos romeiros ?",
+                "option": [
+                    {
+                        "id": 1,
+                        "texto": "Limpeza Pública"
+                    },
+                    {
+                        "id": 2,
+                        "texto": "Segurança"
+                    },
+                    {
+                        "id": 3,
+                        "texto": "Infraestrutura"
+                    },
+                    {
+                        "id": 4,
+                        "texto": "Turismo"
+                    },
+                    {
+                        "id": 5,
+                        "texto": "Saúde"
+                    }
+                ]
+            }
+        ]
+    }
+}
