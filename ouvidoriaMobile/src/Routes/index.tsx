@@ -4,15 +4,14 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login} from '../pages/Login';
 import {Upload} from '../pages/UploadPage/index';
 import Icon from 'react-native-vector-icons/EvilIcons';
-import RomariaForm from '../pages/HomeForm/RomariaForm/index';
-
+import FormularioHome from '../pages/FormularioHome';
 const Stack = createNativeStackNavigator();
 
 export default () => (
   <Stack.Navigator>
     <Stack.Screen
-      name="Home"
-      component={RomariaForm}
+      name="FormularioHome"
+      component={FormularioHome}
       options={{
         headerShown: false,
       }}

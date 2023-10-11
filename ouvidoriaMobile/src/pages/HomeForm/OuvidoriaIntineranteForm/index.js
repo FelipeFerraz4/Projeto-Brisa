@@ -59,7 +59,6 @@ function OuvidoriaIntineranteForm() {
             <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
           ))}
         </View>
-
         <View>
           <TouchableOpacity style={stylePage.botao}>
             <Text style={stylePage.textoBotao}>Salvar</Text>

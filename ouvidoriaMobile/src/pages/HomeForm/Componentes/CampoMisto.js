@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, View, TextInput, Image, TouchableOpacity} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import styleComponent from './style';
-import Box from '../../../../assets/checkbox/boxBlue.png';
-import CheckBox from '../../../../assets/checkbox/checkboxBlue.png';
+import Box from '../../../assets/checkbox/boxBlue.png';
+import CheckBox from '../../../assets/checkbox/checkboxBlue.png';
 
 function CampoInputAberto({
   quantityChackBox: quantity,
