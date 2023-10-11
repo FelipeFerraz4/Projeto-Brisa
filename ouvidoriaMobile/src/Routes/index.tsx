@@ -5,6 +5,8 @@ import {Login} from '../pages/Login';
 import {Upload} from '../pages/UploadPage/index';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import FormularioHome from '../pages/FormularioHome';
+import Romaria from '../pages/HomeForm/RomariaForm';
+import OuvidoriaIntinerante from '../pages/HomeForm/OuvidoriaIntineranteForm';
 const Stack = createNativeStackNavigator();
 
 export default () => (
@@ -12,6 +14,20 @@ export default () => (
     <Stack.Screen
       name="FormularioHome"
       component={FormularioHome}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="Romaria"
+      component={Romaria}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Stack.Screen
+      name="OuvidoriaIntinerante"
+      component={OuvidoriaIntinerante}
       options={{
         headerShown: false,
       }}

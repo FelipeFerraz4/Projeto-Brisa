@@ -5,16 +5,18 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
+  Image,
   ScrollView,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
-import Voltar from '../../../assets/icon/voltar.svg';
-import Login from '../../../assets/icon/person-circle.svg';
+import Voltar from '../../../assets/icon/arrow_black.png';
 import stylePage from '../Componentes/stylePage';
 import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';
+import {useNavigation} from '@react-navigation/native';
 
 function OuvidoriaIntineranteForm() {
+  const Navigation = useNavigation();
   const dados = CarregarOuvidoria();
   return (
     <KeyboardAvoidingView
@@ -23,8 +25,12 @@ function OuvidoriaIntineranteForm() {
       style={stylePage.page}>
       <ScrollView>
         <View style={stylePage.topo}>
-          <Voltar width={40} height={30} />
-          <Login width={40} height={30} />
+          <TouchableOpacity
+            onPress={() => {
+              Navigation.navigate('FormularioHome');
+            }}>
+            <Image source={Voltar} />
+          </TouchableOpacity>
         </View>
         <View style={stylePage.titulo}>
           <Text style={stylePage.tituloNome}>{dados.titulo}</Text>

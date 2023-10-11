@@ -9,15 +9,15 @@ const styleServidor = StyleSheet.create({
   },
   campoHeader: {
     width: '90%',
-    height: '6%',
+    height: '7%',
     marginHorizontal: '1%',
     marginVertical: '1%',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  iconVoltar: {
-    width: 35,
+  icon: {
+    width: 30,
   },
   campoLogo: {
     marginHorizontal: '2%',

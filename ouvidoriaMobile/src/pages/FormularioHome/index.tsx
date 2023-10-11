@@ -4,15 +4,46 @@ import styleServidor from './style';
 import Person from '../../assets/icon/person.png';
 import Logo from '../../assets/logo/logo.png';
 import arrow from '../../assets/icon/arrow_black.png';
+import Login from '../../assets/icon/person_circle_black.png';
+import {NavigationProp} from '@react-navigation/native';
 
-function FormularioHome() {
+type RootStackParamList = {
+  Romaria: undefined;
+  OuvidoriaIntinerante: undefined;
+  Login: undefined;
+};
+
+type Props = {
+  navigation: NavigationProp<RootStackParamList>;
+};
+
+function FormularioHome({navigation}: Props) {
   const [Servidor, SetServidor] = useState('');
+
+  function NavigationForm() {
+    const form: number = 0;
+    if (form === 0) {
+      navigation.navigate('Romaria');
+    } else {
+      navigation.navigate('OuvidoriaIntinerante');
+    }
+  }
+
+  function LoginPage() {
+    navigation.navigate('Login');
+  }
 
   return (
     <View style={styleServidor.conteiner}>
       <View style={styleServidor.campoHeader}>
         <TouchableOpacity>
-          <Image source={arrow} style={styleServidor.iconVoltar} />
+          <Image source={arrow} style={styleServidor.icon} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            LoginPage();
+          }}>
+          <Image source={Login} style={styleServidor.icon} />
         </TouchableOpacity>
       </View>
       <View style={styleServidor.campoLogo}>
@@ -35,7 +66,11 @@ function FormularioHome() {
         </View>
       </View>
       <View style={styleServidor.campoBotao}>
-        <TouchableOpacity style={styleServidor.botao}>
+        <TouchableOpacity
+          style={styleServidor.botao}
+          onPress={() => {
+            NavigationForm();
+          }}>
           <Text style={styleServidor.botaoTexto}>Iniciar</Text>
         </TouchableOpacity>
       </View>
