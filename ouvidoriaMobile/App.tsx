@@ -1,15 +1,13 @@
 import React from 'react';
-import {ScrollView, StatusBar} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import HomeForm from './src/Screen/HomeForm';
+import {NavigationContainer} from '@react-navigation/native';
+import Stacks from './src/Routes';
 
-export default function App() {
+function App() {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <ScrollView>
-        <HomeForm id={'1'} />
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stacks />
+    </NavigationContainer>
   );
 }
+
+export default App;
