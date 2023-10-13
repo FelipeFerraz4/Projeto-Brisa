@@ -6,7 +6,18 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     paddingVertical: 50,
     paddingHorizontal: 10,
+    justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  Header: {
+    width: '90%',
+    height: '7%',
+    marginVertical: '1%',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+  icon: {
+    width: 30,
   },
   logo: {
     width: 180,

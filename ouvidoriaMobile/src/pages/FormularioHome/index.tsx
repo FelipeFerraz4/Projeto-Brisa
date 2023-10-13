@@ -11,6 +11,7 @@ type RootStackParamList = {
   Romaria: undefined;
   OuvidoriaIntinerante: undefined;
   Login: undefined;
+  Home: undefined;
 };
 
 type Props = {
@@ -32,11 +33,17 @@ function FormularioHome({navigation}: Props) {
   function LoginPage() {
     navigation.navigate('Login');
   }
+  function HomePage() {
+    navigation.navigate('Home');
+  }
 
   return (
     <View style={styleServidor.conteiner}>
       <View style={styleServidor.campoHeader}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            HomePage();
+          }}>
           <Image source={arrow} style={styleServidor.icon} />
         </TouchableOpacity>
         <TouchableOpacity

@@ -3,6 +3,7 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {CustomInput} from '../../components/CustomInput';
 import {CustomButton} from '../../components/CustomButton';
 import {styles} from './styles';
+import arrow from '../../assets/icon/arrow_black.png';
 import {NavigationProp} from '@react-navigation/native';
 
 type RootStackParamList = {
@@ -21,8 +22,20 @@ export function Login({navigation}: Props) {
     navigation.navigate('Upload');
   }
 
+  function handleBackBnt() {
+    navigation.goBack();
+  }
+
   return (
     <View style={styles.container}>
+      <View style={styles.Header}>
+        <TouchableOpacity
+          onPress={() => {
+            handleBackBnt();
+          }}>
+          <Image source={arrow} style={styles.icon} />
+        </TouchableOpacity>
+      </View>
       <Image
         style={styles.logo}
         source={require('../../assets/logo/logo.png')}
