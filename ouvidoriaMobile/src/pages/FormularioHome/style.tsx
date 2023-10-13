@@ -22,6 +22,10 @@ const styleServidor = StyleSheet.create({
   campoLogo: {
     marginHorizontal: '2%',
   },
+  image: {
+    width: 220,
+    height: 220,
+  },
   campoForm: {
     marginVertical: '15%',
     width: '90%',

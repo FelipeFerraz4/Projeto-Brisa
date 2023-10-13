@@ -20,8 +20,8 @@ export const styles = StyleSheet.create({
     width: 30,
   },
   logo: {
-    width: 180,
-    height: 180,
+    width: 220,
+    height: 220,
   },
   loginArea: {
     width: '100%',

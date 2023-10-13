@@ -34,7 +34,7 @@ function FormularioHome({navigation}: Props) {
     navigation.navigate('Login');
   }
   function HomePage() {
-    navigation.navigate('Home');
+    navigation.goBack();
   }
 
   return (
@@ -54,7 +54,7 @@ function FormularioHome({navigation}: Props) {
         </TouchableOpacity>
       </View>
       <View style={styleServidor.campoLogo}>
-        <Image source={Logo} />
+        <Image source={Logo} style={styleServidor.image} />
       </View>
       <View style={styleServidor.campoForm}>
         <Text style={styleServidor.titulo}>Nome do servidor</Text>

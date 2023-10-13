@@ -1,21 +1,19 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {CarregarRomaria, CarregarOuvidoria} from '../../serviços/CarregarForms';
 import Login from '../../assets/icon/person_circle_black.png';
+import Logo from '../../assets/logo/logo.png';
 import {NavigationProp} from '@react-navigation/native';
 import OuvidoriaIntinerante from '../../assets/imagem/Ouvidoria_Intinerante.png';
 import PadreCicero from '../../assets/imagem/Padre_Cícero2.png';
+import styleHome from './style';
 
 type RootStackParamList = {
   FormularioHome: undefined;
+  idForm: string;
   Login: undefined;
   Upload: undefined;
+  form: {id: number};
 };
 
 type Props = {
@@ -23,6 +21,9 @@ type Props = {
 };
 
 function Home({navigation}: Props) {
+  const dadoOuvidoria = CarregarOuvidoria();
+  const dadoRomaria = CarregarRomaria();
+
   function LoginPage() {
     navigation.navigate('Login');
   }
@@ -30,12 +31,16 @@ function Home({navigation}: Props) {
   function handlePress() {
     navigation.navigate('Upload');
   }
+  function formularioPress() {
+    navigation.navigate('FormularioHome');
+  }
 
   return (
     <View style={styleHome.app}>
       <ScrollView>
         <View style={styleHome.conteiner}>
           <View style={styleHome.campoHeader}>
+            <Text style={styleHome.headerTexto}>Ouvidoria</Text>
             <TouchableOpacity
               onPress={() => {
                 LoginPage();
@@ -43,12 +48,17 @@ function Home({navigation}: Props) {
               <Image source={Login} style={styleHome.icon} />
             </TouchableOpacity>
           </View>
+          <Image source={Logo} style={styleHome.logo} />
           <View style={styleHome.main}>
             <View>
               <Text style={styleHome.campoTitulo}>Formulários</Text>
             </View>
             <View>
-              <TouchableOpacity style={styleHome.formulario}>
+              <TouchableOpacity
+                style={styleHome.formulario}
+                onPress={() => {
+                  formularioPress();
+                }}>
                 <View style={styleHome.campoImage}>
                   <Image
                     source={OuvidoriaIntinerante}
@@ -57,11 +67,14 @@ function Home({navigation}: Props) {
                   />
                 </View>
                 <View>
-                  <Text style={styleHome.titulo}>Titulo</Text>
-                  <Text style={styleHome.subTitulo}>Subtitulo</Text>
+                  <Text style={styleHome.titulo}>{dadoOuvidoria.titulo}</Text>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity style={styleHome.formulario}>
+              <TouchableOpacity
+                style={styleHome.formulario}
+                onPress={() => {
+                  formularioPress();
+                }}>
                 <View style={styleHome.campoImage}>
                   <Image
                     source={PadreCicero}
@@ -70,8 +83,7 @@ function Home({navigation}: Props) {
                   />
                 </View>
                 <View>
-                  <Text style={styleHome.titulo}>Titulo</Text>
-                  <Text style={styleHome.subTitulo}>Subtitulo</Text>
+                  <Text style={styleHome.titulo}>{dadoRomaria.titulo}</Text>
                 </View>
               </TouchableOpacity>
             </View>
@@ -92,80 +104,3 @@ function Home({navigation}: Props) {
 }
 
 export default Home;
-
-const styleHome = StyleSheet.create({
-  app: {
-    flex: 1,
-    backgroundColor: '#F5F6FF',
-  },
-  conteiner: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  campoHeader: {
-    width: 350,
-    height: 50,
-    marginVertical: '4%',
-    justifyContent: 'center',
-    alignItems: 'flex-end',
-  },
-  icon: {
-    width: 30,
-  },
-  campoBotao: {
-    marginVertical: '3%',
-    marginHorizontal: '5%',
-  },
-  botao: {
-    width: 350,
-    height: 50,
-    backgroundColor: '#30358C',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  botaoTexto: {
-    color: '#fff',
-    padding: 12,
-  },
-  campoTitulo: {
-    marginVertical: 2,
-  },
-  campoImage: {
-    marginHorizontal: 2,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-  },
-  imagem: {
-    width: 125,
-    height: 125,
-    backgroundColor: '#f00',
-  },
-  titulo: {
-    margin: '3%',
-    fontSize: 20,
-    lineHeight: 30,
-  },
-  subTitulo: {
-    margin: '3%',
-    fontSize: 15,
-    lineHeight: 20,
-  },
-  main: {
-    padding: '4%',
-    width: 350,
-    marginVertical: 2,
-    borderRadius: 30,
-    borderWidth: 1,
-  },
-  formulario: {
-    paddingVertical: '3%',
-    paddingHorizontal: '3%',
-    marginHorizontal: '2%',
-    marginVertical: '2%',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-  },
-});

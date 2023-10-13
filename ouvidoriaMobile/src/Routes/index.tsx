@@ -6,7 +6,7 @@ import {Upload} from '../pages/UploadPage/index';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import FormularioHome from '../pages/FormularioHome';
 import Romaria from '../pages/HomeForm/RomariaForm';
-import OuvidoriaIntinerante from '../pages/HomeForm/OuvidoriaIntineranteForm';
+import OuvidoriaIntinerante from '../pages/HomeForm/OuvidoriaIntineranteForm/';
 import Home from '../pages/Home';
 const Stack = createNativeStackNavigator();
 
