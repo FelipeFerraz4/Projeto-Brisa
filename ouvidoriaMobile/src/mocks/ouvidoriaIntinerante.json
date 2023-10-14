@@ -10,15 +10,15 @@
             },
             {
                 "id": 2,
-                "texto": "Endereço"
+                "texto": "Endereço:"
             },
             {
                 "id": 3,
-                "texto": "Idade"
+                "texto": "Idade:"
             },
             {
                 "id": 4,
-                "texto": "Contato"
+                "texto": "Contato:"
             }
         ],
         "fechados": 
@@ -26,7 +26,7 @@
             {
                 "id": 1,
                 "campos": 3,
-                "texto": "Gênero",
+                "texto": "Gênero:",
                 "option": [
                     {
                         "id": 1,

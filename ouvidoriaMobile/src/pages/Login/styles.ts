@@ -3,18 +3,24 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingVertical: 50,
+    paddingVertical: 20,
     paddingHorizontal: 10,
     justifyContent: 'flex-start',
     alignItems: 'center',
+    backgroundColor: '#F5F6FF',
   },
   Header: {
     width: '90%',
     height: '7%',
     marginVertical: '1%',
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerTexto: {
+    fontSize: 25,
+    lineHeight: 30,
+    color: '#000',
   },
   icon: {
     width: 30,

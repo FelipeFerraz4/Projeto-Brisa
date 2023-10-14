@@ -27,7 +27,7 @@ function CheckBox5({campo: dados, pergunta: titulo}) {
             }
           }}>
           <Image source={Figura1} />
-          <Text>{dados[0].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[0].texto}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -43,7 +43,7 @@ function CheckBox5({campo: dados, pergunta: titulo}) {
             }
           }}>
           <Image source={Figura2} />
-          <Text>{dados[1].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[1].texto}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -59,7 +59,7 @@ function CheckBox5({campo: dados, pergunta: titulo}) {
             }
           }}>
           <Image source={Figura3} />
-          <Text>{dados[2].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[2].texto}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -75,7 +75,7 @@ function CheckBox5({campo: dados, pergunta: titulo}) {
             }
           }}>
           <Image source={Figura4} />
-          <Text>{dados[3].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[3].texto}</Text>
         </TouchableOpacity>
       </View>
     </View>

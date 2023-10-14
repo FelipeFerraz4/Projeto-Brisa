@@ -39,13 +39,15 @@ const styleHome = StyleSheet.create({
   botao: {
     width: 350,
     height: 50,
-    backgroundColor: '#30358C',
+    backgroundColor: '#0068bd',
     justifyContent: 'center',
     alignItems: 'center',
   },
   botaoTexto: {
     color: '#fff',
-    padding: 12,
+    padding: 2,
+    fontSize: 20,
+    lineHeight: 30,
   },
   campoTitulo: {
     marginVertical: 2,

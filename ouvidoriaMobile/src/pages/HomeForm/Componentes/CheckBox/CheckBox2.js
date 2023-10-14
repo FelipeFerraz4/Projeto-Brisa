@@ -23,7 +23,7 @@ function CheckBox2({campo: dados, pergunta: texto}) {
             }
           }}>
           <Image source={Figura1} />
-          <Text>{dados[0].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[0].texto}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -37,7 +37,7 @@ function CheckBox2({campo: dados, pergunta: texto}) {
             }
           }}>
           <Image source={Figura2} />
-          <Text>{dados[1].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[1].texto}</Text>
         </TouchableOpacity>
       </View>
     </View>

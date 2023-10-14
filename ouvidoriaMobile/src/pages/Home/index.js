@@ -3,24 +3,13 @@ import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {CarregarRomaria, CarregarOuvidoria} from '../../serviços/CarregarForms';
 import Login from '../../assets/icon/person_circle_black.png';
 import Logo from '../../assets/logo/logo.png';
-import {NavigationProp} from '@react-navigation/native';
 import OuvidoriaIntinerante from '../../assets/imagem/Ouvidoria_Intinerante.png';
 import PadreCicero from '../../assets/imagem/Padre_Cícero2.png';
 import styleHome from './style';
+import {useNavigation} from '@react-navigation/native';
 
-type RootStackParamList = {
-  FormularioHome: undefined;
-  idForm: string;
-  Login: undefined;
-  Upload: undefined;
-  form: {id: number};
-};
-
-type Props = {
-  navigation: NavigationProp<RootStackParamList>;
-};
-
-function Home({navigation}: Props) {
+function Home() {
+  const navigation = useNavigation();
   const dadoOuvidoria = CarregarOuvidoria();
   const dadoRomaria = CarregarRomaria();
 
@@ -31,8 +20,9 @@ function Home({navigation}: Props) {
   function handlePress() {
     navigation.navigate('Upload');
   }
-  function formularioPress() {
-    navigation.navigate('FormularioHome');
+  function formularioPress(id) {
+    console.log(id);
+    navigation.navigate('FormularioHome', {idForm: id});
   }
 
   return (
@@ -57,7 +47,7 @@ function Home({navigation}: Props) {
               <TouchableOpacity
                 style={styleHome.formulario}
                 onPress={() => {
-                  formularioPress();
+                  formularioPress(dadoOuvidoria.id);
                 }}>
                 <View style={styleHome.campoImage}>
                   <Image
@@ -73,7 +63,7 @@ function Home({navigation}: Props) {
               <TouchableOpacity
                 style={styleHome.formulario}
                 onPress={() => {
-                  formularioPress();
+                  formularioPress(dadoRomaria.id);
                 }}>
                 <View style={styleHome.campoImage}>
                   <Image

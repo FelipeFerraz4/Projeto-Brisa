@@ -5,7 +5,22 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     paddingHorizontal: 15,
-    backgroundColor: '#d3d3d3',
+    backgroundColor: '#F5F6FF',
+  },
+  Header: {
+    height: '7%',
+    marginVertical: '2%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerTexto: {
+    fontSize: 25,
+    lineHeight: 30,
+    color: '#000',
+  },
+  icon: {
+    width: 30,
   },
   formsArea: {
     backgroundColor: '#fff',

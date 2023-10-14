@@ -5,25 +5,16 @@ import Person from '../../assets/icon/person.png';
 import Logo from '../../assets/logo/logo.png';
 import arrow from '../../assets/icon/arrow_black.png';
 import Login from '../../assets/icon/person_circle_black.png';
-import {NavigationProp} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
-type RootStackParamList = {
-  Romaria: undefined;
-  OuvidoriaIntinerante: undefined;
-  Login: undefined;
-  Home: undefined;
-};
-
-type Props = {
-  navigation: NavigationProp<RootStackParamList>;
-};
-
-function FormularioHome({navigation}: Props) {
+function FormularioHome() {
+  const navigation = useNavigation();
+  const dados = useRoute();
   const [Servidor, SetServidor] = useState('');
 
   function NavigationForm() {
-    const form: number = 0;
-    if (form === 0) {
+    const form = dados.params?.idForm;
+    if (form === 2) {
       navigation.navigate('Romaria');
     } else {
       navigation.navigate('OuvidoriaIntinerante');
@@ -46,6 +37,7 @@ function FormularioHome({navigation}: Props) {
           }}>
           <Image source={arrow} style={styleServidor.icon} />
         </TouchableOpacity>
+        <Text style={styleServidor.headerTexto}>Ouvidoria</Text>
         <TouchableOpacity
           onPress={() => {
             LoginPage();
@@ -66,6 +58,7 @@ function FormularioHome({navigation}: Props) {
           />
           <TextInput
             value={Servidor}
+            placeholder="Nome do servidor"
             onChangeText={nome => {
               SetServidor(nome);
             }}

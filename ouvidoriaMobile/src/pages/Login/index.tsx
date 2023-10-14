@@ -18,10 +18,6 @@ export function Login({navigation}: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleUploadBnt() {
-    navigation.navigate('Upload');
-  }
-
   function handleBackBnt() {
     navigation.goBack();
   }
@@ -35,6 +31,7 @@ export function Login({navigation}: Props) {
           }}>
           <Image source={arrow} style={styles.icon} />
         </TouchableOpacity>
+        <Text style={styles.headerTexto}>Ouvidoria</Text>
       </View>
       <Image
         style={styles.logo}
@@ -59,7 +56,7 @@ export function Login({navigation}: Props) {
           <Text style={styles.forgotText}>Esqueci minha senha</Text>
         </TouchableOpacity>
       </View>
-      <CustomButton name="Entrar" onPress={handleUploadBnt} />
+      <CustomButton name="Entrar" onPress={handleBackBnt} />
     </View>
   );
 }

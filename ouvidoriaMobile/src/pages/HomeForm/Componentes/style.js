@@ -7,14 +7,14 @@ const styleComponent = StyleSheet.create({
   },
   campoTitulo: {
     margin: '1%',
-    fontSize: 15,
+    fontSize: 20,
     color: '#000',
   },
   inputText: {
     margin: '1%',
-    borderWidth: 0.5,
+    borderWidth: 2,
     borderRadius: 10,
-    borderColor: '#888',
+    borderColor: '#0068bd',
     backgroundColor: '#FFF',
   },
   checkBox: {
@@ -23,6 +23,11 @@ const styleComponent = StyleSheet.create({
   box: {
     flex: 1,
     flexDirection: 'row',
+  },
+  boxTexto: {
+    fontSize: 15,
+    lineHeight: 20,
+    fontWeight: 'bold',
   },
 });
 

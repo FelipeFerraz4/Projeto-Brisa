@@ -1,9 +1,7 @@
-/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Login} from '../pages/Login';
 import {Upload} from '../pages/UploadPage/index';
-import Icon from 'react-native-vector-icons/EvilIcons';
 import FormularioHome from '../pages/FormularioHome';
 import Romaria from '../pages/HomeForm/RomariaForm';
 import OuvidoriaIntinerante from '../pages/HomeForm/OuvidoriaIntineranteForm/';
@@ -51,11 +49,7 @@ export default () => (
       name="Upload"
       component={Upload}
       options={{
-        title: '',
-        headerStyle: {
-          backgroundColor: '#fff',
-        },
-        headerRight: () => <Icon name="user" size={50} />,
+        headerShown: false,
       }}
     />
   </Stack.Navigator>

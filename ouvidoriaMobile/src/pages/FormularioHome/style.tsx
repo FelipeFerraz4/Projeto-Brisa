@@ -6,6 +6,7 @@ const styleServidor = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    backgroundColor: '#F5F6FF',
   },
   campoHeader: {
     width: '90%',
@@ -15,6 +16,11 @@ const styleServidor = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+  },
+  headerTexto: {
+    fontSize: 25,
+    lineHeight: 30,
+    color: '#000',
   },
   icon: {
     width: 30,
@@ -44,7 +50,7 @@ const styleServidor = StyleSheet.create({
   textInput: {
     borderWidth: 3,
     borderRadius: 10,
-    borderColor: '#2778C3',
+    borderColor: '#0068bd',
     flexDirection: 'row',
   },
   textInputImage: {
@@ -52,7 +58,7 @@ const styleServidor = StyleSheet.create({
     width: '8%',
   },
   botao: {
-    backgroundColor: '#2778C3',
+    backgroundColor: '#0068bd',
     height: '25%',
     flexDirection: 'column',
     justifyContent: 'center',

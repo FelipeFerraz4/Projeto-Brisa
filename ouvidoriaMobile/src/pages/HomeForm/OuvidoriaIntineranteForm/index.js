@@ -21,7 +21,7 @@ function OuvidoriaIntineranteForm() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={50}
+      keyboardVerticalOffset={40}
       style={stylePage.page}>
       <ScrollView>
         <View style={stylePage.topo}>
@@ -31,6 +31,7 @@ function OuvidoriaIntineranteForm() {
             }}>
             <Image source={Voltar} />
           </TouchableOpacity>
+          <Text style={stylePage.headerTexto}>Ouvidoria</Text>
         </View>
         <View style={stylePage.titulo}>
           <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
