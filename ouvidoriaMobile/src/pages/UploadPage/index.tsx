@@ -37,7 +37,12 @@ export function Upload({navigation}: Props) {
         </View>
       </ScrollView>
       <View style={styles.buttonArea}>
-        <CustomButton name="Enviar" onPress={() => {}} />
+        <CustomButton
+          name="Enviar"
+          onPress={() => {
+            handleBackBnt();
+          }}
+        />
       </View>
     </View>
   );
