@@ -63,8 +63,8 @@ const styleHome = StyleSheet.create({
     alignItems: 'flex-start',
   },
   imagem: {
-    width: 125,
-    height: 125,
+    width: 100,
+    height: 100,
     borderRadius: 20,
   },
   main: {
