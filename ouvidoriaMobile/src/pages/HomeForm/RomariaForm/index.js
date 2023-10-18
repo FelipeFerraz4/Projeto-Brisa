@@ -42,39 +42,52 @@ function RomariaForm() {
         </View>
 
         <View style={stylePage.titulo}>
-          {dados.dadosPessoais.abertos.map(pergunta => (
-            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
-          ))}
-          {dados.dadosPessoais.fechados.map(pergunta => (
-            <CheckBox
-              key={pergunta.id}
-              pergunta={pergunta.texto}
-              quantityChackBox={pergunta.campos}
-              option={pergunta.option}
-            />
-          ))}
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[0].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[1].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[2].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[3].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[4].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[5].texto} />
+          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[6].texto} />
+          <CheckBox
+            pergunta={dados.dadosPessoais.fechados[0].texto}
+            quantityChackBox={dados.dadosPessoais.fechados[0].campos}
+            option={dados.dadosPessoais.fechados[0].option}
+          />
         </View>
 
         <View style={stylePage.titulo}>
-          {dados.perguntas.fechada.map(pergunta => (
-            <CheckBox
-              key={pergunta.id}
-              pergunta={pergunta.texto}
-              quantityChackBox={pergunta.campos}
-              option={pergunta.option}
-            />
-          ))}
-          {dados.perguntas.mista.map(pergunta => (
-            <CampoMisto
-              key={pergunta.id}
-              quantityChackBox={pergunta.campos}
-              pergunta={pergunta.texto}
-              option={pergunta.option}
-            />
-          ))}
-          {dados.perguntas.aberta.map(pergunta => (
-            <CampoInputAberto key={pergunta.id} pergunta={pergunta.texto} />
-          ))}
+          <CheckBox
+            pergunta={dados.perguntas.fechada[0].texto}
+            quantityChackBox={dados.perguntas.fechada[0].campos}
+            option={dados.perguntas.fechada[0].option}
+          />
+          <CheckBox
+            pergunta={dados.perguntas.fechada[1].texto}
+            quantityChackBox={dados.perguntas.fechada[1].campos}
+            option={dados.perguntas.fechada[1].option}
+          />
+          <CheckBox
+            pergunta={dados.perguntas.fechada[2].texto}
+            quantityChackBox={dados.perguntas.fechada[2].campos}
+            option={dados.perguntas.fechada[2].option}
+          />
+          <CheckBox
+            pergunta={dados.perguntas.fechada[3].texto}
+            quantityChackBox={dados.perguntas.fechada[3].campos}
+            option={dados.perguntas.fechada[3].option}
+          />
+          <CheckBox
+            pergunta={dados.perguntas.fechada[4].texto}
+            quantityChackBox={dados.perguntas.fechada[4].campos}
+            option={dados.perguntas.fechada[4].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[0].texto}
+            quantityChackBox={dados.perguntas.mista[0].campos}
+            option={dados.perguntas.mista[0].option}
+          />
+          <CampoInputAberto pergunta={dados.perguntas.aberta[0].texto} />
         </View>
 
         <View>

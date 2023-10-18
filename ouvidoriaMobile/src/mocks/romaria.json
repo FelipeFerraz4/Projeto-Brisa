@@ -152,7 +152,7 @@
             },
             {
                 "id": 4,
-                "campos": 5,
+                "campos": 6,
                 "texto": "Quais serviços públicos realizados pelo município você destaca na Cidade ?",
                 "option": [
                     {
@@ -179,7 +179,7 @@
             },
             {
                 "id": 5,
-                "campos": 5,
+                "campos": 6,
                 "texto": "Qual serviço público deve ser melhorado no município de Juazeiro do Norte - CE para atender as necessidades dos romeiros ?",
                 "option": [
                     {
