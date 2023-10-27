@@ -1,5 +1,5 @@
-import React from 'react';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
 import styleComponent from './style';
 import Box from '../../../assets/checkbox/boxBlue.png';
 import CheckBox from '../../../assets/checkbox/checkboxBlue.png';
@@ -11,6 +11,7 @@ function CampoInputAberto({
 }) {
   const [Figura1, SetFigura1] = React.useState(Box);
   const [Figura2, SetFigura2] = React.useState(Box);
+  const [Texto, SetTexto] = useState('')
 
   return (
     <View style={styleComponent.campo}>
@@ -27,7 +28,7 @@ function CampoInputAberto({
             }
           }}>
           <Image source={Figura1} />
-          <Text>{dados[0].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[0].texto}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -41,8 +42,11 @@ function CampoInputAberto({
             }
           }}>
           <Image source={Figura2} />
-          <Text>{dados[1].texto}</Text>
+          <Text style={styleComponent.boxTexto}>{dados[1].texto}</Text>
         </TouchableOpacity>
+      </View>
+      <View>
+        <TextInput onChangeText={SetTexto} value={Texto} style={styleComponent.inputText}/>
       </View>
     </View>
   );

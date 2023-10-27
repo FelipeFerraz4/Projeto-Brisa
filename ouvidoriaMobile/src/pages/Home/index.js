@@ -52,7 +52,7 @@ function Home() {
                 <View style={styleHome.campoImage}>
                   <Image
                     source={OuvidoriaIntinerante}
-                    resizeMode="stretch"
+                    resizeMode="cover"
                     style={styleHome.imagem}
                   />
                 </View>
