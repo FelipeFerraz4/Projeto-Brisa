@@ -12,6 +12,7 @@ const styleComponent = StyleSheet.create({
   },
   inputText: {
     margin: '1%',
+    paddingHorizontal: '3%',
     borderWidth: 2,
     borderRadius: 10,
     borderColor: '#0068bd',

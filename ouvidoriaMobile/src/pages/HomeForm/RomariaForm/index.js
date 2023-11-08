@@ -57,35 +57,35 @@ function RomariaForm() {
         </View>
 
         <View style={stylePage.titulo}>
-          <CheckBox
-            pergunta={dados.perguntas.fechada[0].texto}
-            quantityChackBox={dados.perguntas.fechada[0].campos}
-            option={dados.perguntas.fechada[0].option}
-          />
-          <CheckBox
-            pergunta={dados.perguntas.fechada[1].texto}
-            quantityChackBox={dados.perguntas.fechada[1].campos}
-            option={dados.perguntas.fechada[1].option}
-          />
-          <CheckBox
-            pergunta={dados.perguntas.fechada[2].texto}
-            quantityChackBox={dados.perguntas.fechada[2].campos}
-            option={dados.perguntas.fechada[2].option}
-          />
-          <CheckBox
-            pergunta={dados.perguntas.fechada[3].texto}
-            quantityChackBox={dados.perguntas.fechada[3].campos}
-            option={dados.perguntas.fechada[3].option}
-          />
-          <CheckBox
-            pergunta={dados.perguntas.fechada[4].texto}
-            quantityChackBox={dados.perguntas.fechada[4].campos}
-            option={dados.perguntas.fechada[4].option}
-          />
           <CampoMisto
             pergunta={dados.perguntas.mista[0].texto}
             quantityChackBox={dados.perguntas.mista[0].campos}
             option={dados.perguntas.mista[0].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[1].texto}
+            quantityChackBox={dados.perguntas.mista[1].campos}
+            option={dados.perguntas.mista[1].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[2].texto}
+            quantityChackBox={dados.perguntas.mista[2].campos}
+            option={dados.perguntas.mista[2].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[3].texto}
+            quantityChackBox={dados.perguntas.mista[3].campos}
+            option={dados.perguntas.mista[3].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[4].texto}
+            quantityChackBox={dados.perguntas.mista[4].campos}
+            option={dados.perguntas.mista[4].option}
+          />
+          <CampoMisto
+            pergunta={dados.perguntas.mista[5].texto}
+            quantityChackBox={dados.perguntas.mista[5].campos}
+            option={dados.perguntas.mista[5].option}
           />
           <CampoInputAberto pergunta={dados.perguntas.aberta[0].texto} />
         </View>

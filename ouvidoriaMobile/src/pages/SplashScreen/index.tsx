@@ -14,7 +14,7 @@ type Props = {
 function SplashScreen({navigation}: Props) {
   setTimeout(() => {
     navigation.navigate('Home');
-  }, 3000);
+  }, 1000);
 
   return (
     <View style={style.page}>

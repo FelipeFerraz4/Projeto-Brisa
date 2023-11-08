@@ -78,11 +78,9 @@
                         "texto": "Não"
                     }
                 ]
-            }
-        ],
-        "fechada": [
+            },
             {
-                "id": 1,
+                "id": 2,
                 "campos": 5,
                 "texto": "Como avalia as condições de hospedagem na Cidade ?",
                 "option": [
@@ -109,7 +107,7 @@
                 ]
             },
             {
-                "id": 2,
+                "id": 3,
                 "campos": 2,
                 "texto": "Os pontos turísticos da cidade são fáceis de serem localizados ?",
                 "option": [
@@ -124,7 +122,7 @@
                 ]
             },
             {
-                "id": 3,
+                "id": 4,
                 "campos": 5,
                 "texto": "Como você avalia o serviço público utilizado ?",
                 "option": [
@@ -151,7 +149,7 @@
                 ]
             },
             {
-                "id": 4,
+                "id": 5,
                 "campos": 6,
                 "texto": "Quais serviços públicos realizados pelo município você destaca na Cidade ?",
                 "option": [
@@ -178,7 +176,7 @@
                 ]
             },
             {
-                "id": 5,
+                "id": 6,
                 "campos": 6,
                 "texto": "Qual serviço público deve ser melhorado no município de Juazeiro do Norte - CE para atender as necessidades dos romeiros ?",
                 "option": [
