@@ -6,14 +6,14 @@ import Logo from '../../assets/logo/logo.png';
 
 function SplashScreen() {
   const navigation = useNavigation();
-  /*
+
   setTimeout(() => {
     navigation.reset({
       index: 0,
       routes: [{name: 'AppRotasTab'}],
     });
   }, 1500);
-*/
+
   return (
     <View style={style.page}>
       <Image source={Logo} style={style.image} />

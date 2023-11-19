@@ -1,5 +1,4 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import AppRotasStackHome from './AppRotasStackHome';
@@ -9,15 +8,10 @@ const Tab = createBottomTabNavigator();
 
 function AppRotasTab() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="AppRotasStackHome" component={AppRotasStackHome} />
-        <Tab.Screen
-          name="AppRotasStackUpload"
-          component={AppRotasStackUpload}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen name="AppRotasStackHome" component={AppRotasStackHome} />
+      <Tab.Screen name="AppRotasStackUpload" component={AppRotasStackUpload} />
+    </Tab.Navigator>
   );
 }
 
