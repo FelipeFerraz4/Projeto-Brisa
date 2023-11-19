@@ -92,6 +92,9 @@ const styleHome = StyleSheet.create({
     lineHeight: 30,
     color: '#000',
   },
+  form: {
+    backgroundColor: '#000',
+  },
 });
 
 export default styleHome;

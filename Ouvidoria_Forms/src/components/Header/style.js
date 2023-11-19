@@ -12,6 +12,7 @@ const styleHeader = StyleSheet.create({
     height: '10%',
     paddingHorizontal: '3%',
     paddingVertical: '2%',
+    marginVertical: '2%',
   },
   texto: {
     fontSize: 25,

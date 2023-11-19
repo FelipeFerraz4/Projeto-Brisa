@@ -1,15 +1,32 @@
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
-import {CarregarRomaria, CarregarOuvidoria} from '../../serviços/CarregarForms';
-import styleHome from './style';
 import {useNavigation} from '@react-navigation/native';
+import {View, Text, TouchableOpacity, TextInput, FlatList} from 'react-native';
+
+import {CarregarFormularios} from '../../serviços/CarregarForms';
+import styleHome from './style';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 
+const TopoLista = () => {
+  return (
+    <>
+      <Header leftArrow={false} />
+      <Logo />
+      <View>
+        <Text style={styleHome.campoTitulo}>Formulários</Text>
+      </View>
+      <View style={styleHome.main}>
+        {/* <TextInput />
+        <Text>Lupa</Text>
+        <Text>Ordem alfabetica</Text> */}
+      </View>
+    </>
+  );
+};
+
 function Home() {
   const navigation = useNavigation();
-  const dadoOuvidoria = CarregarOuvidoria();
-  const dadoRomaria = CarregarRomaria();
+  const formulario = CarregarFormularios().formularios;
 
   function formularioPress(id) {
     console.log(id);
@@ -18,37 +35,16 @@ function Home() {
 
   return (
     <View style={styleHome.app}>
-      <ScrollView>
-        <View style={styleHome.conteiner}>
-          <Header leftArrow={false} />
-          <Logo />
-          <View style={styleHome.main}>
-            <View>
-              <Text style={styleHome.campoTitulo}>Formulários</Text>
-            </View>
-            <View>
-              <TouchableOpacity
-                style={styleHome.formulario}
-                onPress={() => {
-                  formularioPress(dadoOuvidoria.id);
-                }}>
-                <View>
-                  <Text style={styleHome.titulo}>{dadoOuvidoria.titulo}</Text>
-                </View>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styleHome.formulario}
-                onPress={() => {
-                  formularioPress(dadoRomaria.id);
-                }}>
-                <View>
-                  <Text style={styleHome.titulo}>{dadoRomaria.titulo}</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+      <FlatList
+        data={formulario}
+        keyExtractor={item => item.id}
+        renderItem={({item}) => (
+          <TouchableOpacity onPress={() => formularioPress(item.id)}>
+            <Text>{item.nome}</Text>
+          </TouchableOpacity>
+        )}
+        ListHeaderComponent={TopoLista}
+      />
     </View>
   );
 }
