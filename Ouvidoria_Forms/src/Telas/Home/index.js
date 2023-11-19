@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import {CarregarRomaria, CarregarOuvidoria} from '../../serviços/CarregarForms';
-import Logo from '../../assets/logo/logo.png';
 import styleHome from './style';
 import {useNavigation} from '@react-navigation/native';
 import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 
 function Home() {
   const navigation = useNavigation();
@@ -21,7 +21,7 @@ function Home() {
       <ScrollView>
         <View style={styleHome.conteiner}>
           <Header leftArrow={false} />
-          <Image source={Logo} style={styleHome.logo} />
+          <Logo />
           <View style={styleHome.main}>
             <View>
               <Text style={styleHome.campoTitulo}>Formulários</Text>

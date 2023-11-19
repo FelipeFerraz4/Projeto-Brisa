@@ -1,8 +1,8 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-import Logo from '../../assets/logo/logo.png';
+import Logo from '../../components/Logo';
 
 function SplashScreen() {
   const navigation = useNavigation();
@@ -16,7 +16,7 @@ function SplashScreen() {
 
   return (
     <View style={style.page}>
-      <Image source={Logo} style={style.image} />
+      <Logo />
     </View>
   );
 }
@@ -28,10 +28,6 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F6FF',
-  },
-  image: {
-    width: 200,
-    height: 200,
   },
 });
 

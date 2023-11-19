@@ -20,6 +20,7 @@ export default function Header({leftArrow: arrow}) {
     <View style={styleHeader.container}>
       {arrow && (
         <Icon
+          testID="HeaderIconeLeftArrow"
           name="arrow-left"
           size={30}
           color={'#000'}
@@ -28,8 +29,11 @@ export default function Header({leftArrow: arrow}) {
           }}
         />
       )}
-      <Text style={styleHeader.texto}>Ouvidoria</Text>
+      <Text testID="HeaderTitulo" style={styleHeader.texto}>
+        Ouvidoria
+      </Text>
       <Icon
+        testID="HeaderIconeLeftArrow"
         name="account-circle"
         size={30}
         color={'#000'}
