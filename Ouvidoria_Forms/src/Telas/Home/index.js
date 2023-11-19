@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
 import {CarregarRomaria, CarregarOuvidoria} from '../../serviços/CarregarForms';
-import Login from '../../assets/icon/person_circle_black.png';
 import Logo from '../../assets/logo/logo.png';
 import styleHome from './style';
 import {useNavigation} from '@react-navigation/native';
@@ -12,10 +11,6 @@ function Home() {
   const dadoOuvidoria = CarregarOuvidoria();
   const dadoRomaria = CarregarRomaria();
 
-  function LoginPage() {
-    navigation.navigate('Login');
-  }
-
   function formularioPress(id) {
     console.log(id);
     navigation.navigate('FormularioHome', {idForm: id});
@@ -25,7 +20,7 @@ function Home() {
     <View style={styleHome.app}>
       <ScrollView>
         <View style={styleHome.conteiner}>
-          <Header />
+          <Header leftArrow={false} />
           <Image source={Logo} style={styleHome.logo} />
           <View style={styleHome.main}>
             <View>
