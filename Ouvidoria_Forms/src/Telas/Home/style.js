@@ -1,99 +1,68 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const largura = Dimensions.get('screen').width;
 
 const styleHome = StyleSheet.create({
-  app: {
+  container: {
     flex: 1,
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    // alignContent: 'center',
     backgroundColor: '#F5F6FF',
   },
-  conteiner: {
+  header: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     alignItems: 'center',
+    // backgroundColor: '#f00',
   },
-  campoHeader: {
-    width: 350,
-    height: 50,
-    marginTop: '3%',
-    marginVertical: '7%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-  },
-  headerTexto: {
-    fontSize: 25,
-    lineHeight: 30,
-    color: '#000',
-  },
-  icon: {
-    width: 30,
-  },
-  logo: {
-    width: 220,
-    height: 220,
-  },
-  campoBotao: {
-    marginVertical: '3%',
-    marginHorizontal: '5%',
-  },
-  botao: {
-    width: 350,
-    height: 50,
-    backgroundColor: '#0068bd',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  botaoTexto: {
-    color: '#fff',
-    padding: 2,
-    fontSize: 20,
-    lineHeight: 30,
+  main: {
+    flex: 2,
+    flexDirection: 'column',
+    // backgroundColor: '#0F0',
   },
   campoTitulo: {
-    marginVertical: 2,
-    padding: '3%',
     fontSize: 25,
     lineHeight: 30,
     color: '#000',
     fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: '5%',
+    // marginRight: 50,
   },
-  campoImage: {
-    marginHorizontal: 2,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-  },
-  imagem: {
-    width: 100,
-    height: 100,
-    borderRadius: 20,
-  },
-  main: {
-    padding: '4%',
-    width: 350,
-    marginVertical: 2,
+  pesquisa: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
     borderRadius: 30,
     borderWidth: 3,
     borderColor: '#30358C',
+    marginHorizontal: '5%',
+    paddingHorizontal: '2%',
+  },
+  pesquisaCampo: {
+    width: largura * (8 / 10),
+    paddingHorizontal: '5%',
+  },
+  formularioCampo: {
+    marginVertical: '3%',
+    flex: 1,
   },
   formulario: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 10,
-    borderWidth: 0.2,
-    padding: '1%',
+    height: 70,
+    justifyContent: 'center',
+    backgroundColor: '#FFF',
     margin: '1%',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    marginHorizontal: '5%',
+    borderWidth: 0.2,
   },
-  titulo: {
-    width: '50%',
-    margin: '4%',
+  formularioTexto: {
     fontSize: 20,
-    lineHeight: 30,
-    color: '#000',
-  },
-  form: {
-    backgroundColor: '#000',
+    lineHeight: 25,
+    fontWeight: 'bold',
+    padding: '3%',
+    paddingLeft: '4%',
   },
 });
 

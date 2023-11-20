@@ -9,7 +9,7 @@ const styleHeader = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: largura,
-    height: '10%',
+    height: 70,
     paddingHorizontal: '3%',
     paddingVertical: '2%',
     marginVertical: '2%',
