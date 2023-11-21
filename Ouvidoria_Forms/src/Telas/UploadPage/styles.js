@@ -5,8 +5,8 @@ const altura = Dimensions.get('screen').height;
 const styleUpload = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: '#F5F6FF',
-    backgroundColor: '#f00',
+    backgroundColor: '#F5F6FF',
+    // backgroundColor: '#f00',
     // height: altura,
   },
   header: {
