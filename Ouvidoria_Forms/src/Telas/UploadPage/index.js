@@ -1,13 +1,16 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
-import styleUpload from './styles';
-import {useNavigation} from '@react-navigation/native';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
+// import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+
+import styleUpload from './styles';
 import Header from '../../components/Header';
 import Botao from '../../components/Botao';
+import {CarregarRespostas} from '../../serviços/CarregarForms';
 
 export default function Upload() {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
+  const Respostas = CarregarRespostas();
 
   return (
     <SafeAreaView style={styleUpload.container}>
@@ -17,7 +20,13 @@ export default function Upload() {
       <View style={styleUpload.main}>
         <Text style={styleUpload.titulo}>Formulários cadastrados</Text>
         <ScrollView style={styleUpload.areaForms}>
-          <Text>Formulários</Text>
+          {Respostas.map(item => (
+            <TouchableOpacity key={item.id} style={styleUpload.resposta}>
+              <Text style={styleUpload.respostaTexto}>
+                {item.id} - {item.nomeFormulario}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </ScrollView>
       </View>
       <View style={styleUpload.footer}>

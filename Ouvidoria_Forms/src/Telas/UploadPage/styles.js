@@ -11,18 +11,18 @@ const styleUpload = StyleSheet.create({
   },
   header: {
     flex: 1,
-    backgroundColor: '#00f',
+    // backgroundColor: '#00f',
   },
   main: {
     flex: 8,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0f0',
+    // backgroundColor: '#0f0',
   },
   footer: {
     flex: 1,
-    backgroundColor: '#f0f',
+    // backgroundColor: '#f0f',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,12 +37,25 @@ const styleUpload = StyleSheet.create({
   areaForms: {
     flex: 1,
     width: '90%',
-    backgroundColor: '#fff',
     marginVertical: '4%',
-    borderWidth: 0.2,
+    borderWidth: 0.5,
+    borderRadius: 10,
+  },
+  resposta: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    paddingHorizontal: '2%',
+    paddingVertical: '5%',
+    borderRadius: 10,
+  },
+  respostaTexto: {
+    color: '#000',
+    fontSize: 20,
+    lineHeight: 25,
   },
   botao: {
     marginVertical: '5%',
+    borderRadius: 10,
   },
 });
 
