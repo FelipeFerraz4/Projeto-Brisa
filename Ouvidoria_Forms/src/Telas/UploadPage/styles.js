@@ -1,28 +1,23 @@
 import {StyleSheet, Dimensions} from 'react-native';
 
-const altura = Dimensions.get('screen').height;
+const largura = Dimensions.get('screen').width;
 
 const styleUpload = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F5F6FF',
-    // backgroundColor: '#f00',
-    // height: altura,
   },
   header: {
     flex: 1,
-    // backgroundColor: '#00f',
   },
   main: {
     flex: 8,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: '#0f0',
   },
   footer: {
     flex: 1,
-    // backgroundColor: '#f0f',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -33,6 +28,21 @@ const styleUpload = StyleSheet.create({
     fontWeight: 'bold',
     color: '#000',
     marginVertical: '3%',
+  },
+  pesquisa: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    borderRadius: 30,
+    borderWidth: 3,
+    borderColor: '#30358C',
+    marginHorizontal: '5%',
+    paddingHorizontal: '2%',
+    marginTop: '2%',
+  },
+  pesquisaCampo: {
+    width: largura * (8 / 10),
+    paddingHorizontal: '5%',
   },
   areaForms: {
     flex: 1,
