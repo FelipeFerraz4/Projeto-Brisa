@@ -1,47 +1,49 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
-export const styles = StyleSheet.create({
+const altura = Dimensions.get('screen').height;
+
+const styleUpload = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
-    paddingHorizontal: 15,
-    backgroundColor: '#F5F6FF',
+    // backgroundColor: '#F5F6FF',
+    backgroundColor: '#f00',
+    // height: altura,
   },
-  Header: {
-    height: '7%',
-    marginVertical: '2%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  header: {
+    flex: 1,
+    backgroundColor: '#00f',
+  },
+  main: {
+    flex: 8,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0f0',
+  },
+  footer: {
+    flex: 1,
+    backgroundColor: '#f0f',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  headerTexto: {
+  titulo: {
     fontSize: 25,
     lineHeight: 30,
-    color: '#000',
-  },
-  icon: {
-    width: 30,
-  },
-  formsArea: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-  },
-  formsH1: {
-    flexDirection: 'row',
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingBottom: 400,
-    fontSize: 25,
-    color: '#535151',
     fontWeight: 'bold',
+    color: '#000',
+    marginVertical: '3%',
   },
-  iconContainer: {
-    position: 'absolute',
-    top: 14,
-    right: 10,
+  areaForms: {
+    flex: 1,
+    width: '90%',
+    backgroundColor: '#fff',
+    marginVertical: '4%',
+    borderWidth: 0.2,
   },
-  buttonArea: {
-    paddingBottom: 50,
-    alignItems: 'center',
+  botao: {
+    marginVertical: '5%',
   },
 });
+
+export default styleUpload;

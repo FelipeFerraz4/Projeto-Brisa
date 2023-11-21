@@ -1,43 +1,32 @@
 import React from 'react';
-import {View, Text, ScrollView, TouchableOpacity, Image} from 'react-native';
-import {styles} from './styles';
-// import {CustomButton} from '../../components/CustomButton';
-// import Icon from 'react-native-vector-icons/EvilIcons';
+import {View, Text, ScrollView} from 'react-native';
+import styleUpload from './styles';
 import {useNavigation} from '@react-navigation/native';
-import arrow from '../../assets/icon/arrow_black.png';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import Header from '../../components/Header';
+import Botao from '../../components/Botao';
 
 export default function Upload() {
   const navigation = useNavigation();
 
-  function handleBackBnt() {
-    navigation.goBack();
-  }
-
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <View style={styles.Header}>
-          <TouchableOpacity
-            onPress={() => {
-              handleBackBnt();
-            }}>
-            <Image source={arrow} style={styles.icon} />
-          </TouchableOpacity>
-          <Text style={styles.headerTexto}>Ouvidoria</Text>
-        </View>
-        <View style={styles.formsArea}>
-          <Text style={styles.formsH1}>Formulários cadastrados</Text>
-          {/* <Icon name="search" style={styles.iconContainer} size={45} /> */}
-        </View>
-      </ScrollView>
-      <View style={styles.buttonArea}>
-        {/* <CustomButton
-          name="Enviar"
-          onPress={() => {
-            handleBackBnt();
-          }}
-        /> */}
+    <SafeAreaView style={styleUpload.container}>
+      <View style={styleUpload.header}>
+        <Header leftArrow={false} />
       </View>
-    </View>
+      <View style={styleUpload.main}>
+        <Text style={styleUpload.titulo}>Formulários cadastrados</Text>
+        <ScrollView style={styleUpload.areaForms}>
+          <Text>Formulários</Text>
+        </ScrollView>
+      </View>
+      <View style={styleUpload.footer}>
+        <Botao
+          texto={'Enviar'}
+          styleBotao={styleUpload.botao}
+          onPress={() => {}}
+        />
+      </View>
+    </SafeAreaView>
   );
 }
