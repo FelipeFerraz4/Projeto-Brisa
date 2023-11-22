@@ -15,10 +15,15 @@ import stylePage from '../Componentes/stylePage';
 import {CarregarRomaria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';
 import {useNavigation} from '@react-navigation/native';
+import Header from '../../../components/Header';
 
 function RomariaForm() {
-  const Navigation = useNavigation();
+  const navigation = useNavigation();
   const dados = CarregarRomaria();
+
+  function handleBackButton() {
+    navigation.goBack();
+  }
 
   return (
     <KeyboardAvoidingView
@@ -26,15 +31,7 @@ function RomariaForm() {
       keyboardVerticalOffset={40}
       style={stylePage.page}>
       <ScrollView>
-        <View style={stylePage.topo}>
-          <TouchableOpacity
-            onPress={() => {
-              Navigation.navigate('FormularioHome');
-            }}>
-            <Image source={Voltar} />
-          </TouchableOpacity>
-          <Text style={stylePage.headerTexto}>Ouvidoria</Text>
-        </View>
+        <Header voltar={handleBackButton} />
 
         <View style={stylePage.titulo}>
           <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
@@ -91,7 +88,7 @@ function RomariaForm() {
         </View>
 
         <View>
-          <TouchableOpacity style={stylePage.botao}>
+          <TouchableOpacity style={stylePage.botao} onPress={handleBackButton}>
             <Text style={stylePage.textoBotao}>Salvar</Text>
           </TouchableOpacity>
         </View>

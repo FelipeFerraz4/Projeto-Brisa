@@ -4,8 +4,6 @@ const stylePage = StyleSheet.create({
   page: {
     flex: 1,
     flexDirection: 'column',
-    paddingHorizontal: '1%',
-    paddingVertical: '7%',
     backgroundColor: '#F5F6FF',
   },
   topo: {

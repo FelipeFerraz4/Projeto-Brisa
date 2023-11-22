@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styleUpload from './styles';
 import Header from '../../components/Header';
-import Botao from '../../components/Botao';
+import ButtonComponent from '../../components/ButtonComponent';
 import {CarregarRespostas} from '../../serviços/CarregarForms';
 
 export default function Upload() {
@@ -61,7 +61,7 @@ export default function Upload() {
         </ScrollView>
       </View>
       <View style={styleUpload.footer}>
-        <Botao
+        <ButtonComponent
           texto={'Enviar'}
           styleBotao={styleUpload.botao}
           onPress={() => {}}

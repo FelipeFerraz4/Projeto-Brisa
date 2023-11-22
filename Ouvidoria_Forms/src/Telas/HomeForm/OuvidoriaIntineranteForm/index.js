@@ -15,25 +15,23 @@ import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';
 import CampoMisto from '../Componentes/CampoMisto';
 import {useNavigation} from '@react-navigation/native';
+import Header from '../../../components/Header';
 
 function OuvidoriaIntineranteForm() {
-  const Navigation = useNavigation();
+  const navigation = useNavigation();
   const dados = CarregarOuvidoria();
+
+  function handleBackButton() {
+    navigation.goBack();
+  }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={40}
       style={stylePage.page}>
       <ScrollView>
-        <View style={stylePage.topo}>
-          <TouchableOpacity
-            onPress={() => {
-              Navigation.navigate('FormularioHome');
-            }}>
-            <Image source={Voltar} />
-          </TouchableOpacity>
-          <Text style={stylePage.headerTexto}>Ouvidoria</Text>
-        </View>
+        <Header voltar={handleBackButton} />
         <View style={stylePage.titulo}>
           <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
           <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
@@ -96,7 +94,7 @@ function OuvidoriaIntineranteForm() {
           <CampoInputAberto pergunta={dados.perguntas.aberta[0].texto} />
         </View>
         <View>
-          <TouchableOpacity style={stylePage.botao}>
+          <TouchableOpacity style={stylePage.botao} onPress={handleBackButton}>
             <Text style={stylePage.textoBotao}>Salvar</Text>
           </TouchableOpacity>
         </View>

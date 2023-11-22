@@ -6,6 +6,7 @@ import Logo from '../../assets/logo/logo.png';
 import arrow from '../../assets/icon/arrow_black.png';
 import Login from '../../assets/icon/person_circle_black.png';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import Header from '../../components/Header';
 
 function FormularioHome() {
   const navigation = useNavigation();
@@ -15,36 +16,22 @@ function FormularioHome() {
   function NavigationForm() {
     const form = dados.params?.idForm;
     if (form === 2) {
-      navigation.navigate('Romaria');
+      navigation.navigate('RomariaForm');
     } else {
-      navigation.navigate('OuvidoriaIntinerante');
+      navigation.navigate('OuvidoriaIntineranteForm');
     }
   }
 
   function LoginPage() {
     navigation.navigate('Login');
   }
-  function HomePage() {
+  function handleBackButton() {
     navigation.goBack();
   }
 
   return (
     <View style={styleServidor.conteiner}>
-      <View style={styleServidor.campoHeader}>
-        <TouchableOpacity
-          onPress={() => {
-            HomePage();
-          }}>
-          <Image source={arrow} style={styleServidor.icon} />
-        </TouchableOpacity>
-        <Text style={styleServidor.headerTexto}>Ouvidoria</Text>
-        <TouchableOpacity
-          onPress={() => {
-            LoginPage();
-          }}>
-          <Image source={Login} style={styleServidor.icon} />
-        </TouchableOpacity>
-      </View>
+      <Header voltar={handleBackButton} />
       <View style={styleServidor.campoLogo}>
         <Image source={Logo} style={styleServidor.image} />
       </View>

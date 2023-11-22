@@ -5,12 +5,8 @@ import {useNavigation} from '@react-navigation/native';
 
 import styleHeader from './style';
 
-export default function Header({leftArrow: arrow}) {
+export default function Header({leftArrow: arrow = true, voltar}) {
   const navigation = useNavigation();
-
-  function Voltar() {
-    navigation.goBack;
-  }
 
   function Login() {
     navigation.navigate('Login');
@@ -22,11 +18,9 @@ export default function Header({leftArrow: arrow}) {
         <Icon
           testID="HeaderIconeLeftArrow"
           name="arrow-left"
-          size={30}
+          size={35}
           color={'#000'}
-          onPress={() => {
-            Voltar();
-          }}
+          onPress={voltar}
         />
       )}
       <Text testID="HeaderTitulo" style={styleHeader.texto}>

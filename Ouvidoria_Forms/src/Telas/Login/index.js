@@ -5,31 +5,22 @@ import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {styles} from './styles';
 import arrow from '../../assets/icon/arrow_black.png';
 import {useNavigation} from '@react-navigation/native';
+import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 
 export default function Login() {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleBackBnt() {
+  function handleBackButton() {
     navigation.goBack();
   }
 
   return (
     <View style={styles.container}>
-      <View style={styles.Header}>
-        <TouchableOpacity
-          onPress={() => {
-            handleBackBnt();
-          }}>
-          <Image source={arrow} style={styles.icon} />
-        </TouchableOpacity>
-        <Text style={styles.headerTexto}>Ouvidoria</Text>
-      </View>
-      <Image
-        style={styles.logo}
-        source={require('../../assets/logo/logo.png')}
-      />
+      <Header voltar={handleBackButton} />
+      <Logo />
       <Text style={styles.h1}>Entrar</Text>
       {/* <CustomInput
         icon="user"
