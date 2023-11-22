@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Home from '../Telas/Home';
 import Login from '../Telas/Login';
-import FormularioHome from '../Telas/FormularioHome';
+import Servidor from '../Telas/Servidor';
 import RomariaForm from '../Telas/HomeForm/RomariaForm';
 import OuvidoriaIntineranteForm from '../Telas/HomeForm/OuvidoriaIntineranteForm';
 
@@ -14,7 +14,7 @@ function AppRotasStackHome() {
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="FormularioHome" component={FormularioHome} />
+      <Stack.Screen name="Servidor" component={Servidor} />
       <Stack.Screen name="RomariaForm" component={RomariaForm} />
       <Stack.Screen
         name="OuvidoriaIntineranteForm"

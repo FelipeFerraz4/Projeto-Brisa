@@ -5,7 +5,6 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
-  Image,
   ScrollView,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';

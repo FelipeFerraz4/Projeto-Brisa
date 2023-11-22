@@ -22,8 +22,7 @@ function Home() {
   const [Busca, SetBusca] = useState('');
 
   function formularioPress(id) {
-    console.log(id);
-    navigation.navigate('FormularioHome', {idForm: id});
+    navigation.navigate('Servidor', {idForm: id});
   }
 
   useEffect(() => {
