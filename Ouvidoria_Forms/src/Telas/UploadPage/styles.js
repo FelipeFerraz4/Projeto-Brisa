@@ -26,7 +26,7 @@ const styleUpload = StyleSheet.create({
     fontSize: 25,
     lineHeight: 30,
     fontWeight: 'bold',
-    color: '#000',
+    color: '#30358C',
     marginVertical: '3%',
   },
   pesquisa: {
@@ -54,9 +54,10 @@ const styleUpload = StyleSheet.create({
   resposta: {
     backgroundColor: '#fff',
     borderWidth: 1,
+    borderRadius: 10,
     paddingHorizontal: '2%',
     paddingVertical: '5%',
-    borderRadius: 10,
+    marginBottom: '2%',
   },
   respostaTexto: {
     color: '#000',

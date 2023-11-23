@@ -25,7 +25,7 @@ const styleHome = StyleSheet.create({
   campoTitulo: {
     fontSize: 25,
     lineHeight: 30,
-    color: '#000',
+    color: '#30358C',
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: '5%',

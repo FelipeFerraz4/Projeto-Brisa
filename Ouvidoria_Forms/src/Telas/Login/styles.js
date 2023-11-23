@@ -1,51 +1,35 @@
 import {StyleSheet} from 'react-native';
 
-export const styles = StyleSheet.create({
+const styleLogin = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5F6FF',
   },
-  Header: {
-    width: '90%',
-    height: '7%',
+  input: {
     marginVertical: '1%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    width: '95%',
   },
-  headerTexto: {
-    fontSize: 25,
-    lineHeight: 30,
-    color: '#000',
+  inputContainer: {
+    borderWidth: 1,
+    borderRadius: 10,
   },
-  icon: {
-    width: 30,
-  },
-  logo: {
-    width: 220,
-    height: 220,
-  },
-  loginArea: {
-    width: '100%',
-  },
-  h1: {
-    width: '100%',
-    paddingTop: 30,
-    paddingLeft: 15,
+  titulo: {
+    marginBottom: '3%',
     fontSize: 20,
+    lineHeight: 25,
     fontWeight: 'bold',
-    color: '#0068bd',
+    color: '#30358C',
   },
-  forgotArea: {
-    width: '100%',
-    alignItems: 'flex-end',
-    marginEnd: 25,
-    marginVertical: 5,
+  botao: {
+    marginVertical: '2%',
+    borderRadius: 10,
   },
-  forgotText: {
-    fontSize: 18,
-    color: '#0068bd',
+  botaoContainer: {
+    width: '90%',
   },
 });
+
+export default styleLogin;

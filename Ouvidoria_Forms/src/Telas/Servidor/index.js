@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import {
-  Image,
   Text,
   TextInput,
-  TouchableOpacity,
   View,
   KeyboardAvoidingView,
   Platform,
@@ -12,7 +10,6 @@ import {
 import {useNavigation, useRoute} from '@react-navigation/native';
 
 import styleServidor from './style';
-import Person from '../../assets/icon/person.png';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
@@ -21,20 +18,20 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 function FormularioHome() {
   const navigation = useNavigation();
   const dados = useRoute();
-  const [Servidor, SetServidor] = useState('');
+  const [servidor, setServidor] = useState('');
 
   function FormsButton() {
     const form = dados.params?.idForm;
-    if (form === 2) {
-      navigation.navigate('RomariaForm');
-    } else {
-      navigation.navigate('OuvidoriaIntineranteForm');
+    if (servidor !== '') {
+      if (form === 2) {
+        navigation.navigate('RomariaForm');
+      } else {
+        navigation.navigate('OuvidoriaIntineranteForm');
+      }
+      setServidor('');
     }
   }
 
-  function LoginPage() {
-    navigation.navigate('Login');
-  }
   function HandleBackButton() {
     navigation.goBack();
   }
@@ -54,12 +51,10 @@ function FormularioHome() {
           <View style={styleServidor.textInput}>
             <Icon name="person" size={30} color={'#000'} />
             <TextInput
-              value={Servidor}
+              value={servidor}
               style={styleServidor.InputCampo}
               placeholder="Nome do servidor"
-              onChangeText={nome => {
-                SetServidor(nome);
-              }}
+              onChangeText={setServidor}
             />
           </View>
         </View>

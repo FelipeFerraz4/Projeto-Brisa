@@ -13,7 +13,6 @@ const styleHeader = StyleSheet.create({
     paddingHorizontal: '3%',
     paddingVertical: '2%',
     marginVertical: '2%',
-    // backgroundColor: '#F00',
   },
   texto: {
     fontSize: 25,

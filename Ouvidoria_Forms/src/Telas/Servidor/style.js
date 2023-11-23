@@ -29,6 +29,7 @@ const styleServidor = StyleSheet.create({
     lineHeight: 30,
     marginVertical: '2%',
     fontWeight: 'bold',
+    color: '#30358C',
   },
   textInput: {
     width: '90%',
