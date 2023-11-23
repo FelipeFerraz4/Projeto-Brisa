@@ -65,7 +65,7 @@ const styleUpload = StyleSheet.create({
     lineHeight: 25,
   },
   botao: {
-    marginVertical: '5%',
+    marginVertical: '2%',
     borderRadius: 10,
   },
 });

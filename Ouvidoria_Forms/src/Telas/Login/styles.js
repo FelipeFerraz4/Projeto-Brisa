@@ -13,7 +13,9 @@ const styleLogin = StyleSheet.create({
     width: '95%',
   },
   inputContainer: {
-    borderWidth: 1,
+    borderWidth: 3,
+    borderBottomWidth: 3,
+    borderColor: '#30358C',
     borderRadius: 10,
   },
   titulo: {
