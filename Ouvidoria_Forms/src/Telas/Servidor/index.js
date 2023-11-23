@@ -1,27 +1,32 @@
 import React, {useState} from 'react';
 import {
   Text,
-  TextInput,
   View,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
 } from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {Input} from '@rneui/themed';
 
 import styleServidor from './style';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import {CarregarFormularios} from '../../serviços/CarregarForms';
 
 function FormularioHome() {
   const navigation = useNavigation();
-  const dados = useRoute();
+  const dado = useRoute().params?.idForm;
   const [servidor, setServidor] = useState('');
+  const formulario = CarregarFormularios();
+  const [mensagemErro, setMensagemErro] = useState('');
+  const [erroStyleContainer, setErroStyleContainer] = useState(
+    styleServidor.inputContainer,
+  );
 
   function FormsButton() {
-    const form = dados.params?.idForm;
+    const form = dado;
     if (servidor !== '') {
       if (form === 2) {
         navigation.navigate('RomariaForm');
@@ -29,6 +34,11 @@ function FormularioHome() {
         navigation.navigate('OuvidoriaIntineranteForm');
       }
       setServidor('');
+      setMensagemErro('');
+      setErroStyleContainer(styleServidor.inputContainer);
+    } else {
+      setMensagemErro('Digite o nome do servidor');
+      setErroStyleContainer(styleServidor.inputContainerErro);
     }
   }
 
@@ -40,23 +50,27 @@ function FormularioHome() {
     <KeyboardAvoidingView
       style={styleServidor.conteiner}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={60}>
+      keyboardVerticalOffset={70}>
       <ScrollView>
         <View>
           <Header voltar={HandleBackButton} />
           <Logo />
         </View>
         <View style={styleServidor.main}>
+          <Text style={styleServidor.titulo}>
+            {formulario[dado - 1].nome.toUpperCase()}
+          </Text>
           <Text style={styleServidor.titulo}>Nome do servidor</Text>
-          <View style={styleServidor.textInput}>
-            <Icon name="person" size={30} color={'#000'} />
-            <TextInput
-              value={servidor}
-              style={styleServidor.InputCampo}
-              placeholder="Nome do servidor"
-              onChangeText={setServidor}
-            />
-          </View>
+          <Input
+            value={servidor}
+            onChangeText={setServidor}
+            placeholder="Nome do servidor"
+            leftIcon={{type: 'MaterialIcons', name: 'person', size: 30}}
+            containerStyle={styleServidor.input}
+            inputContainerStyle={erroStyleContainer}
+            errorMessage={mensagemErro}
+            errorStyle={styleServidor.inputMensagemErro}
+          />
         </View>
         <View style={styleServidor.footer}>
           <ButtonComponent

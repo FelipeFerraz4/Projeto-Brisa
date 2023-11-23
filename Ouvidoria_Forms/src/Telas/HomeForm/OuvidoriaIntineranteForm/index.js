@@ -8,7 +8,6 @@ import {
   ScrollView,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
-import Voltar from '../../../assets/icon/arrow_black.png';
 import stylePage from '../Componentes/stylePage';
 import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';

@@ -20,10 +20,6 @@ const styleServidor = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  campoBotao: {
-    marginHorizontal: '2%',
-    width: '90%',
-  },
   titulo: {
     fontSize: 20,
     lineHeight: 30,
@@ -31,20 +27,29 @@ const styleServidor = StyleSheet.create({
     fontWeight: 'bold',
     color: '#30358C',
   },
-  textInput: {
-    width: '90%',
+  input: {
+    width: '95%',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  inputContainer: {
     borderWidth: 3,
+    borderBottomWidth: 3,
     borderRadius: 10,
     borderColor: '#30358C',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  InputCampo: {
-    width: '90%',
+  inputContainerErro: {
+    borderWidth: 3,
+    borderBottomWidth: 3,
+    borderRadius: 10,
+    borderColor: '#F00',
+  },
+  inputMensagemErro: {
+    color: '#f00',
   },
   botao: {
-    marginVertical: '5%',
+    marginVertical: '2%',
     borderRadius: 10,
   },
   botaoContainer: {

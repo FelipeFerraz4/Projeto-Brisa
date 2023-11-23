@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
 import CampoMisto from '../Componentes/CampoMisto';
-import Voltar from '../../../assets/icon/arrow_black.png';
 import stylePage from '../Componentes/stylePage';
 import {CarregarRomaria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';
