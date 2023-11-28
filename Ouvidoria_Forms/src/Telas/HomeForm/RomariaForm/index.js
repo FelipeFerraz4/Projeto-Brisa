@@ -2,11 +2,9 @@ import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Image,
 } from 'react-native';
 import CampoInputAberto from '../Componentes/campoInputAberto';
 import CampoMisto from '../Componentes/CampoMisto';
@@ -15,6 +13,7 @@ import {CarregarRomaria} from '../../../serviços/CarregarForms';
 import CheckBox from '../Componentes/CheckBox/CheckBox';
 import {useNavigation} from '@react-navigation/native';
 import Header from '../../../components/Header';
+import ButtonComponent from '../../../components/ButtonComponent';
 
 function RomariaForm() {
   const navigation = useNavigation();
@@ -38,58 +37,61 @@ function RomariaForm() {
         </View>
 
         <View style={stylePage.titulo}>
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[0].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[1].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[2].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[3].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[4].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[5].texto} />
-          <CampoInputAberto pergunta={dados.dadosPessoais.abertos[6].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[0].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[1].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[2].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[3].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[4].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[5].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[6].texto} />
           <CheckBox
-            pergunta={dados.dadosPessoais.fechados[0].texto}
-            quantityChackBox={dados.dadosPessoais.fechados[0].campos}
-            option={dados.dadosPessoais.fechados[0].option}
+            pergunta={dados.perguntas[7].texto}
+            quantityChackBox={dados.perguntas[7].quantidadeCamposFechados}
+            option={dados.perguntas[7].option}
           />
         </View>
 
         <View style={stylePage.titulo}>
           <CampoMisto
-            pergunta={dados.perguntas.mista[0].texto}
-            quantityChackBox={dados.perguntas.mista[0].campos}
-            option={dados.perguntas.mista[0].option}
+            pergunta={dados.perguntas[8].texto}
+            quantityChackBox={dados.perguntas[8].quantidadeCamposFechados}
+            option={dados.perguntas[8].option}
           />
           <CampoMisto
-            pergunta={dados.perguntas.mista[1].texto}
-            quantityChackBox={dados.perguntas.mista[1].campos}
-            option={dados.perguntas.mista[1].option}
+            pergunta={dados.perguntas[9].texto}
+            quantityChackBox={dados.perguntas[9].quantidadeCamposFechados}
+            option={dados.perguntas[9].option}
           />
           <CampoMisto
-            pergunta={dados.perguntas.mista[2].texto}
-            quantityChackBox={dados.perguntas.mista[2].campos}
-            option={dados.perguntas.mista[2].option}
+            pergunta={dados.perguntas[10].texto}
+            quantityChackBox={dados.perguntas[10].quantidadeCamposFechados}
+            option={dados.perguntas[10].option}
           />
           <CampoMisto
-            pergunta={dados.perguntas.mista[3].texto}
-            quantityChackBox={dados.perguntas.mista[3].campos}
-            option={dados.perguntas.mista[3].option}
+            pergunta={dados.perguntas[11].texto}
+            quantityChackBox={dados.perguntas[11].quantidadeCamposFechados}
+            option={dados.perguntas[11].option}
           />
           <CampoMisto
-            pergunta={dados.perguntas.mista[4].texto}
-            quantityChackBox={dados.perguntas.mista[4].campos}
-            option={dados.perguntas.mista[4].option}
+            pergunta={dados.perguntas[12].texto}
+            quantityChackBox={dados.perguntas[12].quantidadeCamposFechados}
+            option={dados.perguntas[12].option}
           />
           <CampoMisto
-            pergunta={dados.perguntas.mista[5].texto}
-            quantityChackBox={dados.perguntas.mista[5].campos}
-            option={dados.perguntas.mista[5].option}
+            pergunta={dados.perguntas[13].texto}
+            quantityChackBox={dados.perguntas[13].quantidadeCamposFechados}
+            option={dados.perguntas[13].option}
           />
-          <CampoInputAberto pergunta={dados.perguntas.aberta[0].texto} />
+          <CampoInputAberto pergunta={dados.perguntas[14].texto} />
         </View>
 
-        <View>
-          <TouchableOpacity style={stylePage.botao} onPress={handleBackButton}>
-            <Text style={stylePage.textoBotao}>Salvar</Text>
-          </TouchableOpacity>
+        <View style={stylePage.footer}>
+          <ButtonComponent
+            texto={'Salvar'}
+            onPress={handleBackButton}
+            styleBotao={stylePage.botao}
+            styleContainer={stylePage.botaoContainer}
+          />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>

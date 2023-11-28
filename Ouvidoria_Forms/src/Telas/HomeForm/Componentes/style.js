@@ -15,7 +15,7 @@ const styleComponent = StyleSheet.create({
     paddingHorizontal: '3%',
     borderWidth: 2,
     borderRadius: 10,
-    borderColor: '#0068bd',
+    borderColor: '#30358C',
     backgroundColor: '#FFF',
   },
   checkBox: {

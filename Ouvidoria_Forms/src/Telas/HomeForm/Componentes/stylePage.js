@@ -22,7 +22,7 @@ const stylePage = StyleSheet.create({
     padding: '2%',
     borderRadius: 17,
     borderWidth: 2,
-    borderColor: '#0068bd',
+    borderColor: '#30358C',
     backgroundColor: '#FFF',
   },
   tituloNome: {
@@ -37,19 +37,17 @@ const stylePage = StyleSheet.create({
     lineHeight: 20,
     fontWeight: 'bold',
   },
-  botao: {
-    margin: '5%',
-    backgroundColor: '#0068bd',
-    flex: 1,
+  footer: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textoBotao: {
-    color: '#FFF',
-    fontSize: 22,
-    lineHeight: 50,
-    fontWeight: '500',
+  botao: {
+    marginVertical: '2%',
+    borderRadius: 10,
+  },
+  botaoContainer: {
+    width: '90%',
   },
 });
 
