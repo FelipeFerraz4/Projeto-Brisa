@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   Text,
   View,
@@ -13,6 +13,7 @@ import styleLogin from './styles';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
+// import {auth} from '../../config/firebase';
 
 export default function Login() {
   const navigation = useNavigation();
