@@ -16,6 +16,7 @@ import ButtonComponent from '../../components/ButtonComponent';
 // import {auth} from '../../config/firebase';
 import Alerta from '../../components/Alerta';
 import {logar} from '../../serviços/requisicoesFirebase';
+import {Snackbar} from 'react-native-paper';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -26,12 +27,20 @@ export default function Login() {
   const [statusError, setStatusError] = useState('');
   const [mensagemErrorEmail, setMensagemErrorEmail] = useState('');
   const [mensagemErrorSenha, setMensagemErrorSenha] = useState('');
+  const [mensagemError, setMensagemError] = useState('');
   const [erroStyleContainerEmail, setErroStyleContainerEmail] = useState(
     styleLogin.inputContainer,
   );
   const [erroStyleContainerSenha, setErroStyleContainerSenha] = useState(
     styleLogin.inputContainer,
   );
+  const [erroStyleContainer, setErroStyleContainer] = useState(
+    styleLogin.mensagemErro,
+  );
+  const [visible, setVisible] = useState(false);
+
+  const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
 
   function handleBackButton() {
     navigation.goBack();
@@ -62,7 +71,8 @@ export default function Login() {
         handleBackButton();
       } else {
         setStatusError('firebase');
-        setMensagemErrorSenha('E-mail ou senha invalido');
+        setMensagemError('E-mail ou senha invalido');
+        setErroStyleContainer(styleLogin.mensagemErroContainer);
       }
     }
   }
@@ -116,13 +126,10 @@ export default function Login() {
             errorMessage={mensagemErrorSenha}
             errorStyle={styleLogin.inputMensagemErro}
           />
+          <View style={erroStyleContainer}>
+            <Text style={styleLogin.mensagemErroTexto}>{mensagemError}</Text>
+          </View>
         </View>
-
-        <Alerta
-          mensagem={mensagemErrorSenha}
-          erro={statusError === 'firebase'}
-          setErro={setStatusError}
-        />
 
         <View style={styleLogin.container}>
           <ButtonComponent
@@ -132,6 +139,7 @@ export default function Login() {
               console.log(statusError);
               console.log(mensagemErrorEmail);
               console.log(mensagemErrorSenha);
+              console.log(mensagemError);
             }}
             styleBotao={styleLogin.botao}
             styleContainer={styleLogin.botaoContainer}

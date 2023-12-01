@@ -43,6 +43,22 @@ const styleLogin = StyleSheet.create({
     borderRadius: 10,
     borderColor: '#F00',
   },
+  mensagemErro: {
+    display: 'none',
+  },
+  mensagemErroContainer: {
+    display: 'flex',
+    width: '90%',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    marginBottom: '3%',
+  },
+  mensagemErroTexto: {
+    color: '#f00',
+    fontSize: 15,
+    lineHeight: 20,
+  },
 });
 
 export default styleLogin;

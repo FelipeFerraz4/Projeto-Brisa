@@ -1,12 +1,5 @@
 import {auth} from '../config/firebase';
-import {signInWithEmailAndPassword, AuthErrorCodes} from 'firebase/auth';
-
-function errosFirebase(erro) {
-  let mensagem = '';
-  // switch(erro.code) {
-  //     case AuthErrorCodes.
-  // }
-}
+import {signInWithEmailAndPassword} from 'firebase/auth';
 
 export async function logar(email, senha) {
   const resultado = await signInWithEmailAndPassword(auth, email, senha)
@@ -16,7 +9,6 @@ export async function logar(email, senha) {
     })
     .catch(erro => {
       console.log(erro);
-      //   return errosFirebase(erro);
       return 'Erro no login';
     });
   return resultado;
