@@ -9,8 +9,10 @@ const styleLogin = StyleSheet.create({
     backgroundColor: '#F5F6FF',
   },
   input: {
-    marginVertical: '1%',
     width: '95%',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
   inputContainer: {
     borderWidth: 3,
@@ -31,6 +33,15 @@ const styleLogin = StyleSheet.create({
   },
   botaoContainer: {
     width: '90%',
+  },
+  inputMensagemErro: {
+    color: '#f00',
+  },
+  inputContainerErro: {
+    borderWidth: 3,
+    borderBottomWidth: 3,
+    borderRadius: 10,
+    borderColor: '#F00',
   },
 });
 
