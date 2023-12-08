@@ -5,7 +5,7 @@ import Home from '../Telas/Home';
 import Login from '../Telas/Login';
 import Servidor from '../Telas/Servidor';
 import RomariaForm from '../Telas/HomeForm/RomariaForm';
-import OuvidoriaIntineranteForm from '../Telas/HomeForm/OuvidoriaIntineranteForm';
+import Formulario from '../Telas/HomeForm/Formulario';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,10 +16,7 @@ function AppRotasStackHome() {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Servidor" component={Servidor} />
       <Stack.Screen name="RomariaForm" component={RomariaForm} />
-      <Stack.Screen
-        name="OuvidoriaIntineranteForm"
-        component={OuvidoriaIntineranteForm}
-      />
+      <Stack.Screen name="Formulario" component={Formulario} />
     </Stack.Navigator>
   );
 }

@@ -31,7 +31,7 @@ function FormularioHome() {
       if (form === 2) {
         navigation.navigate('RomariaForm');
       } else {
-        navigation.navigate('OuvidoriaIntineranteForm');
+        navigation.navigate('Formulario');
       }
       setServidor('');
       setMensagemErro('');

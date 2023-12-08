@@ -13,10 +13,7 @@ import styleLogin from './styles';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
-// import {auth} from '../../config/firebase';
-import Alerta from '../../components/Alerta';
 import {logar} from '../../serviços/requisicoesFirebase';
-import {Snackbar} from 'react-native-paper';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -37,10 +34,6 @@ export default function Login() {
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleLogin.mensagemErro,
   );
-  const [visible, setVisible] = useState(false);
-
-  const onToggleSnackBar = () => setVisible(!visible);
-  const onDismissSnackBar = () => setVisible(false);
 
   function handleBackButton() {
     navigation.goBack();
