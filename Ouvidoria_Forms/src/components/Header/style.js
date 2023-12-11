@@ -14,6 +14,17 @@ const styleHeader = StyleSheet.create({
     paddingVertical: '2%',
     marginVertical: '2%',
   },
+  containerTitulo: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: largura,
+    height: 70,
+    paddingHorizontal: '3%',
+    paddingVertical: '2%',
+    marginVertical: '2%',
+  },
   texto: {
     fontSize: 25,
     lineHeight: 30,

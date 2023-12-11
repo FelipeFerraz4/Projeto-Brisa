@@ -30,7 +30,6 @@ function QuestionComponent({
               uncheckedIcon="checkbox-blank-outline"
               title={item.texto}
               containerStyle={styleQuestion.checkBox}
-              // wrapperStyle={styleQuestion.checkBoxContainer}
             />
           ))}
         </View>

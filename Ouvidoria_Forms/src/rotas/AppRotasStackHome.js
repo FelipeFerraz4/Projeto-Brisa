@@ -13,7 +13,7 @@ function AppRotasStackHome() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Login" component={Login} />
+      {/* <Stack.Screen name="Login" component={Login} /> */}
       <Stack.Screen name="Servidor" component={Servidor} />
       <Stack.Screen name="RomariaForm" component={RomariaForm} />
       <Stack.Screen name="Formulario" component={Formulario} />
