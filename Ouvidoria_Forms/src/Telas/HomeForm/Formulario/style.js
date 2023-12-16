@@ -1,6 +1,4 @@
-import {StyleSheet, Dimensions} from 'react-native';
-
-const altura = Dimensions.get('screen').height;
+import {StyleSheet} from 'react-native';
 
 const stylePage = StyleSheet.create({
   container: {
@@ -46,7 +44,6 @@ const stylePage = StyleSheet.create({
     backgroundColor: '#FFF',
     marginVertical: '2%',
     marginHorizontal: '1%',
-    height: altura * 0.65,
   },
   tituloNome: {
     margin: '2%',
@@ -68,7 +65,7 @@ const stylePage = StyleSheet.create({
     margin: '1%',
   },
   botao: {
-    marginVertical: '5%',
+    marginVertical: '2%',
     borderRadius: 10,
   },
   botaoContainer: {

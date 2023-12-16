@@ -36,7 +36,7 @@ export default function Upload() {
   return (
     <SafeAreaView style={styleUpload.container}>
       <View style={styleUpload.header}>
-        <Header leftArrow={false} />
+        <Header leftArrow={false} logout={true} />
       </View>
       <View style={styleUpload.main}>
         <Text style={styleUpload.titulo}>Formulários cadastrados</Text>

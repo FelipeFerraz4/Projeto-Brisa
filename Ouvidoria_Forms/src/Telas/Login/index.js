@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Text,
   View,
@@ -14,6 +14,7 @@ import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
 import {logar} from '../../serviços/requisicoesFirebase';
+import {auth} from '../../config/firebase';
 
 export default function Login() {
   const navigation = useNavigation();
@@ -34,6 +35,20 @@ export default function Login() {
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleLogin.mensagemErro,
   );
+
+  useEffect(() => {
+    const estadoUsuario = auth.onAuthStateChanged(usuario => {
+      if (usuario) {
+        navigation.replace('Upload');
+      }
+    });
+
+    return () => estadoUsuario();
+  }, [navigation]);
+
+  function handleLoginButton() {
+    navigation.replace('Upload');
+  }
 
   function handleBackButton() {
     navigation.goBack();
@@ -61,7 +76,7 @@ export default function Login() {
       clearHooks();
       const resultado = await logar(email, senha);
       if (resultado === 'sucesso') {
-        handleBackButton();
+        handleLoginButton();
       } else {
         setStatusError('firebase');
         setMensagemError('E-mail ou senha invalido');

@@ -23,9 +23,9 @@ function Formulario() {
   const [styleMessage, setStyleMessage] = useState(stylePage.messageCompleted);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
   const quantidadePerguntas = dados.perguntas.length;
-  console.log(perguntaAtual);
-  console.log(quantidadePerguntas);
-  console.log(resposta);
+  // console.log(perguntaAtual);
+  // console.log(quantidadePerguntas);
+  // console.log(resposta);
 
   function adicionarQuestao() {
     resposta.push({
@@ -59,71 +59,45 @@ function Formulario() {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={40}
+      keyboardVerticalOffset={70}
       style={stylePage.container}>
-      <Header voltar={handleBackButton} />
+      <Header voltar={handleBackButton} arrow={true} />
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
           {/* <View style={styleMessage}>
             <Text>Mensagem concluido</Text>
           </View> */}
+          <Text style={stylePage.tituloNome}>{dados.titulo} - Novo</Text>
+          <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
           <View style={stylePage.main}>
-            <Text style={stylePage.tituloNome}>{dados.titulo} - Novo</Text>
-            {perguntaAtual === 0 && (
-              <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
-            )}
-            <QuestionComponet
-              option={dados.perguntas[perguntaAtual].option}
-              texto={dados.perguntas[perguntaAtual].texto}
-              tipoPergunta={dados.perguntas[perguntaAtual].tipoPergunta}
-              quantidadeCamposFechados={
-                dados.perguntas[perguntaAtual].quantidadeCamposFechados
-              }
-              hookResposta={respostaQuestao}
-              hookSetResposta={setRespostaQuestao}
-              hookTexto={respostaTesxto}
-              hookSetTexto={setRespostaTexto}
-            />
+            {dados.perguntas.map(item => (
+              <QuestionComponet
+                key={item.id}
+                option={item.option}
+                texto={item.texto}
+                tipoPergunta={item.tipoPergunta}
+                quantidadeCamposFechados={item.quantidadeCamposFechados}
+                hookResposta={respostaQuestao}
+                hookSetResposta={setRespostaQuestao}
+                hookTexto={respostaTesxto}
+                hookSetTexto={setRespostaTexto}
+              />
+            ))}
           </View>
           <View style={stylePage.footer}>
             <View style={stylePage.campoBotao}>
               <ButtonComponent
-                texto={'Anterior'}
+                texto={'Salvar'}
                 onPress={() => {
-                  if (perguntaAtual > 0) {
-                    setPerguntaAtual(perguntaAtual - 1);
+                  if (perguntaAtual < quantidadePerguntas) {
+                    adicionarQuestao();
+                    salvarResposta();
+                    setPerguntaAtual(0);
                   }
                 }}
                 styleBotao={stylePage.botao}
                 styleContainer={stylePage.botaoContainer}
               />
-              {perguntaAtual + 1 === quantidadePerguntas && (
-                <ButtonComponent
-                  texto={'Salvar'}
-                  onPress={() => {
-                    if (perguntaAtual < quantidadePerguntas) {
-                      adicionarQuestao();
-                      salvarResposta();
-                      setPerguntaAtual(0);
-                    }
-                  }}
-                  styleBotao={stylePage.botao}
-                  styleContainer={stylePage.botaoContainer}
-                />
-              )}
-              {!(perguntaAtual + 1 === quantidadePerguntas) && (
-                <ButtonComponent
-                  texto={'Proximo'}
-                  onPress={() => {
-                    if (perguntaAtual < quantidadePerguntas) {
-                      adicionarQuestao();
-                      setPerguntaAtual(perguntaAtual + 1);
-                    }
-                  }}
-                  styleBotao={stylePage.botao}
-                  styleContainer={stylePage.botaoContainer}
-                />
-              )}
             </View>
           </View>
         </View>

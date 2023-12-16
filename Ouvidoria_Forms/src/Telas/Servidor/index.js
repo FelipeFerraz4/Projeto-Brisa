@@ -53,7 +53,7 @@ function FormularioHome() {
       keyboardVerticalOffset={70}>
       <ScrollView>
         <View>
-          <Header voltar={HandleBackButton} />
+          <Header voltar={HandleBackButton} arrow={true} />
           <Logo />
         </View>
         <View style={styleServidor.main}>

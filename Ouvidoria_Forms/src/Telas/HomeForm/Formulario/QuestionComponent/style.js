@@ -30,6 +30,7 @@ const styleQuestion = StyleSheet.create({
   },
   checkBoxView: {
     marginBottom: '5%',
+    flex: 1,
   },
 });
 

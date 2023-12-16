@@ -4,23 +4,30 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
 
 import styleHeader from './style';
+import {auth} from '../../config/firebase';
 
 export default function Header({
-  leftArrow: arrow = true,
+  arrow = false,
   voltar,
   login = false,
+  logout = false,
 }) {
   const navigation = useNavigation();
   const [styleContainer, setStyleContainer] = useState(styleHeader.container);
 
   useEffect(() => {
-    if (login === false && arrow === false) {
+    if (login === false && arrow === false && logout === false) {
       setStyleContainer(styleHeader.containerTitulo);
     }
-  }, [arrow, login]);
+  }, [arrow, login, logout]);
 
   function Login() {
     navigation.navigate('Login');
+  }
+
+  function offLogin() {
+    auth.signOut();
+    navigation.replace('Login');
   }
 
   return (
@@ -39,12 +46,23 @@ export default function Header({
       </Text>
       {login && (
         <Icon
-          testID="HeaderIconeLeftArrow"
+          testID="HeaderIconeLogin"
           name="account-circle"
           size={30}
           color={'#000'}
           onPress={() => {
             Login();
+          }}
+        />
+      )}
+      {logout && (
+        <Icon
+          testID="HeaderIconeLogout"
+          name="logout"
+          size={30}
+          color={'#000'}
+          onPress={() => {
+            offLogin();
           }}
         />
       )}
