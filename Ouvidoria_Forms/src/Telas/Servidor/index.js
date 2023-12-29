@@ -58,7 +58,7 @@ function FormularioHome() {
         </View>
         <View style={styleServidor.main}>
           <Text style={styleServidor.titulo}>
-            {formulario[dado - 1].nome.toUpperCase()}
+            {formulario[dado - 1].titulo.toUpperCase()}
           </Text>
           <Text style={styleServidor.titulo}>Nome do servidor</Text>
           <Input

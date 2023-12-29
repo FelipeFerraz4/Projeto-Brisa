@@ -63,7 +63,7 @@ function Home() {
                 style={styleHome.formulario}
                 onPress={() => formularioPress(item.id)}>
                 <Text style={styleHome.formularioTexto}>
-                  {item.nome.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
+                  {item.titulo.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
                     letra.toUpperCase(),
                   )}
                 </Text>

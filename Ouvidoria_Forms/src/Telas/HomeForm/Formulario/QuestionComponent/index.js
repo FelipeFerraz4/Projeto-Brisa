@@ -31,7 +31,7 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
   const [texto, setTexto] = useState('');
 
   function onIcone(id) {
-    console.log(id);
+    // console.log(id);
     let statusIcone = figura[id - 1].iconStatus;
     if (statusIcone === 'offIcone') {
       icones[id - 1].iconStatus = 'onIcone';
@@ -56,7 +56,7 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
 
   useEffect(() => {
     async function pegarRespostaIcone() {
-      let index = (await pergunta.id) - 1;
+      let indexPergunta = (await pergunta.id) - 1;
       let respostaFechada = [];
       for (let index = 0; index < figura.length; index++) {
         // console.log(figura[index].id);
@@ -65,11 +65,11 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
           respostaFechada.push(await pergunta.option[index].texto);
         }
       }
-      console.log(respostaFechada);
+      // console.log(respostaFechada);
       // console.log(figura);
       // console.log(index);
       // console.log(resposta[index].respostaFechada);
-      resposta[index].respostaFechada = respostaFechada;
+      resposta[indexPergunta].respostaFechada = respostaFechada;
       setResposta(resposta);
     }
     pegarRespostaIcone();
