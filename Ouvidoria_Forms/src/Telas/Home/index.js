@@ -62,7 +62,11 @@ function Home() {
                 key={item.id}
                 style={styleHome.formulario}
                 onPress={() => formularioPress(item.id)}>
-                <Text style={styleHome.formularioTexto}>{item.nome}</Text>
+                <Text style={styleHome.formularioTexto}>
+                  {item.nome.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
+                    letra.toUpperCase(),
+                  )}
+                </Text>
               </TouchableOpacity>
             ))}
           </View>
