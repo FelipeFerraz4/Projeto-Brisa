@@ -4,16 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styleQuestion from './style';
 
-function QuestionComponent({
-  option: resposta,
-  quantidadeCamposFechados: camposFechado,
-  texto: titulo,
-  tipoPergunta: tipo,
-  hookResposta,
-  hookSetResposta,
-  hookTexto,
-  hookSetTexto,
-}) {
+function QuestionComponent({pergunta, resposta, setResposta}) {
   let icones = [
     {
       id: 1,
@@ -37,6 +28,7 @@ function QuestionComponent({
     },
   ];
   const [figura, setFigura] = useState(icones);
+  const [texto, setTexto] = useState('');
 
   function onIcone(id) {
     console.log(id);
@@ -50,12 +42,46 @@ function QuestionComponent({
     }
   }
 
+  useEffect(() => {
+    async function pegarRespostaTexto() {
+      let index = (await pergunta.id) - 1;
+      // console.log(index);
+      // console.log(resposta[index].respostaAberta);
+      resposta[index].respostaAberta = texto;
+      setResposta(resposta);
+    }
+    pegarRespostaTexto();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [texto]);
+
+  useEffect(() => {
+    async function pegarRespostaIcone() {
+      let index = (await pergunta.id) - 1;
+      let respostaFechada = [];
+      for (let index = 0; index < figura.length; index++) {
+        // console.log(figura[index].id);
+        // console.log(figura[index].iconStatus);
+        if (figura[index].iconStatus === 'onIcone') {
+          respostaFechada.push(await pergunta.option[index].texto);
+        }
+      }
+      console.log(respostaFechada);
+      // console.log(figura);
+      // console.log(index);
+      // console.log(resposta[index].respostaFechada);
+      resposta[index].respostaFechada = respostaFechada;
+      setResposta(resposta);
+    }
+    pegarRespostaIcone();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [figura]);
+
   return (
     <View style={styleQuestion.campo}>
-      <Text style={styleQuestion.titulo}>{titulo}</Text>
-      {camposFechado !== 0 && (
+      <Text style={styleQuestion.titulo}>{pergunta.texto}</Text>
+      {pergunta.quantidadeCamposFechados !== 0 && (
         <View style={styleQuestion.checkBoxView}>
-          {resposta.map(item => (
+          {pergunta.option.map(item => (
             <TouchableOpacity
               key={item.id}
               style={styleQuestion.checkBoxContainer}
@@ -71,12 +97,12 @@ function QuestionComponent({
           ))}
         </View>
       )}
-      {tipo === 'aberta' && (
+      {pergunta.tipoPergunta === 'aberta' && (
         <View>
           <TextInput
             multiline={true}
-            onChangeText={hookSetTexto}
-            value={hookTexto}
+            onChangeText={setTexto}
+            value={texto}
             style={styleQuestion.inputText}
             placeholder="Digite mais informações"
           />

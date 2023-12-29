@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   ScrollView,
+  Alert,
 } from 'react-native';
 import stylePage from './style';
 import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
@@ -16,16 +17,38 @@ import QuestionComponet from './QuestionComponent';
 function Formulario() {
   const navigation = useNavigation();
   const dados = CarregarOuvidoria();
-  const [resposta, setResposta] = useState([]);
   const [respostaQuestao, setRespostaQuestao] = useState([]);
   const [respostaTesxto, setRespostaTexto] = useState('');
   const [completeMessage, setCompleteMessage] = useState(true);
   const [styleMessage, setStyleMessage] = useState(stylePage.messageCompleted);
   const [perguntaAtual, setPerguntaAtual] = useState(0);
   const quantidadePerguntas = dados.perguntas.length;
-  // console.log(perguntaAtual);
-  // console.log(quantidadePerguntas);
-  // console.log(resposta);
+  let dadosResposta = [
+    {
+      id: 1,
+      respostaFechada: [],
+      respostaAberta: '',
+    },
+  ];
+  const [resposta, setResposta] = useState(dadosResposta);
+  const [respostaEmBranco, setRespostaEmBranco] = useState([]);
+
+  useEffect(() => {
+    for (let i = 1; i < dados.perguntas.length; i++) {
+      resposta.push({
+        id: i + 1,
+        respostaFechada: [],
+        respostaAberta: '',
+      });
+    }
+
+    setRespostaEmBranco(resposta);
+    setResposta(resposta);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  console.log(dados.perguntas.length);
+  console.log(resposta);
 
   function adicionarQuestao() {
     resposta.push({
@@ -56,6 +79,10 @@ function Formulario() {
     navigation.goBack();
   }
 
+  function limpaResposta() {
+    setResposta(respostaEmBranco);
+  }
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -64,23 +91,15 @@ function Formulario() {
       <Header voltar={handleBackButton} arrow={true} />
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
-          {/* <View style={styleMessage}>
-            <Text>Mensagem concluido</Text>
-          </View> */}
           <Text style={stylePage.tituloNome}>{dados.titulo} - Novo</Text>
           <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
           <View style={stylePage.main}>
             {dados.perguntas.map(item => (
               <QuestionComponet
+                pergunta={item}
                 key={item.id}
-                option={item.option}
-                texto={item.texto}
-                tipoPergunta={item.tipoPergunta}
-                quantidadeCamposFechados={item.quantidadeCamposFechados}
-                hookResposta={respostaQuestao}
-                hookSetResposta={setRespostaQuestao}
-                hookTexto={respostaTesxto}
-                hookSetTexto={setRespostaTexto}
+                resposta={resposta}
+                setResposta={setResposta}
               />
             ))}
           </View>
@@ -89,11 +108,10 @@ function Formulario() {
               <ButtonComponent
                 texto={'Salvar'}
                 onPress={() => {
-                  if (perguntaAtual < quantidadePerguntas) {
-                    adicionarQuestao();
-                    salvarResposta();
-                    setPerguntaAtual(0);
-                  }
+                  console.log(resposta);
+                  limpaResposta();
+                  Alert.alert('Resposta Salva');
+                  navigation.replace('Formulario');
                 }}
                 styleBotao={stylePage.botao}
                 styleContainer={stylePage.botaoContainer}
