@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {
   Text,
   View,
@@ -6,33 +6,27 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import {Input} from '@rneui/themed';
 
 import styleServidor from './style';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
-import {CarregarFormularios} from '../../serviços/CarregarForms';
+import {GlobalContext} from '../../contexts/GlobalContext';
 
 function FormularioHome() {
   const navigation = useNavigation();
-  const dado = useRoute().params?.idForm;
   const [servidor, setServidor] = useState('');
-  const formulario = CarregarFormularios();
   const [mensagemErro, setMensagemErro] = useState('');
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleServidor.inputContainer,
   );
+  const {formularioAtual, formulario} = useContext(GlobalContext);
 
   function FormsButton() {
-    const form = dado;
     if (servidor !== '') {
-      if (form === 2) {
-        navigation.navigate('RomariaForm');
-      } else {
-        navigation.navigate('Formulario');
-      }
+      navigation.navigate('Formulario', {formulario: formulario});
       setServidor('');
       setMensagemErro('');
       setErroStyleContainer(styleServidor.inputContainer);
@@ -58,9 +52,11 @@ function FormularioHome() {
         </View>
         <View style={styleServidor.main}>
           <Text style={styleServidor.titulo}>
-            {formulario[dado - 1].titulo.toUpperCase()}
+            {formulario.titulo.toUpperCase()}
           </Text>
-          <Text style={styleServidor.titulo}>Nome do servidor</Text>
+          <Text style={styleServidor.titulo}>
+            Nome do servidor{formularioAtual}
+          </Text>
           <Input
             value={servidor}
             onChangeText={setServidor}
@@ -75,7 +71,7 @@ function FormularioHome() {
         <View style={styleServidor.footer}>
           <ButtonComponent
             texto={'Iniciar'}
-            onPress={FormsButton}
+            onPress={() => FormsButton()}
             styleBotao={styleServidor.botao}
             styleContainer={styleServidor.botaoContainer}
           />

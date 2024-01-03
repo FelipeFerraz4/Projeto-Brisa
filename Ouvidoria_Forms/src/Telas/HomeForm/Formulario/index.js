@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -8,15 +8,16 @@ import {
   Alert,
 } from 'react-native';
 import stylePage from './style';
-import {CarregarOuvidoria} from '../../../serviços/CarregarForms';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import Header from '../../../components/Header';
 import ButtonComponent from '../../../components/ButtonComponent';
 import QuestionComponet from './QuestionComponent';
+import {GlobalContext} from '../../../contexts/GlobalContext';
 
 function Formulario() {
+  const {formularioAtual, formulario} = useContext(GlobalContext);
   const navigation = useNavigation();
-  const dados = CarregarOuvidoria();
+  const dados = formulario;
   const [respostaQuestao, setRespostaQuestao] = useState([]);
   const [respostaTesxto, setRespostaTexto] = useState('');
   const [completeMessage, setCompleteMessage] = useState(true);
@@ -91,7 +92,9 @@ function Formulario() {
       <Header voltar={handleBackButton} arrow={true} />
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
-          <Text style={stylePage.tituloNome}>{dados.titulo} - Novo</Text>
+          <Text style={stylePage.tituloNome}>
+            {dados.titulo} - Novo{formularioAtual}
+          </Text>
           <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
           <View style={stylePage.main}>
             {dados.perguntas.map(item => (

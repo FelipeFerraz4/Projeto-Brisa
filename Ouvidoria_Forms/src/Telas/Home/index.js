@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
   View,
@@ -14,15 +14,20 @@ import styleHome from './style';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {GlobalContext} from '../../contexts/GlobalContext';
 
 function Home() {
   const navigation = useNavigation();
   const formulario = CarregarFormularios();
   const [ListaFormulario, SetListaFormulario] = useState(formulario);
   const [Busca, SetBusca] = useState('');
+  const {formularioAtual, setFormularioAtual, setFormulario} =
+    useContext(GlobalContext);
 
-  function formularioPress(id) {
-    navigation.navigate('Servidor', {idForm: id});
+  function formularioPress(form, id) {
+    setFormularioAtual(id - 1);
+    setFormulario(form);
+    navigation.navigate('Servidor');
   }
 
   useEffect(() => {
@@ -45,7 +50,9 @@ function Home() {
           <Logo />
         </View>
         <View style={styleHome.main}>
-          <Text style={styleHome.campoTitulo}>Formulários</Text>
+          <Text style={styleHome.campoTitulo}>
+            Formulários{formularioAtual}
+          </Text>
           <View style={styleHome.pesquisa}>
             <TextInput
               style={styleHome.pesquisaCampo}
@@ -61,7 +68,7 @@ function Home() {
               <TouchableOpacity
                 key={item.id}
                 style={styleHome.formulario}
-                onPress={() => formularioPress(item.id)}>
+                onPress={() => formularioPress(item, item.id)}>
                 <Text style={styleHome.formularioTexto}>
                   {item.titulo.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
                     letra.toUpperCase(),
