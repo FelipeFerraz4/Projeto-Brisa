@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {
   View,
   Text,
@@ -7,18 +7,17 @@ import {
   TextInput,
   Alert,
 } from 'react-native';
-// import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import styleUpload from './styles';
 import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
-import {CarregarRespostas} from '../../serviços/CarregarForms';
+import {GlobalContext} from '../../contexts/GlobalContext';
 
 export default function Upload() {
-  // const navigation = useNavigation();
-  const Respostas = CarregarRespostas().reverse();
+  const {formularioAtual, respostas, setRespostas} = useContext(GlobalContext);
+  const Respostas = respostas.reverse();
   const [Busca, SetBusca] = useState('');
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
 
@@ -29,7 +28,7 @@ export default function Upload() {
       SetListaRespostas(
         Respostas.filter(
           item => item.Servidor.toLowerCase().indexOf(Busca.toLowerCase()) > -1,
-        ).reverse(),
+        ),
       );
     }
   }, [Busca, Respostas]);
@@ -40,7 +39,9 @@ export default function Upload() {
         <Header leftArrow={false} logout={true} />
       </View>
       <View style={styleUpload.main}>
-        <Text style={styleUpload.titulo}>Formulários cadastrados</Text>
+        <Text style={styleUpload.titulo}>
+          Formulários cadastrados{formularioAtual}
+        </Text>
         <View style={styleUpload.pesquisa}>
           <TextInput
             style={styleUpload.pesquisaCampo}
@@ -67,7 +68,7 @@ export default function Upload() {
           styleBotao={styleUpload.botao}
           onPress={() => {
             Alert.alert('Dados enviados com sucesso');
-            SetListaRespostas([]);
+            setRespostas([]);
           }}
         />
       </View>

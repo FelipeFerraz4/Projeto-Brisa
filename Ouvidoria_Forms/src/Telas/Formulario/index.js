@@ -8,11 +8,11 @@ import {
   Alert,
 } from 'react-native';
 import stylePage from './style';
-import {useNavigation, useRoute} from '@react-navigation/native';
-import Header from '../../../components/Header';
-import ButtonComponent from '../../../components/ButtonComponent';
+import {useNavigation} from '@react-navigation/native';
+import Header from '../../components/Header';
+import ButtonComponent from '../../components/ButtonComponent';
 import QuestionComponet from './QuestionComponent';
-import {GlobalContext} from '../../../contexts/GlobalContext';
+import {GlobalContext} from '../../contexts/GlobalContext';
 
 function Formulario() {
   const {formularioAtual, formulario} = useContext(GlobalContext);
