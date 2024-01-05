@@ -26,6 +26,8 @@ const styleQuestion = StyleSheet.create({
   checkBoxContainer: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     margin: 0,
   },
   checkBoxView: {

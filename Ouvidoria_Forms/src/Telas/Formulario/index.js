@@ -15,15 +15,9 @@ import QuestionComponet from './QuestionComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 
 function Formulario() {
-  const {formularioAtual, formulario} = useContext(GlobalContext);
+  const {formularioAtual, formulario, servidor} = useContext(GlobalContext);
   const navigation = useNavigation();
   const dados = formulario;
-  const [respostaQuestao, setRespostaQuestao] = useState([]);
-  const [respostaTesxto, setRespostaTexto] = useState('');
-  const [completeMessage, setCompleteMessage] = useState(true);
-  const [styleMessage, setStyleMessage] = useState(stylePage.messageCompleted);
-  const [perguntaAtual, setPerguntaAtual] = useState(0);
-  const quantidadePerguntas = dados.perguntas.length;
   let dadosResposta = [
     {
       id: 1,
@@ -32,7 +26,6 @@ function Formulario() {
     },
   ];
   const [resposta, setResposta] = useState(dadosResposta);
-  const [respostaEmBranco, setRespostaEmBranco] = useState([]);
 
   useEffect(() => {
     for (let i = 1; i < dados.perguntas.length; i++) {
@@ -43,45 +36,12 @@ function Formulario() {
       });
     }
 
-    setRespostaEmBranco(resposta);
     setResposta(resposta);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(dados.perguntas.length);
-  console.log(resposta);
-
-  function adicionarQuestao() {
-    resposta.push({
-      id: perguntaAtual + 1,
-      respostaFechada: respostaQuestao,
-      respostaAberta: respostaTesxto,
-    });
-
-    setResposta(resposta);
-
-    setRespostaQuestao([]);
-    setRespostaTexto('');
-  }
-
-  function salvarResposta() {
-    setResposta([]);
-  }
-
-  useEffect(() => {
-    if (completeMessage) {
-      setStyleMessage(stylePage.messageComplete);
-    } else {
-      setStyleMessage(stylePage.messageCompletedVisible);
-    }
-  }, [completeMessage]);
-
   function handleBackButton() {
     navigation.goBack();
-  }
-
-  function limpaResposta() {
-    setResposta(respostaEmBranco);
   }
 
   return (
@@ -93,7 +53,7 @@ function Formulario() {
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
           <Text style={stylePage.tituloNome}>
-            {dados.titulo} - Novo{formularioAtual}
+            {dados.titulo} - Novo{formularioAtual} - {servidor}
           </Text>
           <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
           <View style={stylePage.main}>
@@ -112,7 +72,7 @@ function Formulario() {
                 texto={'Salvar'}
                 onPress={() => {
                   console.log(resposta);
-                  limpaResposta();
+                  // limpaResposta();
                   Alert.alert('Resposta Salva');
                   navigation.replace('Formulario');
                 }}

@@ -17,17 +17,18 @@ import {GlobalContext} from '../../contexts/GlobalContext';
 
 function FormularioHome() {
   const navigation = useNavigation();
-  const [servidor, setServidor] = useState('');
+  // const [servidor, setServidor] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleServidor.inputContainer,
   );
-  const {formularioAtual, formulario} = useContext(GlobalContext);
+  const {formularioAtual, formulario, servidor, setServidor} =
+    useContext(GlobalContext);
 
   function FormsButton() {
     if (servidor !== '') {
       navigation.navigate('Formulario', {formulario: formulario});
-      setServidor('');
+      // setServidor('');
       setMensagemErro('');
       setErroStyleContainer(styleServidor.inputContainer);
     } else {

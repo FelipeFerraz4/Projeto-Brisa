@@ -1,52 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, TextInput, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styleQuestion from './style';
+import {CheckBox} from '@rneui/themed';
 
 function QuestionComponent({pergunta, resposta, setResposta}) {
-  let icones = [
-    {
-      id: 1,
-      iconStatus: 'offIcone',
-    },
-    {
-      id: 2,
-      iconStatus: 'offIcone',
-    },
-    {
-      id: 3,
-      iconStatus: 'offIcone',
-    },
-    {
-      id: 4,
-      iconStatus: 'offIcone',
-    },
-    {
-      id: 5,
-      iconStatus: 'offIcone',
-    },
-  ];
-  const [figura, setFigura] = useState(icones);
   const [texto, setTexto] = useState('');
-
-  function onIcone(id) {
-    // console.log(id);
-    let statusIcone = figura[id - 1].iconStatus;
-    if (statusIcone === 'offIcone') {
-      icones[id - 1].iconStatus = 'onIcone';
-      setFigura(icones);
-    } else {
-      icones[id - 1].iconStatus = 'offIcone';
-      setFigura(icones);
-    }
-  }
+  const [checked, setChecked] = useState([false, false, false, false, false]);
 
   useEffect(() => {
     async function pegarRespostaTexto() {
       let index = (await pergunta.id) - 1;
-      // console.log(index);
-      // console.log(resposta[index].respostaAberta);
       resposta[index].respostaAberta = texto;
       setResposta(resposta);
     }
@@ -58,23 +22,47 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
     async function pegarRespostaIcone() {
       let indexPergunta = (await pergunta.id) - 1;
       let respostaFechada = [];
-      for (let index = 0; index < figura.length; index++) {
-        // console.log(figura[index].id);
-        // console.log(figura[index].iconStatus);
-        if (figura[index].iconStatus === 'onIcone') {
+      for (let index = 0; index < checked.length; index++) {
+        if (checked[index] === true) {
           respostaFechada.push(await pergunta.option[index].texto);
         }
       }
-      // console.log(respostaFechada);
-      // console.log(figura);
-      // console.log(index);
-      // console.log(resposta[index].respostaFechada);
       resposta[indexPergunta].respostaFechada = respostaFechada;
       setResposta(resposta);
     }
     pegarRespostaIcone();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [figura]);
+  }, [checked]);
+
+  function toggleCheckBoxMultiple(id) {
+    let checkBox = [...checked];
+    for (let index = 0; index < checked.length; index++) {
+      if (index === id - 1) {
+        if (checkBox[index] === true) {
+          checkBox[index] = false;
+        } else {
+          checkBox[index] = true;
+        }
+      }
+    }
+    setChecked(checkBox);
+  }
+
+  function toggleCheckBox(id) {
+    let checkBox = [...checked];
+    for (let index = 0; index < checked.length; index++) {
+      if (index === id - 1) {
+        if (checkBox[index] === true) {
+          checkBox[index] = false;
+        } else {
+          checkBox[index] = true;
+        }
+      } else {
+        checkBox[index] = false;
+      }
+    }
+    setChecked(checkBox);
+  }
 
   return (
     <View style={styleQuestion.campo}>
@@ -82,18 +70,19 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
       {pergunta.quantidadeCamposFechados !== 0 && (
         <View style={styleQuestion.checkBoxView}>
           {pergunta.option.map(item => (
-            <TouchableOpacity
-              key={item.id}
-              style={styleQuestion.checkBoxContainer}
-              onPress={() => onIcone(item.id)}>
-              {figura[item.id - 1].iconStatus === 'offIcone' && (
-                <Icon name="checkbox-blank-outline" size={30} color={'#55F'} />
-              )}
-              {figura[item.id - 1].iconStatus !== 'offIcone' && (
-                <Icon name="checkbox-marked" size={30} color={'#55F'} />
-              )}
-              <Text>{item.texto}</Text>
-            </TouchableOpacity>
+            <View key={item.id} style={styleQuestion.checkBoxContainer}>
+              <CheckBox
+                title={item.texto}
+                checked={checked[item.id - 1]}
+                onPress={() => toggleCheckBox(item.id)}
+                iconType="material-community"
+                checkedIcon="checkbox-marked"
+                uncheckedIcon={'checkbox-blank-outline'}
+                checkedColor="#55F"
+                uncheckedColor="#55F"
+                size={30}
+              />
+            </View>
           ))}
         </View>
       )}

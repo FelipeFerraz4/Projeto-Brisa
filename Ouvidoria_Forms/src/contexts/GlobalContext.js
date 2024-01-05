@@ -13,6 +13,7 @@ export function InfoProvider({children}) {
   const [formulario, setFormulario] = useState(formularios[formularioAtual]);
   const resposta = CarregarRespostas();
   const [respostas, setRespostas] = useState(resposta);
+  const [servidor, setServidor] = useState('');
 
   return (
     <GlobalContext.Provider
@@ -23,6 +24,8 @@ export function InfoProvider({children}) {
         setFormulario,
         respostas,
         setRespostas,
+        servidor,
+        setServidor,
       }}>
       {children}
     </GlobalContext.Provider>

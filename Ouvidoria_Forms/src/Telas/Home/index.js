@@ -21,12 +21,13 @@ function Home() {
   const formulario = CarregarFormularios();
   const [ListaFormulario, SetListaFormulario] = useState(formulario);
   const [Busca, SetBusca] = useState('');
-  const {formularioAtual, setFormularioAtual, setFormulario} =
+  const {formularioAtual, setFormularioAtual, setFormulario, setServidor} =
     useContext(GlobalContext);
 
   function formularioPress(form, id) {
     setFormularioAtual(id - 1);
     setFormulario(form);
+    setServidor('');
     navigation.navigate('Servidor');
   }
 
