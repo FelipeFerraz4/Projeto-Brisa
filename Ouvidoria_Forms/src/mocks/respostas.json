@@ -4,84 +4,83 @@
         "idFormulario": 1,
         "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
         "Data": "20/11/2023",
-        "Hora": "15:00:00",
         "Servidor": "Felipe",
         "Respostas": [
             {
                 "id": 1,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Felipe"
 
             },
             {
                 "id": 2,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Bairro Centro"
 
             },
             {
                 "id": 3,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "21"
 
             },
             {
                 "id": 4,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "felipe@gmail.com"
 
             },
             {
                 "id": 5,
-                "respostaFechada": "masculino",
+                "respostaFechada": ["masculino"],
                 "respostaAberta":""
 
             },
             {
                 "id": 6,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 7,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 8,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 9,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 10,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 11,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 12,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 13,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             }
@@ -91,85 +90,84 @@
         "id": 2,
         "idFormulario": 1,
         "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Hora": "15:03:00",
-        "Servidor": "Felipe",
+        "Data": "22/11/2023",
+        "Servidor": "Maria",
         "Respostas": [
             {
                 "id": 1,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Felipe"
 
             },
             {
                 "id": 2,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Bairro Centro"
 
             },
             {
                 "id": 3,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "21"
 
             },
             {
                 "id": 4,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "felipe@gmail.com"
 
             },
             {
                 "id": 5,
-                "respostaFechada": "masculino",
+                "respostaFechada": ["masculino"],
                 "respostaAberta":""
 
             },
             {
                 "id": 6,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 7,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 8,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 9,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 10,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 11,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 12,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 13,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             }
@@ -179,85 +177,84 @@
         "id": 3,
         "idFormulario": 1,
         "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Hora": "15:06:00",
+        "Data": "22/11/2023",
         "Servidor": "Felipe",
         "Respostas": [
             {
                 "id": 1,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Felipe"
 
             },
             {
                 "id": 2,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Bairro Centro"
 
             },
             {
                 "id": 3,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "21"
 
             },
             {
                 "id": 4,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "felipe@gmail.com"
 
             },
             {
                 "id": 5,
-                "respostaFechada": "masculino",
+                "respostaFechada": ["masculino"],
                 "respostaAberta":""
 
             },
             {
                 "id": 6,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 7,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 8,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 9,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 10,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 11,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 12,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 13,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             }
@@ -267,85 +264,84 @@
         "id": 4,
         "idFormulario": 1,
         "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Hora": "15:12:00",
+        "Data": "22/11/2023",
         "Servidor": "Felipe",
         "Respostas": [
             {
                 "id": 1,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Felipe"
 
             },
             {
                 "id": 2,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Bairro Centro"
 
             },
             {
                 "id": 3,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "21"
 
             },
             {
                 "id": 4,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "felipe@gmail.com"
 
             },
             {
                 "id": 5,
-                "respostaFechada": "masculino",
+                "respostaFechada": ["masculino"],
                 "respostaAberta":""
 
             },
             {
                 "id": 6,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 7,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 8,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 9,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 10,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 11,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 12,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 13,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             }
@@ -356,88 +352,173 @@
         "idFormulario": 1,
         "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
         "Data": "20/11/2023",
-        "Hora": "15:15:00",
-        "Servidor": "Felipe",
+        "Servidor": "Maria",
         "Respostas": [
             {
                 "id": 1,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Felipe"
 
             },
             {
                 "id": 2,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "Bairro Centro"
 
             },
             {
                 "id": 3,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "21"
 
             },
             {
                 "id": 4,
-                "respostaFechada": "",
+                "respostaFechada": [],
                 "respostaAberta": "felipe@gmail.com"
 
             },
             {
                 "id": 5,
-                "respostaFechada": "masculino",
+                "respostaFechada": ["masculino"],
                 "respostaAberta":""
 
             },
             {
                 "id": 6,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 7,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 8,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 9,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 10,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 11,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 12,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             },
             {
                 "id": 13,
-                "respostaFechada": "Ótima",
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "idFormulario": 1,
+        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
+        "Data": "20/11/2023",
+        "Servidor": "Maria",
+        "Respostas": [
+            {
+                "id": 1,
+                "respostaFechada": [],
+                "respostaAberta": "Felipe"
+
+            },
+            {
+                "id": 2,
+                "respostaFechada": [],
+                "respostaAberta": "Bairro Centro"
+
+            },
+            {
+                "id": 3,
+                "respostaFechada": [],
+                "respostaAberta": "21"
+
+            },
+            {
+                "id": 4,
+                "respostaFechada": [],
+                "respostaAberta": "felipe@gmail.com"
+
+            },
+            {
+                "id": 5,
+                "respostaFechada": ["masculino"],
+                "respostaAberta":""
+
+            },
+            {
+                "id": 6,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 7,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 8,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 9,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 10,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 11,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 12,
+                "respostaFechada": ["Ótima"],
+                "respostaAberta":"Por motivo de desempenho"
+
+            },
+            {
+                "id": 13,
+                "respostaFechada": ["Ótima"],
                 "respostaAberta":"Por motivo de desempenho"
 
             }
         ]
     }
-
 ]
