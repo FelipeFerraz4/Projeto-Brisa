@@ -15,7 +15,8 @@ import QuestionComponet from './QuestionComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 
 function Formulario() {
-  const {formularioAtual, formulario, servidor} = useContext(GlobalContext);
+  const {formularioAtual, formulario, servidor, respostas} =
+    useContext(GlobalContext);
   const navigation = useNavigation();
   const dados = formulario;
   let dadosResposta = [
@@ -42,6 +43,15 @@ function Formulario() {
 
   function handleBackButton() {
     navigation.goBack();
+  }
+
+  function pegarData() {
+    const date = new Date();
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    const data = day + '/' + month + '/' + year;
+    return data;
   }
 
   return (
@@ -71,8 +81,27 @@ function Formulario() {
               <ButtonComponent
                 texto={'Salvar'}
                 onPress={() => {
-                  console.log(resposta);
-                  // limpaResposta();
+                  // console.log(resposta);
+                  // console.log(pegarData());
+                  const data = pegarData();
+                  // "id": 2,
+                  // "idFormulario": 1,
+                  // "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
+                  // "Data": "22/11/2023",
+                  // "Servidor": "Maria",
+                  // "Respostas":
+                  const respostaFinal = {
+                    id: respostas.length + 1,
+                    idFormulario: formularioAtual + 1,
+                    data: data,
+                    servidor: servidor,
+                    resposta: resposta,
+                  };
+                  console.log(respostaFinal.id);
+                  console.log(respostaFinal.idFormulario);
+                  console.log(respostaFinal.data);
+                  console.log(respostaFinal.servidor);
+                  console.log(respostaFinal.resposta);
                   Alert.alert('Resposta Salva');
                   navigation.replace('Formulario');
                 }}
