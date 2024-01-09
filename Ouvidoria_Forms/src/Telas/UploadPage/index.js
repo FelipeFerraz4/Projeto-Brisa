@@ -68,7 +68,9 @@ export default function Upload() {
           <Icon name="search" size={30} color={'#333'} />
         </View>
         <ScrollView style={styleUpload.areaForms}>
-          {ListaRespostas.map(item => (
+          {ListaRespostas.sort(
+            (respostaA, respostaB) => respostaB.id - respostaA.id,
+          ).map(item => (
             <TouchableOpacity key={item.id} style={styleUpload.resposta}>
               <Text style={styleUpload.respostaTexto}>
                 {item.id} - {item.servidor} - {item.data}
