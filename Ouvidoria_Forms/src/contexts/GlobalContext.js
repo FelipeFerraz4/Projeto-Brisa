@@ -8,6 +8,7 @@ import {
 export const GlobalContext = createContext({});
 
 export function InfoProvider({children}) {
+  const [respostaNovas, setRespostaNovas] = useState(false);
   const [formularioAtual, setFormularioAtual] = useState(0);
   const formularios = CarregarFormularios();
   const [formulario, setFormulario] = useState(formularios[formularioAtual]);
@@ -26,6 +27,8 @@ export function InfoProvider({children}) {
         setRespostas,
         servidor,
         setServidor,
+        respostaNovas,
+        setRespostaNovas,
       }}>
       {children}
     </GlobalContext.Provider>

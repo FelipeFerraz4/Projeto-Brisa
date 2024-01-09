@@ -14,10 +14,18 @@ import styleUpload from './styles';
 import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 
 export default function Upload() {
-  const {formularioAtual, respostas, setRespostas} = useContext(GlobalContext);
-  const Respostas = respostas.reverse();
+  const navigation = useNavigation();
+  const {
+    formularioAtual,
+    respostas,
+    setRespostas,
+    respostaNovas,
+    setRespostaNovas,
+  } = useContext(GlobalContext);
+  const [Respostas, SetResposta] = useState(respostas);
   const [Busca, SetBusca] = useState('');
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
 
@@ -27,11 +35,18 @@ export default function Upload() {
     } else {
       SetListaRespostas(
         Respostas.filter(
-          item => item.Servidor.toLowerCase().indexOf(Busca.toLowerCase()) > -1,
+          item => item.servidor.toLowerCase().indexOf(Busca.toLowerCase()) > -1,
         ),
       );
     }
   }, [Busca, Respostas]);
+
+  useFocusEffect(() => {
+    if (respostaNovas === true) {
+      setRespostaNovas(false);
+      // navigation.replace('Upload');
+    }
+  });
 
   return (
     <SafeAreaView style={styleUpload.container}>
@@ -56,7 +71,7 @@ export default function Upload() {
           {ListaRespostas.map(item => (
             <TouchableOpacity key={item.id} style={styleUpload.resposta}>
               <Text style={styleUpload.respostaTexto}>
-                {item.id} - {item.Servidor} - {item.Data}
+                {item.id} - {item.servidor} - {item.data}
               </Text>
             </TouchableOpacity>
           ))}

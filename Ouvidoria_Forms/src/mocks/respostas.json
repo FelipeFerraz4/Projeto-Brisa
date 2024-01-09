@@ -2,10 +2,9 @@
     {
         "id": 1,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Servidor": "Felipe",
-        "Respostas": [
+        "data": "20/11/2023",
+        "servidor": "Felipe",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],
@@ -89,10 +88,9 @@
     {
         "id": 2,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "22/11/2023",
-        "Servidor": "Maria",
-        "Respostas": [
+        "data": "22/11/2023",
+        "servidor": "Maria",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],
@@ -176,10 +174,9 @@
     {
         "id": 3,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "22/11/2023",
-        "Servidor": "Felipe",
-        "Respostas": [
+        "data": "22/11/2023",
+        "servidor": "Felipe",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],
@@ -263,10 +260,9 @@
     {
         "id": 4,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "22/11/2023",
-        "Servidor": "Felipe",
-        "Respostas": [
+        "data": "22/11/2023",
+        "servidor": "Felipe",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],
@@ -350,10 +346,9 @@
     {
         "id": 5,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Servidor": "Maria",
-        "Respostas": [
+        "data": "20/11/2023",
+        "servidor": "Maria",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],
@@ -437,10 +432,9 @@
     {
         "id": 6,
         "idFormulario": 1,
-        "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-        "Data": "20/11/2023",
-        "Servidor": "Maria",
-        "Respostas": [
+        "data": "20/11/2023",
+        "servidor": "Maria",
+        "respostas": [
             {
                 "id": 1,
                 "respostaFechada": [],

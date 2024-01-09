@@ -15,8 +15,14 @@ import QuestionComponet from './QuestionComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 
 function Formulario() {
-  const {formularioAtual, formulario, servidor, respostas} =
-    useContext(GlobalContext);
+  const {
+    formularioAtual,
+    formulario,
+    servidor,
+    respostas,
+    setRespostas,
+    setRespostaNovas,
+  } = useContext(GlobalContext);
   const navigation = useNavigation();
   const dados = formulario;
   let dadosResposta = [
@@ -81,15 +87,7 @@ function Formulario() {
               <ButtonComponent
                 texto={'Salvar'}
                 onPress={() => {
-                  // console.log(resposta);
-                  // console.log(pegarData());
                   const data = pegarData();
-                  // "id": 2,
-                  // "idFormulario": 1,
-                  // "nomeFormulario": "Pesquisa da Ouvidoria Itinerante",
-                  // "Data": "22/11/2023",
-                  // "Servidor": "Maria",
-                  // "Respostas":
                   const respostaFinal = {
                     id: respostas.length + 1,
                     idFormulario: formularioAtual + 1,
@@ -102,6 +100,10 @@ function Formulario() {
                   console.log(respostaFinal.data);
                   console.log(respostaFinal.servidor);
                   console.log(respostaFinal.resposta);
+                  respostas.push(respostaFinal);
+                  setRespostas(respostas);
+                  console.log(respostas);
+                  setRespostaNovas(true);
                   Alert.alert('Resposta Salva');
                   navigation.replace('Formulario');
                 }}
