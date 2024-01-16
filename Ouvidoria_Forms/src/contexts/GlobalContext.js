@@ -1,20 +1,23 @@
 import React, {useState} from 'react';
 import {createContext} from 'react';
+import {CarregarRespostas} from '../serviços/CarregarForms';
 import {
-  CarregarFormularios,
-  CarregarRespostas,
-} from '../serviços/CarregarForms';
-import {LerFormularios, SalvarFormularios} from '../serviços/AsyncStorage';
+  LerFormularios,
+  LerRespostas,
+  SalvarFormularios,
+  SalvarRespostas,
+} from '../serviços/AsyncStorage';
 
 export const GlobalContext = createContext({});
 
 export function InfoProvider({children}) {
   SalvarFormularios();
+  SalvarRespostas();
   const [respostaNovas, setRespostaNovas] = useState(false);
   const [formularioAtual, setFormularioAtual] = useState(0);
   const formularios = LerFormularios();
   const [formulario, setFormulario] = useState(formularios[formularioAtual]);
-  const resposta = CarregarRespostas();
+  const resposta = LerRespostas();
   const [respostas, setRespostas] = useState(resposta);
   const [servidor, setServidor] = useState('');
 
