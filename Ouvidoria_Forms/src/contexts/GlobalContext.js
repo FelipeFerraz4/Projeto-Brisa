@@ -4,13 +4,15 @@ import {
   CarregarFormularios,
   CarregarRespostas,
 } from '../serviços/CarregarForms';
+import {LerFormularios, SalvarFormularios} from '../serviços/AsyncStorage';
 
 export const GlobalContext = createContext({});
 
 export function InfoProvider({children}) {
+  SalvarFormularios();
   const [respostaNovas, setRespostaNovas] = useState(false);
   const [formularioAtual, setFormularioAtual] = useState(0);
-  const formularios = CarregarFormularios();
+  const formularios = LerFormularios();
   const [formulario, setFormulario] = useState(formularios[formularioAtual]);
   const resposta = CarregarRespostas();
   const [respostas, setRespostas] = useState(resposta);
