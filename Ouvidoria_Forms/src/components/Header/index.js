@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useNavigation} from '@react-navigation/native';
 
 import styleHeader from './style';
-import {auth} from '../../config/firebase';
+import {AuthContext} from '../../contexts/AuthContext';
+// import {auth} from '../../config/firebase';
 
 export default function Header({
   arrow = false,
@@ -14,6 +15,7 @@ export default function Header({
 }) {
   const navigation = useNavigation();
   const [styleContainer, setStyleContainer] = useState(styleHeader.container);
+  const {SalvarLogoff} = useContext(AuthContext);
 
   useEffect(() => {
     if (login === false && arrow === false && logout === false) {
@@ -26,7 +28,7 @@ export default function Header({
   }
 
   function offLogin() {
-    auth.signOut();
+    SalvarLogoff();
     navigation.replace('Login');
   }
 

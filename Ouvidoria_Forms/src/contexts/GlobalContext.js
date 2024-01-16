@@ -17,7 +17,7 @@ export function InfoProvider({children}) {
   const [formularioAtual, setFormularioAtual] = useState(0);
   const formularios = LerFormularios();
   const [formulario, setFormulario] = useState(formularios[formularioAtual]);
-  const resposta = LerRespostas();
+  const resposta = CarregarRespostas();
   const [respostas, setRespostas] = useState(resposta);
   const [servidor, setServidor] = useState('');
 

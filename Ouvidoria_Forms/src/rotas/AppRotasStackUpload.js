@@ -9,8 +9,8 @@ const Stack = createNativeStackNavigator();
 function AppRotasStackUpload() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Upload" component={Upload} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Upload" component={Upload} />
     </Stack.Navigator>
   );
 }

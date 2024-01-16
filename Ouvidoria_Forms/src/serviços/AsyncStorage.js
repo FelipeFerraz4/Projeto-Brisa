@@ -10,8 +10,8 @@ export async function SalvarFormularios() {
 export async function LerFormularios() {
   const formularios = await AsyncStorage.getItem('1');
   const formulariosJson = await JSON.parse(formularios);
-  console.log(await formulariosJson[0]);
-  console.log(await formulariosJson[1]);
+  // console.log(await formulariosJson[0]);
+  // console.log(await formulariosJson[1]);
   return formulariosJson;
 }
 

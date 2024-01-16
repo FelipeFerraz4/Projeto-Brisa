@@ -2,13 +2,16 @@ import React from 'react';
 import {StatusBar, SafeAreaView, StyleSheet} from 'react-native';
 import AppRotasStackStart from './src/rotas/AppRotasStackStart';
 import {InfoProvider} from './src/contexts/GlobalContext';
+import {AuthProvider} from './src/contexts/AuthContext';
 
 export default function App() {
   return (
     <SafeAreaView style={styleApp.page}>
       <StatusBar />
       <InfoProvider>
-        <AppRotasStackStart />
+        <AuthProvider>
+          <AppRotasStackStart />
+        </AuthProvider>
       </InfoProvider>
     </SafeAreaView>
   );

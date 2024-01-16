@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   Text,
   View,
@@ -13,10 +13,12 @@ import styleLogin from './styles';
 import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
-import {logar} from '../../serviços/requisicoesFirebase';
-import {auth} from '../../config/firebase';
+import {AuthContext} from '../../contexts/AuthContext';
+// import {logar} from '../../serviços/requisicoesFirebase';
+// import {auth} from '../../config/firebase';
 
 export default function Login() {
+  const {login, isLogged} = useContext(AuthContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -37,14 +39,10 @@ export default function Login() {
   );
 
   useEffect(() => {
-    const estadoUsuario = auth.onAuthStateChanged(usuario => {
-      if (usuario) {
-        navigation.replace('Upload');
-      }
-    });
-
-    return () => estadoUsuario();
-  }, [navigation]);
+    if (isLogged) {
+      navigation.replace('Upload');
+    }
+  }, [isLogged, navigation]);
 
   function handleLoginButton() {
     navigation.replace('Upload');
@@ -74,12 +72,12 @@ export default function Login() {
       setStatusError('senha');
     } else {
       clearHooks();
-      const resultado = await logar(email, senha);
+      const resultado = await login(email, senha);
       if (resultado === 'sucesso') {
         handleLoginButton();
       } else {
-        setStatusError('firebase');
-        setMensagemError('E-mail ou senha invalido');
+        // setStatusError('firebase');
+        setMensagemError(resultado);
         setErroStyleContainer(styleLogin.mensagemErroContainer);
       }
     }
@@ -144,10 +142,10 @@ export default function Login() {
             texto={'Entrar'}
             onPress={() => {
               realizarLogin();
-              console.log(statusError);
-              console.log(mensagemErrorEmail);
-              console.log(mensagemErrorSenha);
-              console.log(mensagemError);
+              // console.log(statusError);
+              // console.log(mensagemErrorEmail);
+              // console.log(mensagemErrorSenha);
+              // console.log(mensagemError);
             }}
             styleBotao={styleLogin.botao}
             styleContainer={styleLogin.botaoContainer}

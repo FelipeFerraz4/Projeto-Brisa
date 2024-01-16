@@ -20,6 +20,7 @@ export default function Upload() {
   const navigation = useNavigation();
   const {respostas, setRespostas, respostaNovas, setRespostaNovas} =
     useContext(GlobalContext);
+  // console.log(respostas);
   const [Respostas, SetResposta] = useState(respostas);
   const [Busca, SetBusca] = useState('');
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
