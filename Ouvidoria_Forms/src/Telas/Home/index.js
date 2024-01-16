@@ -51,9 +51,7 @@ function Home() {
           <Logo />
         </View>
         <View style={styleHome.main}>
-          <Text style={styleHome.campoTitulo}>
-            Formulários{formularioAtual}
-          </Text>
+          <Text style={styleHome.campoTitulo}>Formulários</Text>
           <View style={styleHome.pesquisa}>
             <TextInput
               style={styleHome.pesquisaCampo}

@@ -18,13 +18,8 @@ import {useFocusEffect, useNavigation} from '@react-navigation/native';
 
 export default function Upload() {
   const navigation = useNavigation();
-  const {
-    formularioAtual,
-    respostas,
-    setRespostas,
-    respostaNovas,
-    setRespostaNovas,
-  } = useContext(GlobalContext);
+  const {respostas, setRespostas, respostaNovas, setRespostaNovas} =
+    useContext(GlobalContext);
   const [Respostas, SetResposta] = useState(respostas);
   const [Busca, SetBusca] = useState('');
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
@@ -54,9 +49,7 @@ export default function Upload() {
         <Header leftArrow={false} logout={true} />
       </View>
       <View style={styleUpload.main}>
-        <Text style={styleUpload.titulo}>
-          Formulários cadastrados{formularioAtual}
-        </Text>
+        <Text style={styleUpload.titulo}>Formulários cadastrados</Text>
         <View style={styleUpload.pesquisa}>
           <TextInput
             style={styleUpload.pesquisaCampo}
@@ -85,6 +78,7 @@ export default function Upload() {
           styleBotao={styleUpload.botao}
           onPress={() => {
             Alert.alert('Dados enviados com sucesso');
+            SetListaRespostas([]);
             setRespostas([]);
           }}
         />

@@ -55,9 +55,7 @@ function FormularioHome() {
           <Text style={styleServidor.titulo}>
             {formulario.titulo.toUpperCase()}
           </Text>
-          <Text style={styleServidor.titulo}>
-            Nome do servidor{formularioAtual}
-          </Text>
+          <Text style={styleServidor.titulo}>Nome do servidor</Text>
           <Input
             value={servidor}
             onChangeText={setServidor}

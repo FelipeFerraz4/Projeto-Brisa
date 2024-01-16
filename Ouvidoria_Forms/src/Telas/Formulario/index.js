@@ -68,9 +68,7 @@ function Formulario() {
       <Header voltar={handleBackButton} arrow={true} />
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
-          <Text style={stylePage.tituloNome}>
-            {dados.titulo} - Novo{formularioAtual} - {servidor}
-          </Text>
+          <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
           <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
           <View style={stylePage.main}>
             {dados.perguntas.map(item => (
