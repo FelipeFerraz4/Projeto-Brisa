@@ -13,6 +13,7 @@ import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
 import QuestionComponet from './QuestionComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
+import {SalvarRespostas} from '../../serviços/AsyncStorage';
 
 function Formulario() {
   const {
@@ -86,21 +87,30 @@ function Formulario() {
                 texto={'Salvar'}
                 onPress={() => {
                   const data = pegarData();
+                  // console.log(respostas);
+                  // console.log(respostas.respostas);
+                  // console.log(Array.from(respostas.respostas).length);
                   const respostaFinal = {
-                    id: respostas.length + 1,
+                    id: respostas.respostas.length + 1,
                     idFormulario: formularioAtual + 1,
                     data: data,
                     servidor: servidor,
                     resposta: resposta,
                   };
-                  console.log(respostaFinal.id);
-                  console.log(respostaFinal.idFormulario);
-                  console.log(respostaFinal.data);
-                  console.log(respostaFinal.servidor);
-                  console.log(respostaFinal.resposta);
-                  respostas.push(respostaFinal);
-                  setRespostas(respostas);
-                  console.log(respostas);
+                  // console.log(respostaFinal.id);
+                  // console.log(respostaFinal.idFormulario);
+                  // console.log(respostaFinal.data);
+                  // console.log(respostaFinal.servidor);
+                  // console.log(respostaFinal.resposta);
+                  // console.log(respostas.respostas.length);
+                  respostas.respostas.push(respostaFinal);
+                  // if (Array.from(respostas).length === 0) {
+                  //   setRespostas(respostaFinal);
+                  // } else {
+                  //   setRespostas(respostas.push(respostaFinal));
+                  // }
+                  // console.log(respostas);
+                  SalvarRespostas(respostas);
                   setRespostaNovas(true);
                   Alert.alert('Resposta Salva');
                   navigation.replace('Formulario');

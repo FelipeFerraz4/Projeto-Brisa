@@ -14,16 +14,18 @@ import styleUpload from './styles';
 import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
-import {useFocusEffect, useNavigation} from '@react-navigation/native';
+import {useFocusEffect} from '@react-navigation/native';
+import {SalvarRespostas} from '../../serviços/AsyncStorage';
 
 export default function Upload() {
-  const navigation = useNavigation();
   const {respostas, setRespostas, respostaNovas, setRespostaNovas} =
     useContext(GlobalContext);
-  // console.log(respostas);
-  const [Respostas, SetResposta] = useState(respostas);
+  const [Respostas, SetResposta] = useState(respostas.respostas);
   const [Busca, SetBusca] = useState('');
+  // console.log('respota: ' + Respostas);
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
+  // console.log(ListaRespostas);
+  // console.log('lista: ' + Array.from(ListaRespostas).length);
 
   useEffect(() => {
     if (Busca === '') {
@@ -44,6 +46,17 @@ export default function Upload() {
     }
   });
 
+  function EnviarResposta() {
+    const respostaVazia = {
+      respostas: [],
+    };
+    SetListaRespostas(respostaVazia.respostas);
+    setRespostas(respostaVazia);
+    SalvarRespostas(respostaVazia);
+    // console.log(respostas);
+    // console.log('fim');
+  }
+
   return (
     <SafeAreaView style={styleUpload.container}>
       <View style={styleUpload.header}>
@@ -62,15 +75,16 @@ export default function Upload() {
           <Icon name="search" size={30} color={'#333'} />
         </View>
         <ScrollView style={styleUpload.areaForms}>
-          {ListaRespostas.sort(
-            (respostaA, respostaB) => respostaB.id - respostaA.id,
-          ).map(item => (
-            <TouchableOpacity key={item.id} style={styleUpload.resposta}>
-              <Text style={styleUpload.respostaTexto}>
-                {item.id} - {item.servidor} - {item.data}
-              </Text>
-            </TouchableOpacity>
-          ))}
+          {Array.from(ListaRespostas).length > 0 &&
+            ListaRespostas.sort(
+              (respostaA, respostaB) => respostaB.id - respostaA.id,
+            ).map(item => (
+              <TouchableOpacity key={item.id} style={styleUpload.resposta}>
+                <Text style={styleUpload.respostaTexto}>
+                  {item.id} - {item.servidor} - {item.data}
+                </Text>
+              </TouchableOpacity>
+            ))}
         </ScrollView>
       </View>
       <View style={styleUpload.footer}>
@@ -79,8 +93,7 @@ export default function Upload() {
           styleBotao={styleUpload.botao}
           onPress={() => {
             Alert.alert('Dados enviados com sucesso');
-            SetListaRespostas([]);
-            setRespostas([]);
+            EnviarResposta();
           }}
         />
       </View>
