@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
 import { FormView } from '../FormView/FormView';
+import { requisicoes1, requisicoes2 } from '../../serviços/requisicoes/requisicoes';
 
 interface ListItem {
   imgOuvidoria: number; // Suponho que imgOuvidoria seja um recurso de imagem
@@ -8,8 +9,14 @@ interface ListItem {
   subtitle: string;
 }
 
+async function requisicao() {
+  const resultado = await requisicoes1();
+  console.log(resultado);
+}
+
 const handlePress = () => {
   console.log('Botão pressionado');
+  requisicao();
 };
 
 export const AllForms: React.FC = () => {
