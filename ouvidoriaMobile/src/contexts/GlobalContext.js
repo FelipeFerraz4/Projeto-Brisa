@@ -15,6 +15,23 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const GlobalContext = createContext({});
 
 export function InfoProvider({children}) {
+  const [forms, setForms] = useState({
+    date: [
+      {
+        id: 1,
+        nome: 'população',
+      },
+      {
+        id: 2,
+        nome: 'Romaria',
+      },
+      {
+        id: 3,
+        nome: 'Ouvidoria Itinerante',
+      },
+    ],
+  })
+
   SalvarFormularios(CarregarFormularios());
   // SalvarRespostas(CarregarRespostas());
   const [respostas, setRespostas] = useState({
@@ -23,24 +40,24 @@ export function InfoProvider({children}) {
   // console.log(respostas);
   const [isCarregadaResposta, setIsCarregadaResposta] = useState(false);
 
-  // useEffect(() => {
-  //   async function VerificarRespostasArmazenadas() {
-  //     const resposta = await AsyncStorage.getItem('2');
-  //     if (resposta.length !== 2 && isCarregadaResposta === false) {
-  //       const respostaJson = JSON.parse(resposta);
-  //       // console.log(respostaJson);
-  //       // let lista = [respostaJson];
-  //       setRespostas(respostaJson);
-  //       setIsCarregadaResposta(true);
-  //       // console.log('um' + respostas);
-  //       // setRespostas()
-  //     } else {
-  //       // console.log('dois' + respostas);
-  //     }
-  //   }
-  //   VerificarRespostasArmazenadas();
-  // }, [isCarregadaResposta, respostas]);
-  // // console.log('aqui' + respostas);
+  useEffect(() => {
+    async function VerificarRespostasArmazenadas() {
+      const resposta = await AsyncStorage.getItem('2');
+      if (respostas.respostas.length !== 2 && isCarregadaResposta === false) {
+        const respostaJson = JSON.parse(resposta);
+        // console.log(respostaJson);
+        // let lista = [respostaJson];
+        setRespostas(respostaJson);
+        setIsCarregadaResposta(true);
+        // console.log('um' + respostas);
+        // setRespostas()
+      } else {
+        // console.log('dois' + respostas);
+      }
+    }
+    VerificarRespostasArmazenadas();
+  }, [isCarregadaResposta, respostas]);
+  // console.log('aqui' + respostas);
 
   const [respostaNovas, setRespostaNovas] = useState(false);
   const [formularioAtual, setFormularioAtual] = useState(0);

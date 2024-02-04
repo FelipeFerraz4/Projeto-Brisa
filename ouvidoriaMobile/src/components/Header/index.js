@@ -5,7 +5,6 @@ import {useNavigation} from '@react-navigation/native';
 
 import styleHeader from './style';
 import {AuthContext} from '../../contexts/AuthContext';
-// import {auth} from '../../config/firebase';
 
 export default function Header({
   arrow = false,
