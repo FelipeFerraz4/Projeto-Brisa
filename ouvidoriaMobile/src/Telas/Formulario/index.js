@@ -14,8 +14,20 @@ import ButtonComponent from '../../components/ButtonComponent';
 import QuestionComponet from './QuestionComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 import {SalvarRespostas} from '../../serviços/AsyncStorage';
+import {FormsContext} from '../../contexts/FormsContext';
+import {
+  QuestionFooter,
+  RespostaBordy,
+  RespostaFooter,
+  RespostaHeader,
+  estruturaResposta,
+  questionFooter,
+  questionHeader,
+  questionsForms,
+} from './Data';
 
 function Formulario() {
+  const navigation = useNavigation();
   const {
     formularioAtual,
     formulario,
@@ -24,29 +36,41 @@ function Formulario() {
     setRespostas,
     setRespostaNovas,
   } = useContext(GlobalContext);
-  const navigation = useNavigation();
-  const dados = formulario;
-  let dadosResposta = [
-    {
-      id: 1,
-      respostaFechada: [],
-      respostaAberta: '',
-    },
-  ];
-  const [resposta, setResposta] = useState(dadosResposta);
+  const {forms, formsQuestion} = useContext(FormsContext);
+  const [formularioNome, setFormularioNome] = useState(
+    forms.data[formularioAtual],
+  );
+  const [questions, setQuestions] = useState(
+    questionsForms(formsQuestion.data, formularioAtual),
+  );
 
-  useEffect(() => {
-    for (let i = 1; i < dados.perguntas.length; i++) {
-      resposta.push({
-        id: i + 1,
-        respostaFechada: [],
-        respostaAberta: '',
-      });
-    }
+  // console.log(formsQuestion);
+  // console.log(formsQuestion.data);
+  // console.log(questions);
+  // const dados = formulario;
+  const [respostaHeader, setRespostaHeader] = useState(RespostaHeader());
+  const [respostaBody, setRespostaBody] = useState(
+    RespostaBordy(questions.length),
+  );
+  const [respostaFooter, setRespostaFooter] = useState(
+    RespostaFooter(questions.length),
+  );
+  // console.log(questionFooter);
+  // console.log(respostaFooter);
+  // console.log(respostaFooter);
 
-    setResposta(resposta);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   for (let i = 1; i < questions.length + questionHeader.length; i++) {
+  //     resposta.push({
+  //       id: i + 1,
+  //       respostaFechada: [],
+  //       respostaAberta: '',
+  //     });
+  //   }
+
+  //   setResposta(resposta);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   function handleBackButton() {
     navigation.goBack();
@@ -69,15 +93,34 @@ function Formulario() {
       <Header voltar={handleBackButton} arrow={true} />
       <ScrollView style={stylePage.scroll}>
         <View style={stylePage.page}>
-          <Text style={stylePage.tituloNome}>{dados.titulo}</Text>
-          <Text style={stylePage.tituloSubnome}>{dados.subtitulo}</Text>
+          <Text style={stylePage.tituloNome}>{formularioNome.nome}</Text>
           <View style={stylePage.main}>
-            {dados.perguntas.map(item => (
+            {questionHeader.map(item => (
               <QuestionComponet
                 pergunta={item}
                 key={item.id}
-                resposta={resposta}
-                setResposta={setResposta}
+                resposta={respostaHeader}
+                setResposta={setRespostaHeader}
+              />
+            ))}
+          </View>
+          <View style={stylePage.main}>
+            {questions.map(item => (
+              <QuestionComponet
+                pergunta={item}
+                key={item.id}
+                resposta={respostaBody}
+                setResposta={setRespostaBody}
+              />
+            ))}
+          </View>
+          <View style={stylePage.main}>
+            {questionFooter.map(item => (
+              <QuestionComponet
+                pergunta={item}
+                key={item.id}
+                resposta={respostaFooter}
+                setResposta={setRespostaFooter}
               />
             ))}
           </View>
@@ -87,29 +130,41 @@ function Formulario() {
                 texto={'Salvar'}
                 onPress={() => {
                   const data = pegarData();
+                  // console.log(respostaHeader);
+                  // console.log(respostaBody);
+                  // console.log(respostaFooter);
+                  let respostaForms = respostaHeader.concat(respostaBody);
+                  let respostaFormsFull = respostaForms.concat(respostaFooter);
+                  console.log(respostaFormsFull);
+
                   // console.log(respostas);
                   // console.log(respostas.respostas);
                   // console.log(Array.from(respostas.respostas).length);
+
                   const respostaFinal = {
                     id: respostas.respostas.length + 1,
                     idFormulario: formularioAtual + 1,
                     data: data,
                     servidor: servidor,
-                    resposta: resposta,
+                    resposta: respostaFormsFull,
                   };
+
                   // console.log(respostaFinal.id);
                   // console.log(respostaFinal.idFormulario);
                   // console.log(respostaFinal.data);
                   // console.log(respostaFinal.servidor);
                   // console.log(respostaFinal.resposta);
                   // console.log(respostas.respostas.length);
+
                   respostas.respostas.push(respostaFinal);
+
                   // if (Array.from(respostas).length === 0) {
                   //   setRespostas(respostaFinal);
                   // } else {
                   //   setRespostas(respostas.push(respostaFinal));
                   // }
                   // console.log(respostas);
+
                   SalvarRespostas(respostas);
                   setRespostaNovas(true);
                   Alert.alert('Resposta Salva');

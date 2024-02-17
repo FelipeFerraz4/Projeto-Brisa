@@ -13,10 +13,18 @@ export async function getFormularios() {
 export async function getFormulariosQuestao() {
   try {
     const resultado = await api.get('/questions');
-    return await resultado.data;
+    return resultado.data;
   } catch (error) {
     return error;
   }
+}
+
+export function tratarErroRequisicaoQuestao(questionJson) {
+  const questionString = questionJson.toString() + '}';
+  // console.log(questionString);
+  const questions = JSON.parse(questionString);
+  // console.log(questions);
+  return questions;
 }
 
 export async function salvarResposta(
@@ -26,10 +34,10 @@ export async function salvarResposta(
   resposta,
 ) {
   try {
-    console.log(idFormularioResposta);
-    console.log(dataResposta);
-    console.log(servidorResposta);
-    console.log(resposta);
+    // console.log(idFormularioResposta);
+    // console.log(dataResposta);
+    // console.log(servidorResposta);
+    // console.log(resposta);
 
     const data = await {
       idFormulario: idFormularioResposta,
@@ -38,7 +46,7 @@ export async function salvarResposta(
       respostas: resposta,
     };
 
-    console.log(data);
+    // console.log(data);
 
     await api.post('/response', data);
     return 'sucesso';

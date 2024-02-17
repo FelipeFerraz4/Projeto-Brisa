@@ -12,7 +12,7 @@ function SplashScreen() {
       index: 0,
       routes: [{name: 'AppRotasTab'}],
     });
-  }, 1500);
+  }, 500);
 
   return (
     <View style={style.page}>

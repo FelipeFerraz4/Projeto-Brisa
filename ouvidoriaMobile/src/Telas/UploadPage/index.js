@@ -15,19 +15,24 @@ import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 import {useFocusEffect} from '@react-navigation/native';
-import {SalvarFormularios, SalvarRespostas} from '../../serviços/AsyncStorage';
+import {
+  SalvarFormularios,
+  SalvarFormulariosQuestion,
+  SalvarRespostas,
+} from '../../serviços/AsyncStorage';
 import {
   getFormularios,
   getFormulariosQuestao,
   salvarResposta,
   salvarRespostaCodigo,
+  tratarErroRequisicaoQuestao,
 } from '../../serviços/api/requisicoes';
 import {FormsContext} from '../../contexts/FormsContext';
 
 export default function Upload() {
   const {respostas, setRespostas, respostaNovas, setRespostaNovas} =
     useContext(GlobalContext);
-  const {forms, setForms} = useContext(FormsContext);
+  const {forms, setForms, setFormsQuestion} = useContext(FormsContext);
   const [Respostas, SetResposta] = useState(respostas.respostas);
   const [Busca, SetBusca] = useState('');
   // console.log('respota: ' + Respostas);
@@ -55,17 +60,24 @@ export default function Upload() {
   });
 
   async function GetFormularios() {
-    const resultado = await getFormularios();
-    setForms({
-      data: await resultado.data,
-    });
-    SalvarFormularios(await forms);
+    let resultado = await getFormularios();
+    if (resultado.data === undefined) {
+      resultado = tratarErroRequisicaoQuestao(await resultado);
+    }
+    // console.log('Forms' + forms);
+    setForms(await resultado);
+    SalvarFormularios(await resultado);
     // console.log(forms.data);
   }
 
   async function GetFormulariosQuestao() {
-    const resultado = await getFormulariosQuestao();
-    console.log(await resultado);
+    let question = await getFormulariosQuestao();
+    if (question.data === undefined) {
+      question = tratarErroRequisicaoQuestao(await question);
+    }
+    console.log(await question.data);
+    setFormsQuestion(await question);
+    SalvarFormulariosQuestion(await question);
   }
 
   async function SalvarResposta(
@@ -89,6 +101,7 @@ export default function Upload() {
       respostas: [],
     };
     GetFormularios();
+    GetFormulariosQuestao();
     // console.log(forms);
     // GetFormulariosQuestao();
     // console.log(respostas.respostas);

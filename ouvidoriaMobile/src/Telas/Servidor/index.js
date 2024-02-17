@@ -14,6 +14,7 @@ import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
+import {FormsContext} from '../../contexts/FormsContext';
 
 function FormularioHome() {
   const navigation = useNavigation();
@@ -22,12 +23,14 @@ function FormularioHome() {
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleServidor.inputContainer,
   );
-  const {formularioAtual, formulario, servidor, setServidor} =
-    useContext(GlobalContext);
+  const {formularioAtual, servidor, setServidor} = useContext(GlobalContext);
+  const {forms} = useContext(FormsContext);
+  const [formulario, setFormulario] = useState(forms.data[formularioAtual]);
 
   function FormsButton() {
     if (servidor !== '' && servidor.trim().replace(/\s/g, '').length > 2) {
-      navigation.navigate('Formulario', {formulario: formulario});
+      // navigation.navigate('Formulario', {formulario: formulario});
+      navigation.navigate('Formulario');
       // setServidor('');
       setMensagemErro('');
       setErroStyleContainer(styleServidor.inputContainer);
@@ -53,7 +56,7 @@ function FormularioHome() {
         </View>
         <View style={styleServidor.main}>
           <Text style={styleServidor.titulo}>
-            {formulario.titulo.toUpperCase()}
+            {formulario.nome.toUpperCase()}
           </Text>
           <Text style={styleServidor.titulo}>Nome do servidor</Text>
           <Input

@@ -1,15 +1,23 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export async function SalvarFormularios(formulario) {
-  // console.log('Async1:' + formulario);
-  const resultado = await AsyncStorage.getItem('4');
+  // console.log(formulario);
+  // const resultado = await AsyncStorage.getItem('4');
   // console.log('Async2:' + resultado);
   const formularios = JSON.stringify(formulario);
   await AsyncStorage.setItem('4', formularios);
 }
 
+export async function SalvarFormulariosQuestion(question) {
+  // console.log(question);
+  // const resultado = await AsyncStorage.getItem('4');
+  // console.log('Async2:' + resultado);
+  const questions = JSON.stringify(question);
+  await AsyncStorage.setItem('5', questions);
+}
+
 export async function LerFormularios() {
-  const formularios = await AsyncStorage.getItem('1');
+  const formularios = await AsyncStorage.getItem('4');
   const formulariosJson = await JSON.parse(formularios);
   // console.log(await formulariosJson[0]);
   // console.log(await formulariosJson[1]);

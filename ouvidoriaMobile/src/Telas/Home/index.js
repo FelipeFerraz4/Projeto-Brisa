@@ -19,33 +19,35 @@ import {FormsContext} from '../../contexts/FormsContext';
 
 function Home() {
   const navigation = useNavigation();
-  const formulario = CarregarFormularios();
+  // const formulario = CarregarFormularios();
   const [Busca, SetBusca] = useState('');
   const {formularioAtual, setFormularioAtual, setFormulario, setServidor} =
     useContext(GlobalContext);
   const {forms, setForms} = useContext(FormsContext);
-  // console.log(forms);
-  const [ListaFormulario, SetListaFormulario] = useState(formulario);
+  console.log(forms.data);
+  const [formularios, setFormularios] = useState(forms.data);
+  const [ListaFormulario, SetListaFormulario] = useState(formularios);
 
-  function formularioPress(form, id) {
+  function formularioPress(id) {
+    // console.log(id);
     setFormularioAtual(id - 1);
-    setFormulario(form);
+    // setFormulario(form);
     setServidor('');
-    console.log('Botao pressionado');
+    // console.log('Botao pressionado');
     navigation.navigate('Servidor');
   }
 
   useEffect(() => {
     if (Busca === '') {
-      SetListaFormulario(formulario);
+      SetListaFormulario(formularios);
     } else {
       SetListaFormulario(
-        formulario.filter(
+        formularios.filter(
           item => item.nome.toLowerCase().indexOf(Busca.toLowerCase()) > -1,
         ),
       );
     }
-  }, [Busca, formulario]);
+  }, [Busca, formularios]);
 
   return (
     <SafeAreaView style={styleHome.container}>
@@ -71,9 +73,9 @@ function Home() {
               <TouchableOpacity
                 key={item.id}
                 style={styleHome.formulario}
-                onPress={() => formularioPress(item, item.id)}>
+                onPress={() => formularioPress(item.id)}>
                 <Text style={styleHome.formularioTexto}>
-                  {item.titulo.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
+                  {item.nome.replace(/(^\w{1})|(\s+\w{1})/g, letra =>
                     letra.toUpperCase(),
                   )}
                 </Text>
