@@ -293,57 +293,36 @@
             {
                 "id": 1,
                 "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0,  
+                "quantidadeCamposFechados": 0,
                 "texto": "Nome:",
                 "option":[]
             },
             {
                 "id": 2,
                 "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "CPF:",
+                "quantidadeCamposFechados": 0,
+                "texto": "Endereço:",
                 "option":[]
             },
             {
                 "id": 3,
                 "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "Endereço:",
+                "quantidadeCamposFechados": 0,
+                "texto": "Idade:",
                 "option":[]
             },
             {
                 "id": 4,
                 "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "Cidade:",
+                "quantidadeCamposFechados": 0,
+                "texto": "Contato:",
                 "option":[]
             },
             {
                 "id": 5,
                 "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "Estado:",
-                "option":[]
-            },
-            {
-                "id": 6,
-                "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "Idade:",
-                "option":[]
-            },
-            {
-                "id": 7,
-                "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 0, 
-                "texto": "Contato:",
-                "option":[]
-            },
-            {
-                "id": 8,
-                "tipoPergunta": "aberta",
-                "quantidadeCamposFechados": 3, 
-                "texto": "Gênero",
+                "quantidadeCamposFechados": 3,
+                "texto": "Gênero:",
                 "option": [
                     {
                         "id": 1,
@@ -360,7 +339,7 @@
                 ]
             },
             {
-                "id": 9,
+                "id": 6,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 2, 
                 "texto": "Você utilizou algum serviço público municipal ?",
@@ -376,7 +355,7 @@
                 ]
             },
             {
-                "id": 10,
+                "id": 7,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Como avalia as condições de hospedagem na Cidade ?",
@@ -404,7 +383,7 @@
                 ]
             },
             {
-                "id": 11,
+                "id": 8,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Os pontos turísticos da cidade são fáceis de serem localizados ?",
@@ -420,7 +399,7 @@
                 ]
             },
             {
-                "id": 12,
+                "id": 9,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Como você avalia o serviço público utilizado ?",
@@ -448,7 +427,7 @@
                 ]
             },
             {
-                "id": 13,
+                "id": 10,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Quais serviços públicos realizados pelo município você destaca na Cidade ?",
@@ -476,7 +455,7 @@
                 ]
             },
             {
-                "id": 14,
+                "id": 11,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Qual serviço público deve ser melhorado no município de Juazeiro do Norte - CE para atender as necessidades dos romeiros ?",
@@ -504,7 +483,7 @@
                 ]
             },
             {
-                "id": 15,
+                "id": 12,
                 "tipoPergunta": "aberta",
                 "quantidadeCamposFechados": 5,
                 "texto": "Este espaço é seu! Registre aqui sugestões, reclamações, elogios, críticas...",

@@ -11,7 +11,11 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
   useEffect(() => {
     async function pegarRespostaTexto() {
       let index = (await pergunta.id) - 1;
-      resposta[index].respostaAberta = texto;
+      let respostaTexto = '';
+      if (texto !== '') {
+        respostaTexto = texto;
+      }
+      resposta[index].respostaAberta = respostaTexto;
       setResposta(resposta);
     }
     pegarRespostaTexto();
@@ -21,7 +25,7 @@ function QuestionComponent({pergunta, resposta, setResposta}) {
   useEffect(() => {
     async function pegarRespostaIcone() {
       let indexPergunta = (await pergunta.id) - 1;
-      let respostaFechada = [];
+      let respostaFechada = [null];
       for (let index = 0; index < checked.length; index++) {
         if (checked[index] === true) {
           respostaFechada.push(await pergunta.option[index].texto);

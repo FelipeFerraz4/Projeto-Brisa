@@ -26,13 +26,13 @@ function FormularioHome() {
     useContext(GlobalContext);
 
   function FormsButton() {
-    if (servidor !== '') {
+    if (servidor !== '' && servidor.trim().replace(/\s/g, '').length > 2) {
       navigation.navigate('Formulario', {formulario: formulario});
       // setServidor('');
       setMensagemErro('');
       setErroStyleContainer(styleServidor.inputContainer);
     } else {
-      setMensagemErro('Digite o nome do servidor');
+      setMensagemErro('Número de caracteres insuficiente');
       setErroStyleContainer(styleServidor.inputContainerErro);
     }
   }

@@ -1,0 +1,16 @@
+Adicionar campo para personalizar opções de pergunta
+tela de informações
+
+buscar palavras chaves no texto
+    Quais palavras chaves:
+        Buracos
+        Esgoto
+        Calçamento
+
+QR code com um link para o site da prefeitura
+    ter acesso para enviar os formulários
+
+
+Natureza apartir das palavras chaves
+    Manifestação do site da prefeitura tem as Natureza
+

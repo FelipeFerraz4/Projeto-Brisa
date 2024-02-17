@@ -15,27 +15,23 @@ import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {GlobalContext} from '../../contexts/GlobalContext';
-import { requisicoes1, requisicoes2 } from '../../serviços/api/requisicoes';
+import {FormsContext} from '../../contexts/FormsContext';
 
 function Home() {
   const navigation = useNavigation();
   const formulario = CarregarFormularios();
-  const [ListaFormulario, SetListaFormulario] = useState(formulario);
   const [Busca, SetBusca] = useState('');
   const {formularioAtual, setFormularioAtual, setFormulario, setServidor} =
     useContext(GlobalContext);
-
-  async function requisicoes() {
-    const resultado = await requisicoes1();
-    console.log(resultado);
-  }
+  const {forms, setForms} = useContext(FormsContext);
+  // console.log(forms);
+  const [ListaFormulario, SetListaFormulario] = useState(formulario);
 
   function formularioPress(form, id) {
     setFormularioAtual(id - 1);
     setFormulario(form);
     setServidor('');
     console.log('Botao pressionado');
-    requisicoes();
     navigation.navigate('Servidor');
   }
 

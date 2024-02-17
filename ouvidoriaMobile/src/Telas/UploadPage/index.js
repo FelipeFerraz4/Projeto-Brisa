@@ -15,11 +15,19 @@ import Header from '../../components/Header';
 import ButtonComponent from '../../components/ButtonComponent';
 import {GlobalContext} from '../../contexts/GlobalContext';
 import {useFocusEffect} from '@react-navigation/native';
-import {SalvarRespostas} from '../../serviços/AsyncStorage';
+import {SalvarFormularios, SalvarRespostas} from '../../serviços/AsyncStorage';
+import {
+  getFormularios,
+  getFormulariosQuestao,
+  salvarResposta,
+  salvarRespostaCodigo,
+} from '../../serviços/api/requisicoes';
+import {FormsContext} from '../../contexts/FormsContext';
 
 export default function Upload() {
   const {respostas, setRespostas, respostaNovas, setRespostaNovas} =
     useContext(GlobalContext);
+  const {forms, setForms} = useContext(FormsContext);
   const [Respostas, SetResposta] = useState(respostas.respostas);
   const [Busca, SetBusca] = useState('');
   // console.log('respota: ' + Respostas);
@@ -46,15 +54,58 @@ export default function Upload() {
     }
   });
 
+  async function GetFormularios() {
+    const resultado = await getFormularios();
+    setForms({
+      data: await resultado.data,
+    });
+    SalvarFormularios(await forms);
+    // console.log(forms.data);
+  }
+
+  async function GetFormulariosQuestao() {
+    const resultado = await getFormulariosQuestao();
+    console.log(await resultado);
+  }
+
+  async function SalvarResposta(
+    idFormularioResposta,
+    dataResposta,
+    servidorResposta,
+    resposta,
+  ) {
+    const resultado = await salvarResposta(
+      idFormularioResposta,
+      dataResposta,
+      servidorResposta,
+      resposta,
+    );
+    // const resultado = await salvarRespostaCodigo();
+    console.log(resultado);
+  }
+
   function EnviarResposta() {
     const respostaVazia = {
       respostas: [],
     };
+    GetFormularios();
+    // console.log(forms);
+    // GetFormulariosQuestao();
+    // console.log(respostas.respostas);
+    ListaRespostas.map(item =>
+      SalvarResposta(
+        item.idFormulario,
+        item.data,
+        item.servidor,
+        item.resposta,
+      ),
+    );
+    // ListaRespostas.map(item => console.log(item));
     SetListaRespostas(respostaVazia.respostas);
     setRespostas(respostaVazia);
     SalvarRespostas(respostaVazia);
-    // console.log(respostas);
-    // console.log('fim');
+
+    // console.log('botao pressionado');
   }
 
   return (

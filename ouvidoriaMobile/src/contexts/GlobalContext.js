@@ -15,24 +15,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const GlobalContext = createContext({});
 
 export function InfoProvider({children}) {
-  const [forms, setForms] = useState({
-    date: [
-      {
-        id: 1,
-        nome: 'população',
-      },
-      {
-        id: 2,
-        nome: 'Romaria',
-      },
-      {
-        id: 3,
-        nome: 'Ouvidoria Itinerante',
-      },
-    ],
-  })
-
-  SalvarFormularios(CarregarFormularios());
+  // SalvarFormularios(CarregarFormularios());
   // SalvarRespostas(CarregarRespostas());
   const [respostas, setRespostas] = useState({
     respostas: [],
@@ -43,7 +26,9 @@ export function InfoProvider({children}) {
   useEffect(() => {
     async function VerificarRespostasArmazenadas() {
       const resposta = await AsyncStorage.getItem('2');
-      if (respostas.respostas.length !== 2 && isCarregadaResposta === false) {
+      // console.log(respostas.respostas.length);
+      // console.log(resposta);
+      if (resposta.length !== 2 && isCarregadaResposta === false) {
         const respostaJson = JSON.parse(resposta);
         // console.log(respostaJson);
         // let lista = [respostaJson];
