@@ -18,7 +18,6 @@ import {FormsContext} from '../../contexts/FormsContext';
 
 function FormularioHome() {
   const navigation = useNavigation();
-  // const [servidor, setServidor] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
   const [erroStyleContainer, setErroStyleContainer] = useState(
     styleServidor.inputContainer,
@@ -29,9 +28,7 @@ function FormularioHome() {
 
   function FormsButton() {
     if (servidor !== '' && servidor.trim().replace(/\s/g, '').length > 2) {
-      // navigation.navigate('Formulario', {formulario: formulario});
       navigation.navigate('Formulario');
-      // setServidor('');
       setMensagemErro('');
       setErroStyleContainer(styleServidor.inputContainer);
     } else {

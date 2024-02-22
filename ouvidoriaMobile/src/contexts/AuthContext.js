@@ -10,7 +10,6 @@ export function AuthProvider({children}) {
   useEffect(() => {
     async function VerificarIsLogged() {
       const estado = await AsyncStorage.getItem('3');
-      // console.log(estado);
       if (estado !== undefined) {
         if (estado === 'true') {
           setIsLogged(true);

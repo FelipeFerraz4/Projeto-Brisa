@@ -21,9 +21,7 @@ export async function getFormulariosQuestao() {
 
 export function tratarErroRequisicaoQuestao(questionJson) {
   const questionString = questionJson.toString() + '}';
-  // console.log(questionString);
   const questions = JSON.parse(questionString);
-  // console.log(questions);
   return questions;
 }
 
@@ -34,19 +32,12 @@ export async function salvarResposta(
   resposta,
 ) {
   try {
-    // console.log(idFormularioResposta);
-    // console.log(dataResposta);
-    // console.log(servidorResposta);
-    // console.log(resposta);
-
     const data = await {
       idFormulario: idFormularioResposta,
       data: dataResposta,
       servidor: servidorResposta,
       respostas: resposta,
     };
-
-    // console.log(data);
 
     await api.post('/response', data);
     return 'sucesso';
@@ -134,31 +125,3 @@ export async function salvarRespostaCodigo() {
     return error;
   }
 }
-
-// export async function getFormularios() {
-//     try {
-//       const resultado = await api.get('/forms');
-//       return resultado.data;
-//     } catch (error) {
-//       return error;
-//     }
-// }
-
-// export async function getFormularios() {
-//     try {
-//       const resultado = await api.get('/forms');
-//       return resultado.data;
-//     } catch (error) {
-//       return error;
-//     }
-//   }
-
-// export async function requisicoes2() {
-//   try {
-//     const resultado = await axios.get('https://viacep.com.br/ws/01001000/json');
-//     console.log(resultado);
-//     return 'sucesso';
-//   } catch (error) {
-//     return error;
-//   }
-// }

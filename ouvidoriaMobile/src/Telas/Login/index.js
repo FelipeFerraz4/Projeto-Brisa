@@ -14,8 +14,6 @@ import Header from '../../components/Header';
 import Logo from '../../components/Logo';
 import ButtonComponent from '../../components/ButtonComponent';
 import {AuthContext} from '../../contexts/AuthContext';
-// import {logar} from '../../serviços/requisicoesFirebase';
-// import {auth} from '../../config/firebase';
 
 export default function Login() {
   const {login, isLogged} = useContext(AuthContext);
@@ -76,7 +74,6 @@ export default function Login() {
       if (resultado === 'sucesso') {
         handleLoginButton();
       } else {
-        // setStatusError('firebase');
         setMensagemError(resultado);
         setErroStyleContainer(styleLogin.mensagemErroContainer);
       }
@@ -142,10 +139,6 @@ export default function Login() {
             texto={'Entrar'}
             onPress={() => {
               realizarLogin();
-              // console.log(statusError);
-              // console.log(mensagemErrorEmail);
-              // console.log(mensagemErrorSenha);
-              // console.log(mensagemError);
             }}
             styleBotao={styleLogin.botao}
             styleContainer={styleLogin.botaoContainer}

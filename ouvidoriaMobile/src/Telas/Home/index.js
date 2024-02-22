@@ -19,7 +19,6 @@ import {FormsContext} from '../../contexts/FormsContext';
 
 function Home() {
   const navigation = useNavigation();
-  // const formulario = CarregarFormularios();
   const [Busca, SetBusca] = useState('');
   const {formularioAtual, setFormularioAtual, setFormulario, setServidor} =
     useContext(GlobalContext);
@@ -29,11 +28,8 @@ function Home() {
   const [ListaFormulario, SetListaFormulario] = useState(formularios);
 
   function formularioPress(id) {
-    // console.log(id);
     setFormularioAtual(id - 1);
-    // setFormulario(form);
     setServidor('');
-    // console.log('Botao pressionado');
     navigation.navigate('Servidor');
   }
 

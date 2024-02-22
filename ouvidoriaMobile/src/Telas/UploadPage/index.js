@@ -24,7 +24,6 @@ import {
   getFormularios,
   getFormulariosQuestao,
   salvarResposta,
-  salvarRespostaCodigo,
   tratarErroRequisicaoQuestao,
 } from '../../serviços/api/requisicoes';
 import {FormsContext} from '../../contexts/FormsContext';
@@ -35,10 +34,7 @@ export default function Upload() {
   const {forms, setForms, setFormsQuestion} = useContext(FormsContext);
   const [Respostas, SetResposta] = useState(respostas.respostas);
   const [Busca, SetBusca] = useState('');
-  // console.log('respota: ' + Respostas);
   const [ListaRespostas, SetListaRespostas] = useState(Respostas);
-  // console.log(ListaRespostas);
-  // console.log('lista: ' + Array.from(ListaRespostas).length);
 
   useEffect(() => {
     if (Busca === '') {
@@ -55,7 +51,6 @@ export default function Upload() {
   useFocusEffect(() => {
     if (respostaNovas === true) {
       setRespostaNovas(false);
-      // navigation.replace('Upload');
     }
   });
 
@@ -64,10 +59,8 @@ export default function Upload() {
     if (resultado.data === undefined) {
       resultado = tratarErroRequisicaoQuestao(await resultado);
     }
-    // console.log('Forms' + forms);
     setForms(await resultado);
     SalvarFormularios(await resultado);
-    // console.log(forms.data);
   }
 
   async function GetFormulariosQuestao() {
@@ -75,7 +68,6 @@ export default function Upload() {
     if (question.data === undefined) {
       question = tratarErroRequisicaoQuestao(await question);
     }
-    console.log(await question.data);
     setFormsQuestion(await question);
     SalvarFormulariosQuestion(await question);
   }
@@ -92,8 +84,6 @@ export default function Upload() {
       servidorResposta,
       resposta,
     );
-    // const resultado = await salvarRespostaCodigo();
-    console.log(resultado);
   }
 
   function EnviarResposta() {
@@ -102,9 +92,6 @@ export default function Upload() {
     };
     GetFormularios();
     GetFormulariosQuestao();
-    // console.log(forms);
-    // GetFormulariosQuestao();
-    // console.log(respostas.respostas);
     ListaRespostas.map(item =>
       SalvarResposta(
         item.idFormulario,
@@ -113,12 +100,9 @@ export default function Upload() {
         item.resposta,
       ),
     );
-    // ListaRespostas.map(item => console.log(item));
     SetListaRespostas(respostaVazia.respostas);
     setRespostas(respostaVazia);
     SalvarRespostas(respostaVazia);
-
-    // console.log('botao pressionado');
   }
 
   return (

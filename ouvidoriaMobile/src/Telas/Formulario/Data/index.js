@@ -3,8 +3,6 @@ export function questionsForms(formsQuestion, id) {
   for (let i = 0; i < questionForm.length; i++) {
     questionForm[i].id = i + 1;
   }
-  // console.log(questionForm);
-  // console.log('aqui');
   return questionForm;
 }
 

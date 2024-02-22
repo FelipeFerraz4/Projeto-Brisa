@@ -16,11 +16,9 @@ import {GlobalContext} from '../../contexts/GlobalContext';
 import {SalvarRespostas} from '../../serviços/AsyncStorage';
 import {FormsContext} from '../../contexts/FormsContext';
 import {
-  QuestionFooter,
   RespostaBordy,
   RespostaFooter,
   RespostaHeader,
-  estruturaResposta,
   questionFooter,
   questionHeader,
   questionsForms,
@@ -44,10 +42,6 @@ function Formulario() {
     questionsForms(formsQuestion.data, formularioAtual),
   );
 
-  // console.log(formsQuestion);
-  // console.log(formsQuestion.data);
-  // console.log(questions);
-  // const dados = formulario;
   const [respostaHeader, setRespostaHeader] = useState(RespostaHeader());
   const [respostaBody, setRespostaBody] = useState(
     RespostaBordy(questions.length),
@@ -55,22 +49,6 @@ function Formulario() {
   const [respostaFooter, setRespostaFooter] = useState(
     RespostaFooter(questions.length),
   );
-  // console.log(questionFooter);
-  // console.log(respostaFooter);
-  // console.log(respostaFooter);
-
-  // useEffect(() => {
-  //   for (let i = 1; i < questions.length + questionHeader.length; i++) {
-  //     resposta.push({
-  //       id: i + 1,
-  //       respostaFechada: [],
-  //       respostaAberta: '',
-  //     });
-  //   }
-
-  //   setResposta(resposta);
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   function handleBackButton() {
     navigation.goBack();
@@ -130,17 +108,8 @@ function Formulario() {
                 texto={'Salvar'}
                 onPress={() => {
                   const data = pegarData();
-                  // console.log(respostaHeader);
-                  // console.log(respostaBody);
-                  // console.log(respostaFooter);
                   let respostaForms = respostaHeader.concat(respostaBody);
                   let respostaFormsFull = respostaForms.concat(respostaFooter);
-                  console.log(respostaFormsFull);
-
-                  // console.log(respostas);
-                  // console.log(respostas.respostas);
-                  // console.log(Array.from(respostas.respostas).length);
-
                   const respostaFinal = {
                     id: respostas.respostas.length + 1,
                     idFormulario: formularioAtual + 1,
@@ -149,21 +118,7 @@ function Formulario() {
                     resposta: respostaFormsFull,
                   };
 
-                  // console.log(respostaFinal.id);
-                  // console.log(respostaFinal.idFormulario);
-                  // console.log(respostaFinal.data);
-                  // console.log(respostaFinal.servidor);
-                  // console.log(respostaFinal.resposta);
-                  // console.log(respostas.respostas.length);
-
                   respostas.respostas.push(respostaFinal);
-
-                  // if (Array.from(respostas).length === 0) {
-                  //   setRespostas(respostaFinal);
-                  // } else {
-                  //   setRespostas(respostas.push(respostaFinal));
-                  // }
-                  // console.log(respostas);
 
                   SalvarRespostas(respostas);
                   setRespostaNovas(true);

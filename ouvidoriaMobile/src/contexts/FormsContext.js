@@ -14,10 +14,8 @@ export function FormsProvider({children}) {
   useEffect(() => {
     async function GetFormulariosAsyncStorage() {
       const formulariosNomesString = await AsyncStorage.getItem('4');
-      console.log(formulariosNomesString);
       if (formulariosNomesString.length !== 2 && formsStatus === false) {
         const formulariosNomesJson = JSON.parse(formulariosNomesString);
-        console.log(formulariosNomesJson);
         setForms(formulariosNomesJson);
         setFormsStatus(true);
       }

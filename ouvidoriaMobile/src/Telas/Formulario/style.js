@@ -4,17 +4,13 @@ const stylePage = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    // backgroundColor: '#F5F6FF',
-    // backgroundColor: '#f00',
   },
   scroll: {
     flex: 1,
-    // backgroundColor: '#f00',
   },
   page: {
     flex: 1,
     flexDirection: 'column',
-    // backgroundColor: '#55f',
   },
   messageCompleted: {
     display: 'none',
